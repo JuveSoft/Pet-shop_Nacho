@@ -1,0 +1,87 @@
+// Animación de entrada de izquierda a derecha
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+#portada {
+  position: relative;
+  min-width: 200px;
+
+  // Espaciado equilibrado
+  @media (max-width: 768px) {
+    margin-top: 0;
+    padding-top: 0.5rem; // Un poco de espacio superior en móvil
+  }
+
+  @media (min-width: 769px) {
+    margin-top: 0;
+    padding-top: 1rem; // Más espacio en desktop
+  }
+
+  .contenido {
+    margin: 2rem auto;
+    max-width: 80%;
+  }
+
+  // 📦 OVERLAY MOVIDO A _general.scss dentro del .contenedor
+  // para mejor organización y evitar problemas de centrado
+
+  #portada {
+    img {
+      display: block;
+      width: clamp(220px, 45vw, 650px);
+      height: auto;
+      object-fit: cover;
+
+      @media (max-width: 768px) {
+        margin: 1rem auto; // Margen cómodo
+      }
+
+      @media (min-width: 769px) {
+        margin: 1.5rem auto; // Más margen en desktop
+      }
+
+      // Aplicar animación de entrada
+      animation: slideInFromLeft 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    // Estilos para el video
+    .video-labrador {
+      display: block;
+      width: clamp(220px, 45vw, 650px);
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+      transition: all 0.8s ease;
+
+      @media (max-width: 768px) {
+        margin: 1.5rem auto; // Margen entre imagen y video
+      }
+
+      @media (min-width: 769px) {
+        margin: 2rem auto; // Más espacio en desktop
+      }
+
+      // Animación de entrada (con delay para que aparezca después de la imagen)
+      animation: slideInFromLeft 1.2s cubic-bezier(0.4, 0, 0.2, 1) 0.5s both;
+
+      // Efectos hover
+      &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+      }
+
+      // Controles del video personalizados
+      &::-webkit-media-controls-panel {
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.6));
+      }
+    }
+  }
+}

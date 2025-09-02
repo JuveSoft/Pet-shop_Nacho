@@ -1,0 +1,230 @@
+html {
+  overflow-x: hidden;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-size: 62.5%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+// Reset básico
+* {
+  box-sizing: border-box;
+}
+
+// 🔧 ELIMINACIÓN DEFINITIVA DE MÁRGENES FANTASMA - EXCLUYENDO AL GATO SOMBRA
+.contenedor
+  *:not(.gato-borde):not(.gato-asomandose):not(.gato-nuclear):not(
+    .gato-img-nuclear
+  ),
+#portada,
+#portada
+  *:not(.gato-borde):not(.gato-asomandose):not(.gato-nuclear):not(
+    .gato-img-nuclear
+  ),
+.overlay,
+.overlay
+  *:not(.gato-borde):not(.gato-asomandose):not(.gato-nuclear):not(
+    .gato-img-nuclear
+  ) {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.contenedor {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto !important; // Forzar centrado
+  margin-bottom: 0 !important; // Sin espacio al footer
+  min-height: 100vh;
+  padding: 0 !important; // ELIMINAR CUALQUIER PADDING
+  padding-bottom: 0 !important; // Asegurar que no hay padding inferior
+  box-sizing: border-box;
+
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+
+  @media (max-width: 768px) {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  // Overlay dentro del contenedor - centrado y sin márgenes problemáticos
+  .overlay {
+    width: 100%;
+    position: relative;
+    text-align: justify;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    margin: 2rem auto;
+    box-sizing: border-box;
+
+    @media (max-width: 480px) {
+      padding: 0.5rem;
+      margin: 0.5rem auto;
+    }
+
+    @media (min-width: 481px) and (max-width: 768px) {
+      padding: 1.25rem;
+      margin: 2rem auto;
+    }
+
+    @media (min-width: 769px) {
+      padding: 1.5rem 2rem;
+      margin: 3rem auto;
+    }
+  }
+}
+
+// Asignación de áreas del grid
+header {
+  grid-area: header;
+}
+
+main {
+  grid-area: main;
+  width: 100%;
+  box-sizing: border-box;
+  padding-bottom: 0 !important; // Sin padding inferior
+  margin-bottom: 0 !important; // Sin margin inferior
+
+  @media (max-width: 768px) {
+    margin: 0;
+    padding: 1rem;
+    padding-bottom: 0 !important; // Mantener sin padding inferior en móvil
+  }
+
+  @media (min-width: 769px) {
+    margin: 0 auto;
+    padding: 1.5rem 2rem;
+    max-width: 100%;
+  }
+
+  // Eliminar margin-bottom del último elemento para pegarlo al footer
+  > *:last-child {
+    margin-bottom: 0 !important;
+  }
+
+  // También aplicar a elementos dentro de secciones
+  section > *:last-child {
+    margin-bottom: 0 !important;
+  }
+}
+
+footer {
+  grid-area: footer;
+}
+
+.btn-volver {
+  display: block;
+  padding: 0.5rem;
+  background-color: rgb(2, 250, 2);
+  a {
+    color: rgb(3, 126, 3);
+    font-size: clamp(1.2rem, 2.2vw, 2.2rem);
+  }
+}
+.centrado-texto {
+  text-align: center;
+  margin: auto;
+  padding: 1rem;
+  margin: 1rem;
+
+  // Eliminar margin del último párrafo para que no haya espacio con el footer
+  &:last-child {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  // Si está dentro de una sección, también eliminar el margin
+  section &:last-child {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+}
+
+// Gato asomándose desde el borde
+.gato-borde {
+  position: fixed !important;
+  top: auto !important;
+  right: -60px !important;
+  // bottom: 15px !important; // Pegado al piso
+  z-index: 1000 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+
+  @media (max-width: 480px) {
+    position: fixed !important;
+    bottom: 15px !important;
+    right: 15px !important;
+    top: auto !important;
+    left: auto !important;
+    z-index: 1001 !important;
+    transition: all 0.3s ease !important;
+  }
+}
+
+.gato-asomandose {
+  position: relative !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  width: clamp(15.8rem, 3vw, 30.8rem);
+  height: auto;
+  transform: rotate(90deg);
+  opacity: 0.3;
+  transition: all 0.3s ease;
+}
+
+// Hover effect para el contenedor del gato (no para la imagen)
+.gato-borde:hover {
+  right: -40px !important; // Se asoma más al hacer hover
+}
+
+.gato-borde:hover .gato-asomandose {
+  opacity: 1; // Se hace más visible
+}
+
+// 🐱 VILMA SUSANA CODE - Estilos base para el gatito (el JS se encarga del responsive)
+@media (max-width: 480px) {
+  .gato-borde {
+    // Solo estilos de transición - el JavaScript controla todo lo demás
+    transition: all 0.3s ease;
+  }
+
+  .gato-asomandose {
+    // Solo estilos de transición - el JavaScript controla todo lo demás
+    transition: all 0.3s ease;
+  }
+}
+
+// 🐱 ELIMINACIÓN TOTAL DE MÁRGENES DEL GATO SOMBRA
+.gato-borde,
+.gato-asomandose {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  outline: none !important;
+}
+
+// 🚫 ANULAR CUALQUIER MARGEN EXTERNO QUE AFECTE AL GATO
+html .gato-borde,
+body .gato-borde,
+main .gato-borde,
+div .gato-borde {
+  margin: 0 !important;
+  padding: 0 !important;
+}

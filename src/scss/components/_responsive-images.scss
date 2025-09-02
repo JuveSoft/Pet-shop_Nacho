@@ -1,0 +1,323 @@
+// ==============================================
+// IMÁGENES RESPONSIVE - GUÍA COMPLETA
+// ==============================================
+
+// ----------------------
+// 1. CLASES BASE PARA IMÁGENES RESPONSIVE
+// ----------------------
+
+// Imagen responsive básica - La más usada
+.img-responsive {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+// Sinónimo de img-responsive (nombre más común en frameworks)
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+// ----------------------
+// 2. CONTROL DE OBJECT-FIT
+// ----------------------
+
+// Imagen que cubre todo el contenedor (puede recortar)
+.img-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+// Imagen que se ajusta completamente dentro del contenedor
+.img-contain {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+// Imagen que rellena todo el contenedor (puede distorsionar)
+.img-fill {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+// Imagen que se escala hacia abajo si es necesario
+.img-scale-down {
+  width: 100%;
+  height: 100%;
+  object-fit: scale-down;
+  object-position: center;
+}
+
+// ----------------------
+// 3. IMÁGENES CON TAMAÑOS ESPECÍFICOS
+// ----------------------
+
+// Imagen hero con altura fluida
+.img-hero {
+  width: 100%;
+  height: clamp(300px, 50vh, 600px);
+  object-fit: cover;
+  object-position: center;
+}
+
+// Imagen banner
+.img-banner {
+  width: 100%;
+  height: clamp(200px, 30vh, 400px);
+  object-fit: cover;
+  object-position: center;
+}
+
+// Imagen con clamp para ancho
+.img-clamp {
+  width: clamp(200px, 50vw, 800px);
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+// ----------------------
+// 4. CONTAINERS CON ASPECT-RATIO
+// ----------------------
+
+.image-container {
+  position: relative;
+  overflow: hidden;
+  
+  // Variantes de aspect-ratio
+  &--square {
+    aspect-ratio: 1 / 1;
+  }
+  
+  &--wide {
+    aspect-ratio: 16 / 9;
+  }
+  
+  &--portrait {
+    aspect-ratio: 3 / 4;
+  }
+  
+  &--classic {
+    aspect-ratio: 4 / 3;
+  }
+  
+  &--cinematic {
+    aspect-ratio: 21 / 9;
+  }
+  
+  // La imagen dentro del container
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  
+  // Overlay para textos sobre la imagen
+  .overlay-text {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 0.5rem;
+    border-radius: 4px;
+    font-size: 0.875rem;
+  }
+}
+
+// ----------------------
+// 5. RESPONSIVE BREAKPOINTS PARA IMÁGENES
+// ----------------------
+
+.img-adaptive {
+  width: 100%;
+  height: auto;
+  
+  // Mobile first approach
+  @media (min-width: 576px) {
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  @media (min-width: 768px) {
+    width: 60%;
+  }
+  
+  @media (min-width: 992px) {
+    width: 50%;
+  }
+  
+  @media (min-width: 1200px) {
+    width: 40%;
+  }
+}
+
+// ----------------------
+// 6. GALLERY RESPONSIVE
+// ----------------------
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  
+  .gallery-item {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: 8px;
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+      
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+}
+
+// ----------------------
+// 7. LAZY LOADING STYLES
+// ----------------------
+
+.img-lazy {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  
+  &.loaded {
+    opacity: 1;
+  }
+  
+  // Placeholder mientras carga
+  &.loading {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+  }
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+// ----------------------
+// 8. ESTILOS PARA EJEMPLOS DEMO
+// ----------------------
+
+.demo-section {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  background: #fafafa;
+}
+
+.demo-title {
+  color: #333;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.demo-container {
+  height: 300px;
+  width: 100%;
+  border: 1px solid #ccc;
+  background: #f5f5f5;
+  position: relative;
+}
+
+.grid-demo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.main-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+// ----------------------
+// 9. UTILIDADES ADICIONALES
+// ----------------------
+
+// Centrar imagen horizontalmente
+.img-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Imagen circular
+.img-circle {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+// Imagen con bordes redondeados
+.img-rounded {
+  border-radius: 8px;
+}
+
+// Imagen con sombra
+.img-shadow {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+.img-hero {
+  width: 100%;
+  height: clamp(300px, 50vh, 600px);
+  object-fit: cover;
+  object-position: center;
+}
+
+// ----------------------
+// EJEMPLO DE USO EN HTML:
+// ----------------------
+
+/* 
+<!-- Imagen básica responsive -->
+<img src="imagen.jpg" alt="Descripción" class="img-responsive">
+
+<!-- Imagen en container cuadrado -->
+<div class="image-container image-container--square">
+  <img src="imagen.jpg" alt="Descripción">
+</div>
+
+<!-- Imagen hero -->
+<img src="imagen.jpg" alt="Descripción" class="img-hero">
+
+<!-- Gallery responsive -->
+<div class="gallery">
+  <div class="gallery-item">
+    <img src="imagen1.jpg" alt="Imagen 1">
+  </div>
+  <div class="gallery-item">
+    <img src="imagen2.jpg" alt="Imagen 2">
+  </div>
+</div>
+*/

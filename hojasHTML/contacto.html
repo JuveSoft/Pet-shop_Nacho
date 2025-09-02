@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contacto - Pet Shop LuNa</title>
+    <!-- Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/main.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- EmailJS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  </head>
+  <body>
+    <div class="contenedor">
+      <header>
+        <div class="titulo">
+          <h1>Pet Shop <span>LuNa</span></h1>
+        </div>
+
+        <nav class="navegacion-principal">
+          <!-- Botón hamburguesa para móviles -->
+          <button class="nav-toggle" aria-label="Abrir menú">
+            <span class="hamburger"></span>
+          </button>
+
+          <ul class="nav-menu">
+            <li class="menu-item">
+              <a href="../index.html" class="menu-trigger">Inicio</a>
+            </li>
+            <li class="menu-item has-dropdown">
+              <a href="#" class="menu-trigger">Productos</a>
+              <div class="dropdown-menu">
+                <div class="dropdown-content">
+                  <div class="dropdown-column">
+                    <h4 class="dropdown-title">Alimentos</h4>
+                    <ul>
+                      <li><a href="Productos/Alimentos.html">Bolsas</a></li>
+                      <li><a href="#">Pedigre</a></li>
+                      <li><a href="#">Dog Chow</a></li>
+                      <li><a href="#">Pirulín</a></li>
+                    </ul>
+                  </div>
+                  <div class="dropdown-column">
+                    <h4 class="dropdown-title">Accesorios</h4>
+                    <ul>
+                      <li>
+                        <a href="Productos/accesorios.html">Las pilchas</a>
+                      </li>
+                      <li><a href="#">Platos</a></li>
+                      <li><a href="#">Correas</a></li>
+                      <li><a href="#">Collares</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="menu-item">
+              <a href="quienesSomos.html" class="menu-trigger">Quiénes Somos</a>
+            </li>
+            <li class="menu-item">
+              <a href="contacto.html" class="menu-trigger active">Contacto</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <main class="contacto-main">
+        <div class="contacto-hero">
+          <h1>Contáctanos</h1>
+          <p>
+            Estamos aquí para ayudarte y a tu mascota. ¡Visitanos o escribenos!
+          </p>
+        </div>
+
+        <div class="contacto-container">
+          <!-- Información de contacto -->
+          <section class="contacto-info">
+            <div class="info-card">
+              <div class="info-header">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3>Ubicación</h3>
+              </div>
+              <p>
+                Teodoro Bronzini 1554, , Argentina
+                <br />B7604GBB Mar del Plata, Provincia de Buenos Aires<br />Argentina
+              </p>
+            </div>
+
+            <div class="info-card">
+              <div class="info-header">
+                <i class="fas fa-phone"></i>
+                <h3>Teléfono</h3>
+              </div>
+              <p>
+                <a href="tel:+542234567890">(223) 456-7890</a><br /><a
+                  href="tel:+541123456789"
+                  >(011) 2345-6789</a
+                >
+              </p>
+            </div>
+
+            <div class="info-card">
+              <div class="info-header">
+                <i class="fas fa-envelope"></i>
+                <h3>Email</h3>
+              </div>
+              <p>
+                <a href="mailto:petshoplunapruebas@gmail.com"
+                  >petshoplunapruebas@gmail.com</a
+                ><br /><a href="mailto:ventas@petshopluna.com"
+                  >ventas@petshopluna.com</a
+                >
+              </p>
+              <p>Contraseña: Luna_Nacho1554</p>
+            </div>
+
+            <div class="info-card">
+              <div class="info-header">
+                <i class="fas fa-clock"></i>
+                <h3>Horarios</h3>
+              </div>
+              <p>
+                <strong>Lunes a Viernes:</strong> 9:00 - 20:00<br /><strong
+                  >Sábados:</strong
+                >
+                9:00 - 18:00<br /><strong>Domingos:</strong> 10:00 - 16:00
+              </p>
+            </div>
+
+            <div class="info-card social-card">
+              <div class="info-header">
+                <i class="fas fa-share-alt"></i>
+                <h3>Redes Sociales</h3>
+              </div>
+              <div class="social-links">
+                <a href="#" aria-label="Facebook"
+                  ><i class="fab fa-facebook"></i
+                ></a>
+                <a href="#" aria-label="Instagram"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+                <a href="#" aria-label="WhatsApp"
+                  ><i class="fab fa-whatsapp"></i
+                ></a>
+                <a href="#" aria-label="Twitter"
+                  ><i class="fab fa-twitter"></i
+                ></a>
+              </div>
+            </div>
+          </section>
+
+          <!-- Formulario de contacto -->
+          <section class="contacto-form">
+            <h2>Envíanos un mensaje</h2>
+            <form class="contact-form" id="contactForm">
+              <div class="form-group">
+                <label for="nombre">Nombre completo *</label>
+                <input type="text" id="nombre" name="nombre" required />
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="email">Email *</label>
+                  <input type="email" id="email" name="email" required />
+                </div>
+                <div class="form-group">
+                  <label for="telefono">Teléfono</label>
+                  <input type="tel" id="telefono" name="telefono" />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="mascota">Nombre de tu mascota</label>
+                <input
+                  type="text"
+                  id="mascota"
+                  name="mascota"
+                  placeholder="¿Cómo se llama tu compañero peludo?"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="asunto">Asunto *</label>
+                <select id="asunto" name="asunto" required>
+                  <option value="">Selecciona un tema</option>
+                  <option value="consulta">Consulta general</option>
+                  <option value="productos">Información sobre productos</option>
+                  <option value="servicios">Servicios disponibles</option>
+                  <option value="cita">Solicitar cita</option>
+                  <option value="reclamo">Reclamo o sugerencia</option>
+                  <option value="otro">Otro</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="mensaje">Mensaje *</label>
+                <textarea
+                  id="mensaje"
+                  name="mensaje"
+                  rows="6"
+                  required
+                  placeholder="Cuéntanos cómo podemos ayudarte..."
+                ></textarea>
+              </div>
+
+              <div class="form-group checkbox-group">
+                <label class="checkbox-label">
+                  <input type="checkbox" id="newsletter" name="newsletter" />
+                  <span class="checkmark"></span>
+                  Quiero recibir ofertas y novedades por email
+                </label>
+              </div>
+
+              <button type="submit" class="btn-submit">
+                <i class="fas fa-paper-plane"></i>
+                Enviar mensaje
+              </button>
+            </form>
+          </section>
+        </div>
+<!-- códigos de 'EmailJS' <p>ewy07z1</p>
+<p>service_vuxiwtg</p>
+<p>_egrs6ENWsYGoP9fe</p> -->
+        <!-- Mapa -->
+        <section class="mapa-section">
+          <h2>¿Cómo llegar?</h2>
+          <div class="mapa-container">
+            <!-- Google Maps Embed - Reemplaza con tu ubicación real -->
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1572.3973928259763!2d-57.57902992130603!3d-37.981918195038574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9584d93fb8413aad%3A0x3ac42e0ceecc437b!2sTeodoro%20Bronzini%201554%2C%20B7604GBB%20Mar%20del%20Plata%2C%20Provincia%20de%20Buenos%20Aires%2C%20Argentina!5e0!3m2!1ses-419!2spl!4v1755917787467!5m2!1ses-419!2spl"
+              width="100%"
+              height="400"
+              allowfullscreen=""
+              title="Ubicación Pet Shop LuNa"
+            >
+            </iframe>
+            <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1572.3973928259763!2d-57.57902992130603!3d-37.981918195038574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9584d93fb8413aad%3A0x3ac42e0ceecc437b!2sTeodoro%20Bronzini%201554%2C%20B7604GBB%20Mar%20del%20Plata%2C%20Provincia%20de%20Buenos%20Aires%2C%20Argentina!5e0!3m2!1ses-419!2spl!4v1755917787467!5m2!1ses-419!2spl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
+          </div>
+          <div class="mapa-info">
+            <div class="mapa-details">
+              <h3><i class="fas fa-route"></i> Cómo llegar</h3>
+              <ul>
+                <li>
+                  <strong>En auto:</strong> Estacionamiento gratuito disponible
+                </li>
+                <li>
+                  <strong>En colectivo:</strong> Líneas 512, 513, 514 - Parada
+                  "Av. Principal"
+                </li>
+                <li>
+                  <strong>A pie:</strong> A 2 cuadras de la estación de servicio
+                  YPF
+                </li>
+              </ul>
+            </div>
+            <div class="mapa-referencias">
+              <h3><i class="fas fa-landmark"></i> Referencias</h3>
+              <ul>
+                <li>Frente al supermercado "La Familia"</li>
+                <li>Al lado de la farmacia "Salud Total"</li>
+                <li>A una cuadra del banco Nación</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Pet Shop <span>LuNa</span></h3>
+            <p>
+              Tu tienda de confianza para el cuidado y bienestar de tus
+              mascotas. Calidad, amor y atención personalizada desde 2024.
+            </p>
+            <div class="social-links">
+              <a href="#" aria-label="Facebook"
+                ><i class="fab fa-facebook"></i
+              ></a>
+              <a href="#" aria-label="Instagram"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" aria-label="WhatsApp"
+                ><i class="fab fa-whatsapp"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="footer-section">
+            <h4>Productos</h4>
+            <ul>
+              <li><a href="Productos/Alimentos.html">Alimentos</a></li>
+              <li><a href="Productos/accesorios.html">Accesorios</a></li>
+              <li><a href="#">Juguetes</a></li>
+              <li><a href="#">Higiene</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4>Información</h4>
+            <ul>
+              <li><a href="quienesSomos.html">Quiénes Somos</a></li>
+              <li><a href="contacto.html">Contacto</a></li>
+              <li><a href="#">Términos y Condiciones</a></li>
+              <li><a href="#">Política de Privacidad</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4>Contacto</h4>
+            <div class="contact-info">
+              <p>
+                <i class="fas fa-map-marker-alt"></i> Av. Principal 1234, Mar
+                del Plata
+              </p>
+              <p><i class="fas fa-phone"></i> (223) 456-7890</p>
+              <p><i class="fas fa-envelope"></i> info@petshopluna.com</p>
+              <p><i class="fas fa-clock"></i> Lun-Sáb: 9:00 - 20:00</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>
+            &copy; 2024 Pet Shop LuNa. Todos los derechos reservados. | Hecho
+            con ❤️ para tu mascota
+          </p>
+        </div>
+      </footer>
+    </div>
+
+    <script src="../src/js/main.js"></script>
+    <script src="../src/js/contacto.js"></script>
+  </body>
+</html>

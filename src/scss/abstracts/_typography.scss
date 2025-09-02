@@ -1,0 +1,69 @@
+// Tipografía global - Inter
+*,
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif !important;
+}
+
+// Headings con Inter
+h1 {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+}
+
+h2 {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: clamp(1.8rem, 4vw, 3.8rem);
+  padding: 1rem;
+  color: black;
+}
+
+h3 {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: clamp(1.5rem, 2vw, 2rem);
+  color: black;
+}
+
+h4 {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: clamp(1.5rem, 2vw, 2rem);
+  color: black;
+}
+
+h5 {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: clamp(1.5rem, 2vw, 2rem);
+  color: black;
+}
+
+h6 {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: clamp(1.5rem, 2vw, 2rem);
+  color: black;
+}
+
+// Texto del cuerpo
+body,
+p {
+  font-family: "Inter", sans-serif;
+  font-size: clamp(1.5rem, 2vw, 2rem);
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+// Enlaces
+a {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+}
+
+// Botones
+button {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+}

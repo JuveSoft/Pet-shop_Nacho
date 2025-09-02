@@ -1,0 +1,395 @@
+// Navigation Styles - Responsive
+.navegacion-principal {
+  position: relative;
+  font-family: "Inter", sans-serif !important;
+  //border: 3px solid red !important; // BORDE TEMPORAL para visualizar límites
+  //  // background-color: rgba(
+  //     255,
+  //     0,
+  //     0,
+  //     0.1
+  //   ) !important; // FONDO TEMPORAL rojo suave
+
+  .nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 1001;
+    position: relative;
+    margin-right: 2rem; // MARGEN AJUSTADO para la hamburguesa
+
+    // Make it more tappable on mobile
+    min-width: 44px;
+    min-height: 54px;
+
+    // &:focus {
+    //   outline: 2px solid #007bff;
+    //   outline-offset: 2px;
+    // }
+
+    // Hamburger icon
+    .hamburger {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background-color: #333;
+      position: relative;
+      transition: all 0.3s ease;
+      margin: auto;
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        width: 35px;
+        height: 3px;
+        background-color: #333;
+        transition: all 0.3s ease;
+      }
+
+      &::before {
+        top: -8px;
+      }
+
+      &::after {
+        top: 8px;
+      }
+    }
+
+    // Active state (cuando el menú está abierto)
+    &.active .hamburger {
+      background-color: transparent;
+
+      &::before {
+        transform: rotate(45deg);
+        top: 0;
+      }
+
+      &::after {
+        transform: rotate(-45deg);
+        top: 0;
+      }
+    }
+  }
+
+  .nav-menu {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  .menu-item {
+    position: relative;
+
+    &.has-dropdown:hover .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+  }
+
+  .menu-trigger {
+    text-decoration: none;
+    color: #333;
+    font-weight: 700;
+    font-family: "Inter", sans-serif !important;
+    // border: 16px solid blue !important; // BORDE TEMPORAL azul para menu items
+    // background-color: rgba(
+    //   0,
+    //   0,
+    //   255,
+    //   0.1
+    // ) !important; // FONDO TEMPORAL azul suave
+    font-size: 1.1rem;
+    padding: 0.5rem;
+    display: block;
+    transition: color 0.3s ease;
+    //margin-top: 3rem;
+
+    &:hover {
+      color: #007bff;
+    }
+  }
+
+  // Dropdown styles - Alineados a la derecha de cada palabra
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: auto; // CAMBIO: quitar left centrado
+    right: 0; // CAMBIO: alinear a la derecha de la palabra
+    transform: translateY(-10px); // CAMBIO: solo mover hacia arriba, no centrar
+    background: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    //  border: 13px solid green !important; // BORDE TEMPORAL verde para dropdowns
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    min-width: 380px;
+    max-width: 75vw;
+    padding: 1.5rem;
+
+    // En pantallas muy grandes
+    @media (min-width: 1800px) {
+      min-width: 450px;
+      max-width: 60vw;
+      padding: 2rem;
+    }
+
+    // Dynamic positioning classes (controlled by JavaScript)
+    &.dropdown-right {
+      left: auto;
+      right: 0;
+      transform: translateY(-10px);
+    }
+
+    &.dropdown-left {
+      left: 0;
+      right: auto;
+      transform: translateY(-10px);
+    }
+
+    &.dropdown-center {
+      left: 50%;
+      right: auto;
+      transform: translateX(-50%) translateY(-10px);
+    }
+  }
+
+  .dropdown-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.8rem;
+  }
+
+  .dropdown-column {
+    .dropdown-title {
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      position: relative;
+
+      // Línea azul decorativa
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 80px;
+        height: 2px;
+        background-color: #007bff;
+        display: block;
+      }
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    a {
+      text-decoration: none;
+      color: #666;
+      font-size: 1rem;
+      padding: 0.5rem 0;
+      display: block;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: #007bff;
+      }
+    }
+  }
+
+  // Mobile styles
+  @media (max-width: 768px) {
+    .nav-toggle {
+      display: block;
+    }
+
+    // .menu-item:first-child {
+    //   margin-top: 2rem;
+    // }
+
+    .nav-menu {
+      position: fixed;
+      top: 2rem;
+      left: -100%;
+      width: 100%;
+      height: 100vh;
+      background: white;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: stretch;
+      padding: 4rem 1rem;
+      transition: left 0.3s ease;
+      z-index: 999;
+      overflow-y: auto;
+      overflow-x: hidden;
+      box-sizing: border-box;
+
+      &.active {
+        left: 0;
+      }
+    }
+
+    .menu-item {
+      border-bottom: 1px solid #eee;
+      flex-shrink: 0;
+      position: relative;
+
+      &.has-dropdown .dropdown-menu {
+        position: static !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+        box-shadow: 5px 5px 15px 10px rgba(0, 0, 0, 0.1);
+        background: #f8f9fa;
+        min-width: auto;
+        padding: 1rem;
+        margin: 0;
+        border-radius: 0;
+        // border: 2px solid orange !important; // TEMPORAL para ver límites en móvil
+      }
+    }
+
+    .menu-trigger {
+      padding: 0.55rem 0.5rem;
+      border: none;
+      background: none;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+      font-family: "Inter", sans-serif !important;
+    }
+
+    .dropdown-content {
+      display: block;
+      gap: 0;
+    }
+
+    .dropdown-column {
+      margin-bottom: 1.5rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      ul {
+        margin-bottom: 1rem;
+      }
+
+      li {
+        margin-bottom: 0.8rem;
+      }
+    }
+
+    .dropdown-column .dropdown-title {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      padding-bottom: 0.3rem;
+
+      &::after {
+        width: 60px;
+        height: 1px;
+      }
+    }
+  }
+  // Tablet adjustments
+  @media (max-width: 1200px) and (min-width: 769px) {
+    .dropdown-menu {
+      min-width: 320px;
+      max-width: 70vw;
+    }
+
+    // .menu-item:first-child .dropdown-menu {
+    //   min-width: 420px !important;
+    //   max-width: 75vw !important;
+    // }
+
+    .dropdown-content {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  // Large screens adjustments
+  @media (min-width: 1201px) {
+    .dropdown-menu {
+      min-width: 380px;
+      max-width: 65vw;
+    }
+
+    // .menu1-item:first-child .dropdown-menu {
+    //   min-width: 520px !important;
+    //   max-width: 75vw !important;
+    // }
+  }
+
+  // Ajustes para dispositivos muy pequeños
+  @media (max-width: 480px) {
+    .nav-menu {
+      padding: 4rem 1rem 6rem 1rem !important;
+      height: calc(100vh - 70px) !important;
+      overflow-y: auto !important;
+    }
+
+    .dropdown-column .dropdown-title {
+      font-size: 0.9rem;
+
+      &::after {
+        width: 50px;
+        height: 1px;
+      }
+    }
+
+    .menu-trigger {
+      padding: 1.2rem 1rem !important;
+    }
+
+    .menu-item {
+      margin-bottom: 0.5rem !important;
+    }
+  }
+
+  // Estilos para pantallas súper pequeñas
+  @media (max-width: 320px) {
+    .nav-menu {
+      padding: 4rem 0.8rem 8rem 0.8rem !important;
+      height: calc(100vh - 60px) !important;
+      overflow-y: auto !important;
+    }
+
+    .dropdown-column .dropdown-title {
+      font-size: 0.8rem;
+
+      &::after {
+        width: 40px;
+      }
+    }
+
+    .menu-trigger {
+      font-size: 0.9rem;
+      padding: 1rem 0.8rem !important;
+    }
+
+    .dropdown-column a {
+      font-size: 0.8rem;
+      padding: 0.4rem 0 !important;
+    }
+
+    .menu-item {
+      margin-bottom: 0.8rem !important;
+    }
+  }
+}

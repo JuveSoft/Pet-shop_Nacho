@@ -1,0 +1,12 @@
+[
+  {
+    "titulo": "Diseño con proposito",
+    "imagen": "imagen1.jpg",
+    "contenido": "Exploramos como el diseñp puede transformar experiencias.."
+  },
+  {
+    "titulo": "SCSS en acción",
+    "imagen": "imagen2.jpg",
+    "contenido": "Como modularizar proywctos escalables..."
+  }
+]

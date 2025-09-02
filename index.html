@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- <meta name="viewport" content="width=device-width, initia          <!-- Controles de velocidad discretos -->
+           <!-- <div class="video-speed-controls">
+            <span class="speed-label">Velocidad:</span>
+            <button class="speed-btn" data-speed="0.3">🐌</button>
+            <button class="speed-btn" data-speed="0.7">🚶</button>
+            <button class="speed-btn active" data-speed="1.0">🏃</button>
+            <button class="speed-btn" data-speed="1.5">🏃‍♂️</button>
+            <button class="speed-btn" data-speed="2.5">🚀</button>
+          </div>.0" /> --> 
+    <title>Revista</title>
+    <!-- Google Fonts - Inter (similar a Mozilla) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.min.css?v=5" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  </head>
+  <body>
+    <!-- GATO NUCLEAR - Ahora se crea desde JavaScript -->
+    <!-- 
+    <div class="gato-borde">
+      <img src="img/webp/Gato_al_reves_sin fondo.png" alt="Gato asomándose" class="gato-asomandose" />
+    </div>
+    -->
+    
+    <div class="contenedor">
+    <header>
+      <div class="titulo">
+        <h1>Pet Shop <span>LuNa</span></h1>
+      </div>
+      
+      <nav class="navegacion-principal">
+      
+        <!-- Botón hamburguesa para móviles -->
+        <button class="nav-toggle" aria-label="Abrir menú">
+          <span class="hamburger"></span>
+        </button>
+        
+        <ul class="nav-menu">
+          <li class="menu-item has-dropdown">
+            <a href="#" class="menu-trigger">Productos</a>
+            <div class="dropdown-menu">
+              <div class="dropdown-content">
+                <div class="dropdown-column">
+                  <h4 class="dropdown-title">Alimentos</h4>
+                  <ul>
+                    <li><a href="hojasHTML/Productos/Alimentos.html">Bolsas</a></li>
+                    <li><a href="">Pedigre</a></li>
+                    <li><a href="">Dog Chow</a></li>
+                    <li><a href="">Pirulín</a></li>
+                  </ul>
+                </div>                
+                <div class="dropdown-column">
+                  <h4 class="dropdown-title">Accesorios</h4>
+                  <ul>
+                    <li><a href="">Las pilchas</a></li>
+                    <li><a href="">Platos</a></li>
+                    <li><a href="">Correas</a></li>
+                    <li><a href="">Collares</a></li>
+                    <li><a href="">Pretales - Bozales</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="menu-item has-dropdown">
+            <a href="#" class="menu-trigger">Curiosidades</a>
+            <div class="dropdown-menu">
+              <div class="dropdown-content">
+                <div class="dropdown-column">
+                  <h4 class="dropdown-title">Perros</h4>
+                  <ul>
+                    <li><a href="#">Perros</a></li>
+                    <li><a href="#">Gatos</a></li>
+                    <li><a href="#">Alimentos</a></li>
+                    <li><a href="#">Conductas</a></li>
+                  </ul>
+                </div>
+                
+                <div class="dropdown-column">
+                  <h4 class="dropdown-title">Juguetería</h4>
+                  <ul>
+                    <li><a href="#">Acerca de Alimentos</a></li>
+                    <li><a href="#">Acerca de Accesorios</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>   
+
+          <li class="menu-item has-dropdown">
+            <a href="#" class="menu-trigger">Contacto</a>
+            <div class="dropdown-menu">
+              <div class="dropdown-content">
+
+                <div class="dropdown-column">
+                  <h4 class="dropdown-title">Información</h4>
+                  <ul>
+                    <li><a href="hojasHTML/quienesSomos.html">Quienes somos</a></li>
+                  </ul>
+                </div>
+
+                <div class="dropdown-column">
+                  <h4 class="dropdown-title">Modos de contacto</h4>
+                  <ul>
+                    <li><a href="">Correo</a></li>
+                    <li><a href="hojasHTML/contacto.html">Donde estamos</a></li>
+                  </ul>
+                </div>
+
+              </div>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </header>
+  
+    </nav>
+    </header>
+
+
+
+    <main id="contenido">
+      <section id="portada">
+        <div class="overlay">
+          <h2 class="centrado-texto">Alimentos y accesorios para mascotas</h2>
+          <h3 class="centrado-texto">Bienvenido al mundo de los que aman sin condiciones</h3>
+    
+          <img src="/src/img/Perros/puppy.png" alt="Cachorro adorable" />
+          
+          <!-- Video del labrador con efecto ping-pong -->
+          <video 
+            id="videoLabrador"
+            autoplay 
+            muted 
+            playsinline
+            preload="auto" 
+            width="100%" 
+            height="auto"
+            poster="/src/img/Perros/puppy.png"
+            class="video-labrador"
+            aria-label="Video de labrador jugando">
+            <source src="/src/img/Perros/Video_labrador2.mp4" type="video/mp4">
+            <p>Tu navegador no soporta videos HTML5. <a href="/src/img/Perros/Video_labrador.mp4">Descarga el video aquí</a>.</p>
+          </video>
+          <!-- <img src="/src/img/Perros/Gato_al_reves.png" alt="Gato_al_reves" /> -->
+
+          <p class="centrado-texto">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sint cum
+            eius nisi eaque obcaecati, itaque officiis saepe quas pariatur sit
+            nostrum esse. Nulla voluptatem maiores nostrum soluta asperiores non
+            esse!
+          </p>
+          <p class="centrado-texto">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio
+            aliquid, temporibus non officia quo corporis deserunt quibusdam
+            expedita reprehenderit esse ducimus minus doloribus, voluptate
+            mollitia unde explicabo enim iure rerum?
+          </p>
+    
+        </div>
+      </section>
+    </main>
+  </div>
+  <!-- ✅ FOOTER FUERA DEL CONTENEDOR -->
+  <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Pet Shop <span>LuNa</span></h3>
+          <p>Tu tienda de confianza para el cuidado y bienestar de tus mascotas. Calidad, amor y atención personalizada desde 2024.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Productos</h4>
+          <ul>
+            <li><a href="hojasHTML/Productos/Alimentos.html">Alimentos</a></li>
+            <li><a href="hojasHTML/Productos/accesorios.html">Accesorios</a></li>
+            <li><a href="#">Juguetes</a></li>
+            <li><a href="#">Higiene</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Información</h4>
+          <ul>
+            <li><a href="hojasHTML/quienesSomos.html">Quiénes Somos</a></li>
+            <li><a href="hojasHTML/contacto.html">Contacto</a></li>
+            <li><a href="#">Términos y Condiciones</a></li>
+            <li><a href="#">Política de Privacidad</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Contacto</h4>
+          <div class="contact-info">
+            <p><i class="fas fa-map-marker-alt"></i> Av. Principal 123, Ciudad</p>
+            <p><i class="fas fa-phone"></i> (223) 1234-5678</p>
+            <p><i class="fas fa-envelope"></i> info@petshopluna.com</p>
+            <p><i class="fas fa-clock"></i> Lun-Sáb: 9:00 - 20:00</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2024 Pet Shop LuNa. Todos los derechos reservados. | Hecho con ❤️ para tu mascota</p>
+      </div>
+    </footer>
+    <script src="src/js/main.js"></script>
+    <script src="src/js/video-control.js"></script>
+    <script src="src/js/gato-sticky-final.js"></script>
+    <script src="src/js/footer-fix.js"></script>
+
+  </body>
+</html>

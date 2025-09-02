@@ -1,0 +1,88 @@
+.contenedor-ofertas {
+  position: relative;
+  display: flex;
+  width: 90%;
+  max-width: 1200px; // Limita el ancho máximo
+  height: auto;
+  margin: 10rem auto;
+
+  // Tablet pequeña
+  @media (min-width: 678px) {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  // Tablet grande / Desktop pequeño
+  @media (min-width: 992px) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  // Desktop grande
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+  .producto-oferta {
+    position: relative;
+    width: 100%; // Cambiado de 90% a 100%
+    max-width: 300px; // Limita el ancho máximo del producto
+    height: auto;
+    margin: 1rem auto;
+    box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    .imagen-producto {
+      display: flex;
+      width: 100%;
+      max-width: 90%; // Se adapta al contenedor
+      height: 8rem;
+      margin: auto;
+      padding: 0.5rem;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        width: auto;
+        height: 100%;
+        max-width: 100%;
+        object-fit: contain; // Mantiene proporción sin deformarse
+      }
+    }
+    .datos-oferta {
+      position: relative;
+      display: block;
+      width: 90%;
+      max-height: none; // Removido para permitir que crezca
+      text-align: center;
+      margin: auto;
+      padding-bottom: 1rem; // Espacio en la parte inferior
+
+      .familia-oferta,
+      .nombre-producto,
+      .tipo-producto,
+      .descripcion-producto {
+        text-align: center;
+        margin: 0.5rem auto;
+        padding: 0.2rem;
+        color: green;
+        font-size: clamp(1.3rem, 2.5vw, 3.5rem);
+      }
+      .nombre-producto {
+        color: black;
+      }
+
+      .precio {
+        color: black;
+        font-weight: bold;
+        font-size: clamp(1.5rem, 2.5vw, 3.5rem);
+        padding-bottom: 1rem;
+        margin: 1rem auto;
+        text-align: center;
+      }
+    }
+  }
+}
