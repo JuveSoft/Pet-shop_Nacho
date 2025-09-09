@@ -1,3 +1,5 @@
+@use "../abstracts/variables" as *;
+
 html {
   overflow-x: hidden;
   width: 100%;
@@ -6,6 +8,7 @@ html {
 }
 
 body {
+  // Configuración base
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -13,6 +16,17 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   width: 100%;
+
+  // Configuración del header embebido migrado
+  font-family: $font-sans;
+  background: $background-light;
+  padding-top: $header-height-desktop; // Espacio para header fijo
+  line-height: 1.6;
+
+  // Responsive
+  @media (max-width: $mobile) {
+    padding-top: $header-height-mobile;
+  }
 }
 
 // Reset básico
@@ -20,21 +34,12 @@ body {
   box-sizing: border-box;
 }
 
-// 🔧 ELIMINACIÓN DEFINITIVA DE MÁRGENES FANTASMA - EXCLUYENDO AL GATO SOMBRA
-.contenedor
-  *:not(.gato-borde):not(.gato-asomandose):not(.gato-nuclear):not(
-    .gato-img-nuclear
-  ),
+// 🔧 ELIMINACIÓN DEFINITIVA DE MÁRGENES FANTASMA - SOLO GATO NUCLEAR EXCLUIDO
+.contenedor *:not(.gato-nuclear):not(.gato-img-nuclear),
 #portada,
-#portada
-  *:not(.gato-borde):not(.gato-asomandose):not(.gato-nuclear):not(
-    .gato-img-nuclear
-  ),
+#portada *:not(.gato-nuclear):not(.gato-img-nuclear),
 .overlay,
-.overlay
-  *:not(.gato-borde):not(.gato-asomandose):not(.gato-nuclear):not(
-    .gato-img-nuclear
-  ) {
+.overlay *:not(.gato-nuclear):not(.gato-img-nuclear) {
   margin-left: 0 !important;
   margin-right: 0 !important;
 }
@@ -95,42 +100,9 @@ header {
   grid-area: header;
 }
 
-main {
-  grid-area: main;
-  width: 100%;
-  box-sizing: border-box;
-  padding-bottom: 0 !important; // Sin padding inferior
-  margin-bottom: 0 !important; // Sin margin inferior
-
-  @media (max-width: 768px) {
-    margin: 0;
-    padding: 1rem;
-    padding-bottom: 0 !important; // Mantener sin padding inferior en móvil
-  }
-
-  @media (min-width: 769px) {
-    margin: 0 auto;
-    padding: 1.5rem 2rem;
-    max-width: 100%;
-  }
-
-  // Eliminar margin-bottom del último elemento para pegarlo al footer
-  > *:last-child {
-    margin-bottom: 0 !important;
-  }
-
-  // También aplicar a elementos dentro de secciones
-  section > *:last-child {
-    margin-bottom: 0 !important;
-  }
-}
-
-footer {
-  grid-area: footer;
-}
-
 .btn-volver {
   display: block;
+  margin: 2rem;
   padding: 0.5rem;
   background-color: rgb(2, 250, 2);
   a {
@@ -157,74 +129,4 @@ footer {
   }
 }
 
-// Gato asomándose desde el borde
-.gato-borde {
-  position: fixed !important;
-  top: auto !important;
-  right: -60px !important;
-  // bottom: 15px !important; // Pegado al piso
-  z-index: 1000 !important;
-  margin: 0 !important;
-  padding: 0 !important;
-
-  @media (max-width: 480px) {
-    position: fixed !important;
-    bottom: 15px !important;
-    right: 15px !important;
-    top: auto !important;
-    left: auto !important;
-    z-index: 1001 !important;
-    transition: all 0.3s ease !important;
-  }
-}
-
-.gato-asomandose {
-  position: relative !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  width: clamp(15.8rem, 3vw, 30.8rem);
-  height: auto;
-  transform: rotate(90deg);
-  opacity: 0.3;
-  transition: all 0.3s ease;
-}
-
-// Hover effect para el contenedor del gato (no para la imagen)
-.gato-borde:hover {
-  right: -40px !important; // Se asoma más al hacer hover
-}
-
-.gato-borde:hover .gato-asomandose {
-  opacity: 1; // Se hace más visible
-}
-
-// 🐱 VILMA SUSANA CODE - Estilos base para el gatito (el JS se encarga del responsive)
-@media (max-width: 480px) {
-  .gato-borde {
-    // Solo estilos de transición - el JavaScript controla todo lo demás
-    transition: all 0.3s ease;
-  }
-
-  .gato-asomandose {
-    // Solo estilos de transición - el JavaScript controla todo lo demás
-    transition: all 0.3s ease;
-  }
-}
-
-// 🐱 ELIMINACIÓN TOTAL DE MÁRGENES DEL GATO SOMBRA
-.gato-borde,
-.gato-asomandose {
-  margin: 0 !important;
-  padding: 0 !important;
-  border: none !important;
-  outline: none !important;
-}
-
-// 🚫 ANULAR CUALQUIER MARGEN EXTERNO QUE AFECTE AL GATO
-html .gato-borde,
-body .gato-borde,
-main .gato-borde,
-div .gato-borde {
-  margin: 0 !important;
-  padding: 0 !important;
-}
+// CSS limpio - solo configuración básica

@@ -33,55 +33,100 @@
   // 📦 OVERLAY MOVIDO A _general.scss dentro del .contenedor
   // para mejor organización y evitar problemas de centrado
 
-  #portada {
-    img {
-      display: block;
-      width: clamp(220px, 45vw, 650px);
-      height: auto;
-      object-fit: cover;
+  // Contenedor para imagen y video - CENTRADO ABSOLUTO
+  .media-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 2rem auto;
+    width: 100%;
+    text-align: center;
+    max-width: none; // Sin límite de ancho, que use el mismo que los textos
 
-      @media (max-width: 768px) {
-        margin: 1rem auto; // Margen cómodo
-      }
+    @media (min-width: 769px) {
+      flex-direction: row;
+      gap: 4rem;
+      max-width: none; // Sin límite, que se ajuste al contenedor padre como los textos
+      justify-content: center !important;
+      align-items: center !important;
+      margin: 3rem auto !important;
+      // Usar el mismo ancho efectivo que los elementos .centrado-texto
+      padding: 0 1rem; // Mismo padding que los textos
+    }
+  }
+  img {
+    display: block;
+    width: clamp(300px, 30vw, 400px);
+    height: auto;
+    object-fit: cover;
+    margin: 0 auto;
 
-      @media (min-width: 769px) {
-        margin: 1.5rem auto; // Más margen en desktop
-      }
+    // Animación de entrada
+    animation: slideInFromLeft 1.5s cubic-bezier(0.4, 0, 0.2, 1);
 
-      // Aplicar animación de entrada
-      animation: slideInFromLeft 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+    @media (max-width: 768px) {
+      margin: 1rem auto;
     }
 
-    // Estilos para el video
-    .video-labrador {
-      display: block;
-      width: clamp(220px, 45vw, 650px);
-      height: auto;
-      border-radius: 12px;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
-      transition: all 0.8s ease;
+    @media (min-width: 769px) {
+      width: 350px !important; // Tamaño fijo y forzado
+      height: auto !important;
+      flex-shrink: 0;
+      margin: 0 !important; // Sin margin, el flexbox lo centra
+    }
+  }
 
-      @media (max-width: 768px) {
-        margin: 1.5rem auto; // Margen entre imagen y video
-      }
+  // Estilos para el video
+  .video-labrador {
+    display: block;
+    width: clamp(300px, 30vw, 400px);
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    transition: all 0.8s ease;
+    margin: 0 auto;
 
-      @media (min-width: 769px) {
-        margin: 2rem auto; // Más espacio en desktop
-      }
+    // Animación de entrada
+    animation: slideInFromLeft 1.2s cubic-bezier(0.4, 0, 0.2, 1) 0.5s both;
 
-      // Animación de entrada (con delay para que aparezca después de la imagen)
-      animation: slideInFromLeft 1.2s cubic-bezier(0.4, 0, 0.2, 1) 0.5s both;
+    @media (max-width: 768px) {
+      margin: 1.5rem auto;
+    }
 
-      // Efectos hover
-      &:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
-      }
+    @media (min-width: 769px) {
+      width: 383px !important; // Video 33px más grande que la imagen (350px + 33px)
+      height: auto !important;
+      flex-shrink: 0;
+      margin: 0 !important; // Sin margin, el flexbox lo centra
+    }
 
-      // Controles del video personalizados
-      &::-webkit-media-controls-panel {
-        background: linear-gradient(transparent, rgba(0, 0, 0, 0.6));
-      }
+    // Efectos hover
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+    }
+
+    // Controles del video personalizados
+    &::-webkit-media-controls-panel {
+      background: linear-gradient(transparent, rgba(0, 0, 0, 0.6));
+    }
+  }
+
+  // ==================== SOBRESCRIBIR REGLAS CONFLICTIVAS ====================
+  // Forzar centrado del media-container a pesar de las reglas generales del overlay
+  .overlay .media-container {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 80% !important; // Que use el ancho disponible como los textos
+
+    @media (min-width: 769px) {
+      margin: 3rem auto !important; // Forzar centrado completo
+      display: flex !important;
+      justify-content: center !important;
+      align-items: center !important;
+      padding: 0 1rem !important; // Mismo padding que .centrado-texto
     }
   }
 }

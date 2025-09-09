@@ -1,85 +1,370 @@
-// Header styles
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.5rem; // MÁS padding lateral en desktop
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  position: fixed; // RELATIVO en desktop
-  z-index: 2002; // Por encima del menú dropdown
-  transition: all 0.3s ease;
-  background-color: white;
-  width: 100%; // Ancho completo del viewport
-  box-sizing: border-box;
-  margin: 0; // Sin márgenes que causen overflow
-  left: 0;
-  top: 0;
+@use "../abstracts/variables" as *;
 
-  @media (max-width: 768px) {
-    padding: 0.5rem; // MÁS margen en móvil (era 0.5rem)
-    position: fixed; // FIJO solo en móvil/tablet
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1002;
-    width: 100%; // Asegurar full width en móvil
-    height: 6rem;
-  }
+// ==================== HEADER MIGRADO DESDE CSS EMBEBIDO ====================
+// Migración exacta del header que funciona en el CSS embebido
+
+// NOTA: Los estilos de body están en base/_general.scss para evitar duplicación
+
+// ==================== CONTENEDOR PRINCIPAL ====================
+.contenedor {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  background: $white;
+  height: auto;
+  position: relative;
 }
 
-.titulo {
-  position: relative;
-  z-index: 1003; // Asegurar que esté por encima
-  background-color: white;
-  width: 100%; // Ancho completo pero sin overflow
-  box-sizing: border-box;
-  text-align: center; // Centrar el contenido
+// ==================== HEADER FIJO ====================
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: $white;
+  border-bottom: 2px solid $primary-blue;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: $z-header;
+  padding: 0;
+}
 
-  @media (max-width: 768px) {
-    text-align: center; // Centrar en móvil también
-  }
+// ==================== TÍTULO ====================
+.titulo {
+  text-align: center;
+  padding: 1rem 0;
+  background: $white;
+  border-bottom: 1px solid $border-light;
 
   h1 {
-    font-family: "Inter", sans-serif !important;
-    font-size: clamp(1.6rem, 5vw, 3.5rem);
-    color: #007bff;
+    color: $primary-blue;
+    font-size: 2.5rem;
     margin: 0;
     font-weight: 700;
 
     span {
-      font-family: "Inter", sans-serif !important;
-      font-size: clamp(2.2rem, 5vw, 4.4rem);
+      color: $text-dark;
       font-weight: bold;
-      color: #333;
     }
   }
 }
 
-// Ajuste para el contenedor principal
-.contenedor {
-  // SIN padding-top en desktop (header relativo)
+// ==================== NAVEGACIÓN ====================
+.navegacion-principal {
+  background: $light-gray;
+  padding: 1.2rem 0;
+  border-bottom: 1px solid $border-gray;
+}
 
-  @media (max-width: 768px) {
-    padding: 20px; // Espacio correcto para el header fijo
+.nav-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 2rem;
+}
+
+.menu-item {
+  position: relative;
+}
+
+.menu-trigger {
+  display: block;
+  padding: 0.75rem 1.5rem;
+  color: $text-dark;
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.has-dropdown .menu-trigger::after {
+  content: "▼";
+  font-size: 0.7rem;
+  margin-left: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.has-dropdown:hover .menu-trigger::after {
+  transform: rotate(180deg);
+}
+
+.menu-trigger:hover {
+  background: $primary-blue;
+  color: $white !important; // Forzar color blanco para contraste
+  text-decoration: none;
+}
+
+// ==================== BOTÓN HAMBURGUESA (MÓVIL) ====================
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 1rem;
+  position: absolute;
+  right: 1rem;
+  top: 40%;
+  transform: translateY(-50%);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  z-index: $z-toggle;
+
+  &:hover {
+    background: rgba(0, 123, 255, 0.1);
+  }
+}
+
+.hamburger {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background: $text-dark;
+  position: relative;
+  transition: all 0.3s ease;
+
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    width: 28px;
+    height: 3px;
+    background: $text-dark;
+    position: absolute;
+    transition: all 0.3s ease;
+    left: 0;
   }
 
-  // Ajuste específico para pantallas muy pequeñas
-  // @media (max-width: 479px) {
-  //   padding-top: 90px; // Un poco más en móviles pequeños
-  // }
+  &::before {
+    top: -9px;
+  }
 
-  // Ajuste específico para pantallas súper pequeñas
-  @media (max-width: 319px) {
-    padding: 0.2rem;
-    padding-top: 85px; // Mantener espacio para header pero no mucho
-    margin: 0;
+  &::after {
+    bottom: -9px;
+  }
+}
 
-    .titulo h1 {
-      font-size: clamp(1.2rem, 5vw, 1.8rem); // Título más pequeño
+// Animación de hamburguesa a X
+.nav-menu.show ~ .nav-toggle .hamburger {
+  background: transparent;
 
-      span {
-        font-size: clamp(1.6rem, 6vw, 2.2rem);
-      }
+  &::before {
+    transform: rotate(45deg) translateY(9px);
+    background: $primary-blue;
+  }
+
+  &::after {
+    transform: rotate(-45deg) translateY(-9px);
+    background: $primary-blue;
+  }
+}
+
+// ==================== RESPONSIVE NAVEGACIÓN ====================
+@media (max-width: $mobile) {
+  body {
+    padding-top: $header-height-mobile;
+  }
+
+  .titulo {
+    padding: 0.75rem 5rem 0.75rem 5rem; // Padding simétrico para centrar
+    position: relative;
+
+    h1 {
+      font-size: 1.8rem;
+      text-align: center; // Forzar centrado
     }
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .navegacion-principal {
+    position: relative;
+  }
+
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: $white;
+    border-top: 1px solid $border-gray;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: $z-header;
+
+    &.show {
+      display: flex;
+    }
+  }
+
+  .menu-item {
+    width: 100%;
+  }
+
+  .menu-trigger {
+    text-align: left;
+    border-bottom: 1px solid $border-light;
+    padding: 1rem 1.5rem;
+
+    &:hover {
+      background: $light-gray !important;
+      color: $primary-blue !important;
+    }
+  }
+}
+
+// ==================== DROPDOWNS ====================
+.has-dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: $white;
+  border: 1px solid $border-gray;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: $z-dropdown;
+  min-width: 400px;
+  margin-top: 5px;
+}
+
+.has-dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+}
+
+.dropdown-content {
+  display: flex;
+  padding: 1.5rem;
+  gap: 2rem;
+}
+
+.dropdown-column {
+  flex: 1;
+}
+
+.dropdown-title {
+  color: $primary-blue;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid $primary-blue;
+}
+
+.dropdown-column ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dropdown-column li {
+  margin-bottom: 0.5rem;
+}
+
+.dropdown-column a {
+  color: $text-dark;
+  text-decoration: none;
+  font-size: 0.9rem;
+  padding: 0.5rem 0;
+  display: block;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+  padding-left: 0.5rem;
+
+  &:hover {
+    color: $primary-blue;
+    background: $light-gray;
+    padding-left: 1rem;
+  }
+}
+
+// ==================== RESPONSIVE DROPDOWNS ====================
+@media (max-width: $mobile) {
+  .dropdown-menu {
+    position: static;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+    min-width: auto;
+    margin: 0;
+    background: $light-gray;
+    display: none;
+  }
+
+  .has-dropdown.show .dropdown-menu {
+    display: block;
+  }
+
+  .dropdown-content {
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .dropdown-title {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .dropdown-column a {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.5rem;
+  }
+
+  // ==================== DROPDOWNS EN MÓVIL ====================
+  // Mostrar dropdown cuando tiene la clase 'dropdown-open' en móvil
+  .has-dropdown.dropdown-open .dropdown-menu {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    position: static !important;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+    background: $light-gray;
+    border-top: 1px solid $border-light;
+    margin-top: 0;
+    animation: slideDown 0.3s ease;
+  }
+
+  // Animación suave para abrir dropdown
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      max-height: 0;
+    }
+    to {
+      opacity: 1;
+      max-height: 300px;
+    }
+  }
+
+  // Indicador visual para items con dropdown en móvil
+  .has-dropdown .menu-trigger::after {
+    content: "▼";
+    font-size: 0.7rem;
+    margin-left: 0.5rem;
+    transition: transform 0.3s ease;
+    float: right;
+  }
+
+  .has-dropdown.dropdown-open .menu-trigger::after {
+    transform: rotate(180deg);
   }
 }

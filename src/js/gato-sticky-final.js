@@ -2,24 +2,29 @@
 document.addEventListener("DOMContentLoaded", function () {
   console.log("🐱 Inicializando gato sticky...");
 
-  // Crear el elemento del gato
+  // Crear el elemento del gato con clase que excluye reglas CSS conflictivas
   const gato = document.createElement("div");
   gato.id = "gato-sombra-sticky";
+  gato.className = "gato-nuclear"; // Usar clase que está excluida de las reglas CSS
   gato.innerHTML =
     '<img src="img/webp/Perros/GatoSinFondo.png" alt="Gato decorativo" onerror="this.src=\'src/img/Perros/GatoSinFondo.png\'">';
 
-  // Estilos del gato - STICKY FINAL
+  // Estilos del gato - STICKY FINAL LIMPIO
   Object.assign(gato.style, {
     position: "sticky",
-    bottom: "0px", // Pegado al fondo del viewport
-    right: "20px",
+    bottom: "0px",
+    right: "0px", // Pegado al borde derecho del contenedor
+    left: "auto",
+    top: "auto",
     width: "120px",
     height: "auto",
     zIndex: "999",
     pointerEvents: "none",
-    opacity: "0.2", // Opacidad sutil
-    float: "right",
-    clear: "both",
+    opacity: "0.2",
+    margin: "0",
+    padding: "0",
+    marginLeft: "auto", // Esto lo empuja hacia la derecha
+    transform: "none",
   });
 
   // Estilos de la imagen
@@ -30,12 +35,11 @@ document.addEventListener("DOMContentLoaded", function () {
     display: "block",
   });
 
-  // Agregar al contenedor
+  // Agregar al contenedor para que el sticky funcione
   const contenedor = document.querySelector(".contenedor");
   if (contenedor) {
-    contenedor.style.position = "relative";
     contenedor.appendChild(gato);
-    console.log("🐱 Gato sticky configurado correctamente");
+    console.log("🐱 Gato sticky configurado correctamente en contenedor");
   } else {
     console.log("❌ Error: No se encontró el contenedor");
   }

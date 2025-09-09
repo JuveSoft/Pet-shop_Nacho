@@ -7,6 +7,7 @@ body {
 
 // Headings con Inter
 h1 {
+  font-size: clamp(1rem, 2.5vw, 3.8rem);
   font-family: "Inter", sans-serif;
   font-weight: 700;
 }
@@ -51,7 +52,7 @@ h6 {
 body,
 p {
   font-family: "Inter", sans-serif;
-  font-size: clamp(1.5rem, 2vw, 2rem);
+  font-size: clamp(1.2rem, 2vw, 2rem);
   font-weight: 400;
   line-height: 1.6;
 }
@@ -66,4 +67,7 @@ a {
 button {
   font-family: "Inter", sans-serif;
   font-weight: 500;
+}
+.justificado {
+  text-align: justify;
 }

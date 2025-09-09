@@ -1,47 +1,30 @@
-// Footer Styles - VALORES EXACTOS
+// Footer Styles - LIMPIO Y PEGADO AL PISO
 footer.footer {
   background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
   color: white;
-
-  // CONTRARRESTAR LOS VALORES EXACTOS ENCONTRADOS
-  margin-top: -64px !important;
-  margin-left: 7.5px !important;
-  margin-right: 0 !important;
-  margin-bottom: 0 !important;
-
-  // Forzar que ocupe todo el ancho sin restricciones del contenedor padre
-  width: 100vw !important;
-  // margin-left: calc(-50vw + 50%) !important; // REMOVIDO - puede causar spacing
-
-  // Resetear cualquier constraining del contenedor
+  // width: 100vw;
+  margin: 0 !important;
+  padding: 0 !important;
   box-sizing: border-box;
-
-  // FORZAR eliminación de cualquier spacing problemático
-  &::before,
-  &::after {
-    display: none !important;
-  }
-
-  // Resetear completamente cualquier margin calculado
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
 
   .footer-content {
     max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem 2rem 0 2rem; // Solo padding top e izq/der, sin bottom
+    margin: auto;
+    padding: 2rem; // Solo padding top e izq/der, sin bottom
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2rem;
 
     @media (max-width: 768px) {
-      grid-template-columns: 1fr;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+
       gap: 2.5rem;
-      padding: 1.5rem 1rem 0 1rem; // Menos padding en móvil
+      //   // padding: 1.5rem 1rem 0 1rem; // Menos padding en móvil
     }
   }
+  // footer {
+  //   grid-area: footer;
+  // }
 
   .footer-section {
     h3 {
@@ -80,7 +63,6 @@ footer.footer {
 
       li {
         margin-bottom: 0.8rem;
-
         a {
           color: #ecf0f1;
           text-decoration: none;
@@ -111,32 +93,34 @@ footer.footer {
     margin-top: 1.5rem;
 
     a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 40px;
-      height: 40px;
-      background: #3498db;
-      color: white;
-      border-radius: 50%;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      font-size: 1.2rem;
+      img {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: #3498db;
+        color: white;
+        border-radius: 50%;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        font-size: 1.2rem;
 
-      &:hover {
-        background: #2980b9;
-        transform: translateY(-3px);
-        box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
-      }
+        &:hover {
+          background: #2980b9;
+          transform: translateY(-3px);
+          box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+        }
 
-      &:nth-child(2):hover {
-        background: #e74c3c;
-        box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
-      }
+        &:nth-child(2):hover {
+          background: #e74c3c;
+          box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
+        }
 
-      &:nth-child(3):hover {
-        background: #27ae60;
-        box-shadow: 0 5px 15px rgba(39, 174, 96, 0.4);
+        &:nth-child(3):hover {
+          background: #27ae60;
+          box-shadow: 0 5px 15px rgba(39, 174, 96, 0.4);
+        }
       }
     }
   }
@@ -149,8 +133,8 @@ footer.footer {
 
       i {
         color: #3498db;
-        margin-right: 0.8rem;
-        width: 16px;
+        //margin-right: 0.8rem;
+        //width: 16px;
         text-align: center;
       }
     }
@@ -176,7 +160,7 @@ footer.footer {
 
   // Responsive adjustments
   @media (max-width: 480px) {
-    padding: 2rem 0 0;
+    padding: 1rem 0 0;
 
     .footer-content {
       gap: 2rem;
@@ -204,33 +188,32 @@ footer.footer {
   }
 }
 
-// REGLA ESPECÍFICA PARA EL ELEMENTO HTML FOOTER
-footer[class="footer"] {
-  margin: 0 !important;
-  padding: 0 !important;
-  transform: translateY(-64px) translateX(7.5px) !important;
-}
+// // FOOTER LIMPIO - SIN TRANSFORMS NI OFFSETS
+// footer[class="footer"] {
+//   margin: 0 !important;
+//   padding: 0 !important;
+// }
 
-// OTRA OPCIÓN: Selector universal
-footer {
-  &.footer {
-    margin: 0 !important;
-    padding-top: 0 !important;
-  }
-}
+// // OTRA OPCIÓN: Selector universal
+// footer {
+//   &.footer {
+//     margin: 0 !important;
+//     padding-top: 0 !important;
+//   }
+// }
 
-// Ajuste para que el footer se mantenga abajo
-html,
-body {
-  height: 100%;
-}
+// // Ajuste para que el footer se mantenga abajo
+// html,
+// body {
+//   height: 100%;
+// }
 
-.contenedor {
-  min-height: 20vh;
-  display: flex;
-  flex-direction: column;
-}
+// .contenedor {
+//   min-height: 20vh;
+//   display: flex;
+//   flex-direction: column;
+// }
 
-main {
-  flex: 1;
-}
+// main {
+//   flex: 1;
+// }

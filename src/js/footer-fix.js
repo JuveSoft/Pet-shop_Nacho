@@ -18,11 +18,16 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   if (contenedor) {
-    // Forzar eliminación del padding del contenedor
-    contenedor.style.setProperty("padding", "0px", "important");
+    // Mantener padding lateral pero eliminar padding vertical problemático
+    contenedor.style.setProperty("padding-top", "0px", "important");
     contenedor.style.setProperty("padding-bottom", "0px", "important");
+    // Mantener padding lateral para el layout
+    contenedor.style.setProperty("padding-left", "1rem", "important");
+    contenedor.style.setProperty("padding-right", "1rem", "important");
 
-    console.log("✅ Padding del contenedor eliminado por JavaScript");
+    console.log(
+      "✅ Padding vertical del contenedor eliminado, lateral mantenido"
+    );
   }
 
   if (footer) {
@@ -31,7 +36,10 @@ document.addEventListener("DOMContentLoaded", function () {
       footer.style.setProperty("margin-top", "0px", "important");
       footer.style.setProperty("margin-left", "0px", "important");
       if (contenedor) {
-        contenedor.style.setProperty("padding", "0px", "important");
+        contenedor.style.setProperty("padding-top", "0px", "important");
+        contenedor.style.setProperty("padding-bottom", "0px", "important");
+        contenedor.style.setProperty("padding-left", "1rem", "important");
+        contenedor.style.setProperty("padding-right", "1rem", "important");
       }
     });
 

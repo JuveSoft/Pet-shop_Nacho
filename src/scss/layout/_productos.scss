@@ -1,87 +1,125 @@
-.contenedor-ofertas {
-  position: relative;
+main {
+  //grid-area: main;
   display: flex;
-  width: 90%;
-  max-width: 1200px; // Limita el ancho máximo
-  height: auto;
-  margin: 10rem auto;
+  width: 100%;
+  box-sizing: border-box;
+  padding-bottom: 0 !important; // Sin padding inferior
+  margin-bottom: 0 !important; // Sin margin inferior
+  margin: auto;
+  justify-content: center;
+  @media (max-width: 768px) {
+    padding: 1rem;
+    padding-bottom: 0 !important; // Mantener sin padding inferior en móvil
+  }
 
-  // Tablet pequeña
-  @media (min-width: 678px) {
+  @media (min-width: 769px) {
+    margin: auto;
+    padding: 1.5rem 2rem;
+    //max-width: 100%;
+  }
+
+  // Eliminar margin-bottom del último elemento para pegarlo al footer
+  > *:last-child {
+    margin-bottom: 0 !important;
+  }
+
+  // También aplicar a elementos dentro de secciones
+  section > *:last-child {
+    margin-bottom: 0 !important;
+  }
+
+  .contenedor-ofertas {
     position: relative;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-  }
 
-  // Tablet grande / Desktop pequeño
-  @media (min-width: 992px) {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-  }
-
-  // Desktop grande
-  @media (min-width: 1200px) {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
-  }
-  .producto-oferta {
-    position: relative;
-    width: 100%; // Cambiado de 90% a 100%
-    max-width: 300px; // Limita el ancho máximo del producto
+    width: 100%;
+    max-width: 1000px; // Limita el ancho máximo
     height: auto;
-    margin: 1rem auto;
-    box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    .imagen-producto {
-      display: flex;
-      width: 100%;
-      max-width: 90%; // Se adapta al contenedor
-      height: 8rem;
-      margin: auto;
-      padding: 0.5rem;
-      justify-content: center;
-      align-items: center;
+    margin: auto;
+    justify-content: center;
+    display: grid;
 
-      img {
-        width: auto;
-        height: 100%;
-        max-width: 100%;
-        object-fit: contain; // Mantiene proporción sin deformarse
-      }
-    }
-    .datos-oferta {
+    gap: 2rem;
+    margin: auto;
+    @media (max-width: 678px) {
       position: relative;
-      display: block;
-      width: 90%;
-      max-height: none; // Removido para permitir que crezca
-      text-align: center;
+      display: grid;
+
+      gap: 1rem;
       margin: auto;
-      padding-bottom: 1rem; // Espacio en la parte inferior
+    }
 
-      .familia-oferta,
-      .nombre-producto,
-      .tipo-producto,
-      .descripcion-producto {
-        text-align: center;
-        margin: 0.5rem auto;
-        padding: 0.2rem;
-        color: green;
-        font-size: clamp(1.3rem, 2.5vw, 3.5rem);
-      }
-      .nombre-producto {
-        color: black;
-      }
+    // Tablet pequeña
+    @media (min-width: 678px) {
+      position: relative;
+      grid-template-columns: repeat(2, 1fr);
+    }
 
-      .precio {
-        color: black;
-        font-weight: bold;
-        font-size: clamp(1.5rem, 2.5vw, 3.5rem);
-        padding-bottom: 1rem;
-        margin: 1rem auto;
+    // Tablet grande / Desktop pequeño
+    @media (min-width: 992px) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .producto-oferta {
+      position: relative;
+      width: 100%; // Cambiado de 90% a 100%
+      //max-width: 300px; // Limita el ancho máximo del producto
+      height: auto;
+      margin: auto;
+      box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      background-color: white;
+      .imagen-producto {
+        display: flex;
+        width: 100%;
+        max-width: 90%; // Se adapta al contenedor
+        height: 8rem;
+        margin: auto;
+        padding: 0.5rem;
+        justify-content: center;
+        align-items: center;
+
+        img {
+          width: auto;
+          height: 100%;
+          max-width: 100%;
+          object-fit: contain; // Mantiene proporción sin deformarse
+        }
+      }
+      .datos-oferta {
+        position: relative;
+        display: block;
+        width: 90%;
+        max-height: none; // Removido para permitir que crezca
         text-align: center;
+        margin: auto;
+        padding-bottom: 1rem; // Espacio en la parte inferior
+
+        .familia-oferta,
+        .nombre-producto,
+        .tipo-producto {
+          text-align: center;
+          margin: 0.5rem auto;
+          padding: 0.2rem;
+          color: green;
+          //font-size: clamp(1.1rem, 3vw, 2.5rem);
+        }
+        .descripcion-producto p {
+          font-size: clamp(1rem, 2vw, 1.1rem);
+        }
+        .nombre-producto {
+          color: blue;
+        }
+
+        .precio {
+          color: black;
+          font-weight: bold;
+          font-size: clamp(1.5rem, 2.5vw, 3.5rem);
+          padding-bottom: 1rem;
+          margin: 1rem auto;
+          text-align: center;
+        }
       }
     }
   }

@@ -9,3 +9,29 @@ $color-primary: #7c3aed;
 $color-accent: #f59e0b;
 
 $spacing-unit: 1rem;
+
+// ==================== VARIABLES PARA EL HEADER ==================== 
+// Colores del header embebido que funciona
+$primary-blue: #007bff;
+$light-gray: #f8f9fa;
+$border-gray: #dee2e6;
+$border-light: #eee;
+$text-dark: #333;
+$text-medium: #666;
+$text-light: #555;
+$white: #fff;
+$background-light: #f5f5f5;
+
+// Espaciado del header
+$header-height-desktop: 140px;
+$header-height-mobile: 100px;
+
+// Z-index
+$z-header: 1000;
+$z-dropdown: 1001;
+$z-toggle: 1002;
+$z-title: 1003;
+
+// Breakpoints
+$mobile: 768px;
+$small-mobile: 480px;

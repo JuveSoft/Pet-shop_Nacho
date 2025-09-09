@@ -1,0 +1,83 @@
+/* ============================================
+   EFECTOS DE IMAGEN - VARIOS ESTILOS
+   Archivo separado para probar efectos en la foto
+   ============================================ */
+
+/* Efecto principal para la imagen */
+.img-effect {
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+/* Efecto Neon (a juego con el video) */
+.img-neon {
+  filter: saturate(2.5) contrast(1.8) brightness(1.3) hue-rotate(45deg);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.6), 0 0 40px rgba(255, 0, 255, 0.4);
+  border: 2px solid rgba(0, 255, 255, 0.8);
+  animation: img-neon-pulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes img-neon-pulse {
+  from {
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.6), 0 0 40px rgba(255, 0, 255, 0.4);
+  }
+  to {
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.8), 0 0 60px rgba(255, 0, 255, 0.6);
+  }
+}
+
+/* Efecto Vintage */
+.img-vintage {
+  filter: sepia(0.6) saturate(0.7) contrast(1.2) brightness(0.95)
+    hue-rotate(-15deg);
+  box-shadow: 0 8px 32px rgba(101, 67, 33, 0.5);
+  border: 2px solid rgba(139, 115, 85, 0.6);
+}
+
+/* Efecto Oil Painting */
+.img-oil {
+  filter: blur(1px) saturate(1.4) contrast(1.3) brightness(1.05) sepia(0.2);
+  box-shadow: 0 8px 32px rgba(139, 89, 42, 0.4);
+  border: 3px solid rgba(139, 89, 42, 0.3);
+}
+
+/* Efecto Cartoon */
+.img-cartoon {
+  filter: saturate(1.8) contrast(1.4) brightness(1.1) hue-rotate(10deg);
+  box-shadow: 0 8px 32px rgba(255, 100, 150, 0.3);
+  border: 2px solid rgba(255, 100, 150, 0.5);
+}
+
+/* Efecto Blanco y Negro */
+.img-bw {
+  filter: grayscale(1) contrast(1.2) brightness(1.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+}
+
+/* Efecto Acuarela */
+.img-watercolor {
+  filter: blur(0.8px) saturate(1.3) contrast(1.1) brightness(1.05) sepia(0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+}
+
+/* Efecto Sketch/Lápiz */
+.img-sketch {
+  filter: grayscale(0.8) contrast(2) brightness(1.2) invert(0.1);
+  mix-blend-mode: multiply;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+/* Efectos hover para todos */
+.img-effect:hover {
+  transform: translateY(-4px) scale(1.02);
+}
+
+/* Comentarios para usar:
+   
+   Para neon: class="img-effect img-neon"
+   Para vintage: class="img-effect img-vintage"  
+   Para oil painting: class="img-effect img-oil"
+   Para cartoon: class="img-effect img-cartoon"
+   Para blanco y negro: class="img-effect img-bw"
+   Para acuarela: class="img-effect img-watercolor"
+   Para sketch: class="img-effect img-sketch"
+*/
