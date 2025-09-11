@@ -1,11 +1,6 @@
-// ==================== VARIABLES ====================
-// Variables globales del proyecto
-
-// Tipografías
 $font-serif: "Merriweather", serif;
 $font-sans: "Inter", sans-serif;
 
-// Colores del tema
 $color-bg-light: #fdfdfd;
 $color-text-light: #e61414;
 $color-bg-dark: #121212;
@@ -13,14 +8,10 @@ $color-text-dark: #eaeaea;
 $color-primary: #7c3aed;
 $color-accent: #f59e0b;
 
-// Colores principales
-$primary-color: #3498db;
-$secondary-color: #e74c3c;
-$success-color: #27ae60;
-$dark-color: #2c3e50;
-$light-color: #ecf0f1;
+$spacing-unit: 1rem;
 
-// Variables para el header
+// ==================== VARIABLES PARA EL HEADER ==================== 
+// Colores del header embebido que funciona
 $primary-blue: #007bff;
 $light-gray: #f8f9fa;
 $border-gray: #dee2e6;
@@ -31,8 +22,7 @@ $text-light: #555;
 $white: #fff;
 $background-light: #f5f5f5;
 
-// Espaciado
-$spacing-unit: 1rem;
+// Espaciado del header
 $header-height-desktop: 140px;
 $header-height-mobile: 100px;
 
@@ -45,5 +35,3 @@ $z-title: 1003;
 // Breakpoints
 $mobile: 768px;
 $small-mobile: 480px;
-$tablet: 768px;
-$desktop: 1024px;

@@ -12,14 +12,26 @@ footer.footer {
     margin: auto;
     padding: 2rem; // Solo padding top e izq/der, sin bottom
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(250px, 1fr)
+    ); // Aumentado a 250px para más espacio
     gap: 2rem;
 
     @media (max-width: 768px) {
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      grid-template-columns: 1fr; // Una sola columna en móvil
+      gap: 2rem; // Reducido el gap
+      padding: 1.5rem 1rem 0 1rem; // Reducir padding horizontal en móvil
+    }
 
-      gap: 2.5rem;
-      //   // padding: 1.5rem 1rem 0 1rem; // Menos padding en móvil
+    @media (max-width: 600px) {
+      padding: 1.2rem 0.8rem 0 0.8rem; // Padding intermedio
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 480px) {
+      padding: 1rem 0.5rem 0 0.5rem; // Aún menos padding en móviles pequeños
+      gap: 1rem;
     }
   }
   // footer {
@@ -27,12 +39,13 @@ footer.footer {
   // }
 
   .footer-section {
+    min-width: 0; // Permite que el flex-item se encoja
+    overflow: hidden; // Evita desbordamiento
+
     h3 {
       color: #3498db;
-      font-size: 1.8rem;
       margin-bottom: 1rem;
       font-weight: bold;
-
       span {
         color: #e74c3c;
         font-weight: bold;
@@ -41,11 +54,10 @@ footer.footer {
 
     h4 {
       color: #3498db;
-      font-size: 1.3rem;
       margin-bottom: 1rem;
       font-weight: 600;
       border-bottom: 2px solid #3498db;
-      padding-bottom: 0.5rem;
+      padding-bottom: 0.2rem;
       display: inline-block;
     }
 
@@ -70,6 +82,7 @@ footer.footer {
           display: flex;
           align-items: center;
           padding: 0.3rem 0;
+          font-size: 0.9rem; // Tamaño específico para enlaces del footer
 
           &:hover {
             color: #3498db;
@@ -91,20 +104,61 @@ footer.footer {
     display: flex;
     gap: 1rem;
     margin-top: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 100%;
+
+    // A partir de 600px hacia abajo, cambiar a grid 2x2
+    @media (max-width: 600px) {
+      display: grid;
+      grid-template-columns: repeat(
+        2,
+        minmax(0, max-content)
+      ); // 2 columnas con contenido mínimo
+      gap: 1rem;
+      width: fit-content;
+      margin: 1rem auto 1rem auto; // Centrar el grid
+      justify-content: center; // Centrar el grid completo
+      place-items: center; // Centrar cada icono perfectamente
+    }
+
+    @media (max-width: 480px) {
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    @media (max-width: 360px) {
+      gap: 1rem;
+      margin-top: 1rem;
+    }
 
     a {
+      flex-shrink: 0; // Los iconos no se encogerán
+
       img {
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 40px;
+        width: 40px; // Volvemos al tamaño original
         height: 40px;
+        min-width: 40px; // Evita que se deforme
+        min-height: 40px; // Evita que se deforme
         background: #3498db;
         color: white;
         border-radius: 50%;
         text-decoration: none;
         transition: all 0.3s ease;
-        font-size: 1.2rem;
+        font-size: 1.2rem; // Volvemos al tamaño original
+        flex-shrink: 0; // No se encoge
+
+        // Con el grid 2x2, solo necesitamos un ajuste menor para móviles muy pequeños
+        @media (max-width: 360px) {
+          width: 36px;
+          height: 36px;
+          min-width: 36px;
+          min-height: 36px;
+          font-size: 1.1rem;
+        }
 
         &:hover {
           background: #2980b9;
@@ -168,6 +222,8 @@ footer.footer {
 
     .footer-section {
       text-align: center;
+      min-width: 0; // Permite encogimiento
+      overflow: hidden; // Evita desbordamiento
 
       h3 {
         font-size: 1.5rem;
@@ -175,6 +231,11 @@ footer.footer {
 
       h4 {
         font-size: 1.1rem;
+      }
+
+      // Ajuste específico para rangos problemáticos
+      @media (max-width: 550px) and (min-width: 450px) {
+        padding: 0 0.5rem; // Padding adicional en este rango
       }
     }
 

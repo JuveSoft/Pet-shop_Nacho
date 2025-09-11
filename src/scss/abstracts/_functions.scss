@@ -1,0 +1,7 @@
+// ==================== FUNCTIONS ====================
+// Funciones SCSS reutilizables
+
+// Función para convertir px a rem
+@function rem($px, $base: 16px) {
+  @return ($px / $base) * 1rem;
+}

@@ -13,7 +13,7 @@ body {
   padding: 0;
   margin: 0;
   font-size: 62.5%;
-  min-height: 100vh;
+  min-height: 100vh; // Para que el sticky funcione correctamente
   overflow-x: hidden;
   width: 100%;
 
@@ -45,11 +45,13 @@ body {
 }
 
 .contenedor {
+  position: relative;
   width: 100%;
   max-width: 1200px;
-  margin: 0 auto !important; // Forzar centrado
+  height: auto;
+  margin: 0 auto;
   margin-bottom: 0 !important; // Sin espacio al footer
-  min-height: 100vh;
+  min-height: calc(100vh - 140px); // Altura completa menos el header
   padding: 0 !important; // ELIMINAR CUALQUIER PADDING
   padding-bottom: 0 !important; // Asegurar que no hay padding inferior
   box-sizing: border-box;
@@ -60,11 +62,13 @@ body {
     "header"
     "main"
     "footer";
+  background: $white;
 
   @media (max-width: 768px) {
     width: 100%;
     margin: 0;
     padding: 0;
+    min-height: calc(100vh - 100px); // Altura móvil menos header móvil
   }
 
   // Overlay dentro del contenedor - centrado y sin márgenes problemáticos
@@ -75,16 +79,17 @@ body {
     border-radius: 8px;
     display: flex;
     flex-direction: column;
-    margin: 2rem auto;
+    margin: auto;
     box-sizing: border-box;
 
     @media (max-width: 480px) {
-      padding: 0.5rem;
-      margin: 0.5rem auto;
+      padding: 0;
+      margin: auto;
+      min-width: 180px;
     }
 
     @media (min-width: 481px) and (max-width: 768px) {
-      padding: 1.25rem;
+      padding: 1rem;
       margin: 2rem auto;
     }
 

@@ -11,18 +11,14 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/main.min.css?v=1004" />
+    <link rel="stylesheet" href="css/main.min.css?v=1007" />
     <!-- EFECTOS DE VIDEO - ARCHIVO SEPARADO PARA PROBAR -->
     <link rel="stylesheet" href="css/video-effects.css?v=9" />
     <!-- EFECTOS DE IMAGEN - ARCHIVO SEPARADO PARA PROBAR -->
     <link rel="stylesheet" href="css/image-effects.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
 
-    <!-- CSS FINAL PARA HAMBURGUESA -->
-    <style>
+    <!-- CSS FINAL PARA HAMBURGUESA - RESTAURADO OTRA VEZ -->
+     <style>
       /* ESTILOS FINALES MÓVIL */
       @media (max-width: 768px) {
         .nav-toggle {
@@ -116,422 +112,8 @@
       }
     </style>
 
-    <!-- CSS embebido al final para máxima prioridad -->
-    <!-- COMENTADO TEMPORALMENTE PARA PROBAR MIGRACIÓN A SCSS -->
-    <!--
-    <style>
-      /* ==================== RESET Y BASE ==================== */
-      body {
-        font-family: "Inter", sans-serif !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        background: #f5f5f5 !important;
-        padding-top: 140px !important; /* Espacio para header fijo */
-        line-height: 1.6 !important;
-      }
 
-      /* ==================== CONTENEDOR PRINCIPAL ==================== */
-      .contenedor {
-        max-width: 1200px !important;
-        margin: 0 auto !important;
-        padding: 0 1rem !important;
-        background: #fff !important;
-        height: auto !important;
-        position: relative !important;
-      }
-
-      /* ==================== HEADER FIJO ==================== */
-      header {
-        position: fixed !important;
-        top: 0 !important;
-        left: 0 !important;
-        right: 0 !important;
-        background: #fff !important;
-        border-bottom: 2px solid #007bff !important;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
-        z-index: 1000 !important;
-        padding: 0 !important;
-      }
-
-      /* ==================== TÍTULO ==================== */
-      .titulo {
-        text-align: center !important;
-        padding: 1rem 0 !important;
-        background: #fff !important;
-        border-bottom: 1px solid #eee !important;
-      }
-
-      .titulo h1 {
-        color: #007bff !important;
-        font-size: 2.5rem !important;
-        margin: 0 !important;
-        font-weight: 700 !important;
-      }
-
-      .titulo h1 span {
-        color: #333 !important;
-        font-weight: bold !important;
-      }
-
-      /* ==================== NAVEGACIÓN ==================== */
-      .navegacion-principal {
-        background: #f8f9fa !important;
-        padding: 1.2rem 0 !important;
-        border-bottom: 1px solid #dee2e6 !important;
-      }
-
-      .nav-menu {
-        display: flex !important;
-        justify-content: center !important;
-        align-items: center !important;
-        list-style: none !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        gap: 2rem !important;
-      }
-
-      .menu-item {
-        position: relative !important;
-      }
-
-      .menu-trigger {
-        display: block !important;
-        padding: 0.75rem 1.5rem !important;
-        color: #333 !important;
-        text-decoration: none !important;
-        font-weight: 500 !important;
-        border-radius: 5px !important;
-        transition: all 0.3s ease !important;
-        position: relative !important;
-      }
-
-      .has-dropdown .menu-trigger::after {
-        content: "▼" !important;
-        font-size: 0.7rem !important;
-        margin-left: 0.5rem !important;
-        transition: transform 0.3s ease !important;
-      }
-
-      .has-dropdown:hover .menu-trigger::after {
-        transform: rotate(180deg) !important;
-      }
-
-      .menu-trigger:hover {
-        background: #007bff !important;
-        color: #fff !important;
-      }
-
-      /* ==================== BOTÓN HAMBURGUESA (MÓVIL) ==================== */
-      .nav-toggle {
-        display: none !important;
-        background: none !important;
-        border: none !important;
-        font-size: 1.5rem !important;
-        cursor: pointer !important;
-        padding: 1rem !important;
-        position: absolute !important;
-        right: 1rem !important;
-        top: 40% !important;
-        transform: translateY(-50%) !important;
-        border-radius: 8px !important;
-        transition: all 0.3s ease !important;
-        z-index: 1002 !important;
-      }
-
-      .nav-toggle:hover {
-        background: rgba(0, 123, 255, 0.1) !important;
-      }
-
-      .hamburger {
-        display: block !important;
-        width: 28px !important;
-        height: 3px !important;
-        background: #333 !important;
-        position: relative !important;
-        transition: all 0.3s ease !important;
-      }
-
-      .hamburger::before,
-      .hamburger::after {
-        content: "" !important;
-        display: block !important;
-        width: 28px !important;
-        height: 3px !important;
-        background: #333 !important;
-        position: absolute !important;
-        transition: all 0.3s ease !important;
-        left: 0 !important;
-      }
-
-      .hamburger::before {
-        top: -9px !important;
-      }
-
-      .hamburger::after {
-        bottom: -9px !important;
-      }
-
-      /* Animación de hamburguesa a X */
-      .nav-menu.show ~ .nav-toggle .hamburger {
-        background: transparent !important;
-      }
-
-      .nav-menu.show ~ .nav-toggle .hamburger::before {
-        transform: rotate(45deg) translateY(9px) !important;
-        background: #007bff !important;
-      }
-
-      .nav-menu.show ~ .nav-toggle .hamburger::after {
-        transform: rotate(-45deg) translateY(-9px) !important;
-        background: #007bff !important;
-      }
-
-      /* ==================== RESPONSIVE NAVEGACIÓN ==================== */
-      @media (max-width: 768px) {
-        body {
-          padding-top: 100px !important;
-        }
-
-        .titulo {
-          padding: 0.75rem 5rem 0.75rem 1rem !important;
-          position: relative !important;
-        }
-
-        .titulo h1 {
-          font-size: 1.8rem !important;
-        }
-
-        .nav-toggle {
-          display: block !important;
-        }
-
-        .navegacion-principal {
-          position: relative !important;
-        }
-
-        .nav-menu {
-          display: none !important;
-          flex-direction: column !important;
-          position: absolute !important;
-          top: 100% !important;
-          left: 0 !important;
-          right: 0 !important;
-          background: #fff !important;
-          border-top: 1px solid #dee2e6 !important;
-          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
-          z-index: 1000 !important;
-        }
-
-        .nav-menu.show {
-          display: flex !important;
-        }
-
-        .menu-item {
-          width: 100% !important;
-        }
-
-        .menu-trigger {
-          text-align: left !important;
-          border-bottom: 1px solid #eee !important;
-          padding: 1rem 1.5rem !important;
-        }
-
-        .menu-trigger:hover {
-          background: #f8f9fa !important;
-          color: #007bff !important;
-        }
-      }
-
-      /* ==================== DROPDOWNS ==================== */
-      .has-dropdown {
-        position: relative !important;
-      }
-
-      .dropdown-menu {
-        position: absolute !important;
-        top: 100% !important;
-        left: 50% !important;
-        transform: translateX(-50%) !important;
-        background: #fff !important;
-        border: 1px solid #dee2e6 !important;
-        border-radius: 8px !important;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15) !important;
-        opacity: 0 !important;
-        visibility: hidden !important;
-        transition: all 0.3s ease !important;
-        z-index: 1001 !important;
-        min-width: 400px !important;
-        margin-top: 5px !important;
-      }
-
-      .has-dropdown:hover .dropdown-menu {
-        opacity: 1 !important;
-        visibility: visible !important;
-      }
-
-      .dropdown-content {
-        display: flex !important;
-        padding: 1.5rem !important;
-        gap: 2rem !important;
-      }
-
-      .dropdown-column {
-        flex: 1 !important;
-      }
-
-      .dropdown-title {
-        color: #007bff !important;
-        font-size: 1rem !important;
-        font-weight: 600 !important;
-        margin: 0 0 1rem 0 !important;
-        padding-bottom: 0.5rem !important;
-        border-bottom: 2px solid #007bff !important;
-      }
-
-      .dropdown-column ul {
-        list-style: none !important;
-        margin: 0 !important;
-        padding: 0 !important;
-      }
-
-      .dropdown-column li {
-        margin-bottom: 0.5rem !important;
-      }
-
-      .dropdown-column a {
-        color: #333 !important;
-        text-decoration: none !important;
-        font-size: 0.9rem !important;
-        padding: 0.5rem 0 !important;
-        display: block !important;
-        transition: all 0.3s ease !important;
-        border-radius: 4px !important;
-        padding-left: 0.5rem !important;
-      }
-
-      .dropdown-column a:hover {
-        color: #007bff !important;
-        background: #f8f9fa !important;
-        padding-left: 1rem !important;
-      }
-
-      /* ==================== RESPONSIVE DROPDOWNS ==================== */
-      @media (max-width: 768px) {
-        .dropdown-menu {
-          position: static !important;
-          transform: none !important;
-          opacity: 1 !important;
-          visibility: visible !important;
-          box-shadow: none !important;
-          border: none !important;
-          border-radius: 0 !important;
-          min-width: auto !important;
-          margin: 0 !important;
-          background: #f8f9fa !important;
-          display: none !important;
-        }
-
-        .has-dropdown.show .dropdown-menu {
-          display: block !important;
-        }
-
-        .dropdown-content {
-          flex-direction: column !important;
-          padding: 1rem !important;
-          gap: 1rem !important;
-        }
-
-        .dropdown-title {
-          font-size: 0.9rem !important;
-          margin-bottom: 0.5rem !important;
-        }
-
-        .dropdown-column a {
-          font-size: 0.85rem !important;
-          padding: 0.4rem 0.5rem !important;
-        }
-      }
-
-      /* ==================== PORTADA (SIN CAMBIOS) ==================== */
-      #portada {
-        text-align: center !important;
-        padding: 2rem 0 !important;
-      }
-
-      #portada .media-container {
-        display: flex !important;
-        gap: 2rem !important;
-        justify-content: center !important;
-        align-items: flex-start !important;
-        margin: 2rem auto !important;
-        max-width: 800px !important;
-      }
-
-      @media (max-width: 768px) {
-        #portada .media-container {
-          display: block !important;
-        }
-      }
-
-      #portada img {
-        width: 400px !important;
-        height: auto !important;
-        margin: 0 auto !important;
-        display: block !important;
-      }
-
-      #portada .video-labrador {
-        width: 400px !important;
-        height: auto !important;
-        margin: 0 auto !important;
-        display: block !important;
-        border-radius: 12px !important;
-      }
-
-      @media (max-width: 768px) {
-        #portada img,
-        #portada .video-labrador {
-          width: 300px !important;
-          margin: 1rem auto !important;
-        }
-      }
-
-      /* ==================== TEXTOS ==================== */
-      .centrado-texto {
-        text-align: center !important;
-        margin: 1rem auto !important;
-        color: #333 !important;
-      }
-
-      h2 {
-        color: #333 !important;
-        font-size: 2rem !important;
-        margin: 1rem 0 !important;
-      }
-
-      h3 {
-        color: #666 !important;
-        font-size: 1.5rem !important;
-        margin: 1rem 0 !important;
-      }
-
-      p {
-        color: #555 !important;
-        line-height: 1.6 !important;
-        margin: 1rem 0 !important;
-      }
-    </style>
-    -->
-  </head>
-  <body>
-    <!-- GATO NUCLEAR - Ahora se crea desde JavaScript -->
-    <!-- 
-    <div class="gato-borde">
-      <img src="img/webp/Gato_al_reves_sin fondo.png" alt="Gato asomándose" class="gato-asomandose" />
-    </div>
-    -->
-
-    <div class="contenedor">
+ 
       <header>
         <div class="titulo">
           <h1>Pet Shop <span>LuNa</span></h1>
@@ -576,7 +158,7 @@
               <div class="dropdown-menu">
                 <div class="dropdown-content">
                   <div class="dropdown-column">
-                    <h4 class="dropdown-title">Perros</h4>
+                    <h4 class="dropdown-title">Especie</h4>
                     <ul>
                       <li><a href="#">Perros</a></li>
                       <li><a href="#">Gatos</a></li>
@@ -586,7 +168,7 @@
                   </div>
 
                   <div class="dropdown-column">
-                    <h4 class="dropdown-title">Juguetería</h4>
+                    <h4 class="dropdown-title">Información</h4>
                     <ul>
                       <li><a href="#">Acerca de Alimentos</a></li>
                       <li><a href="#">Acerca de Accesorios</a></li>
@@ -624,7 +206,7 @@
           </ul>
         </nav>
       </header>
-
+      <div class="contenedor">
       <main id="contenido">
         <section id="portada">
           <div class="overlay">
@@ -671,7 +253,7 @@
               Por eso, trabajamos con pasión para ofrecerte lo mejor en
               nutrición, bienestar y diversión para tu mascota.
             </p>
-         
+         </div> 
         </section>
       </main>
     </div>
@@ -758,6 +340,5 @@
     <!-- <script src="src/js/navigation-fixed.js"></script> -->
     <script src="src/js/video-control-simple.js"></script>
     <script src="src/js/gato-sticky-final.js"></script>
-    <script src="src/js/footer-fix.js"></script>
   </body>
 </html>
