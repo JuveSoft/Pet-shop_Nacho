@@ -241,6 +241,19 @@
     box-shadow: 0 2px 8px rgba(240, 147, 251, 0.3);
   }
 
+  /* Anchos específicos para las barras de porcentajes */
+  /* Perros */
+  .perros .chart-item.proteinas .chart-bar { width: 25%; }
+  .perros .chart-item.grasas .chart-bar { width: 15%; }
+  .perros .chart-item.carbohidratos .chart-bar { width: 40%; }
+  .perros .chart-item.fibra .chart-bar { width: 8%; }
+
+  /* Gatos */
+  .gatos .chart-item.proteinas .chart-bar { width: 35%; }
+  .gatos .chart-item.grasas .chart-bar { width: 18%; }
+  .gatos .chart-item.carbohidratos .chart-bar { width: 10%; }
+  .gatos .chart-item.fibra .chart-bar { width: 5%; }
+
   /* Contenedores de las infografías - OPTIMIZADO MÓVILES Y DESKTOP */
   .infografia-section {
     margin: 40px 0;
