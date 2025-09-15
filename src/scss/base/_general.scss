@@ -134,4 +134,28 @@ header {
   }
 }
 
+// Font Awesome fallback styles para asegurar que se vean los iconos
+.fa,
+.fas,
+.far,
+.fal,
+.fab {
+  font-family: "Font Awesome 5 Free", "Font Awesome 5 Brands" !important;
+  font-weight: 900 !important;
+  display: inline-block !important;
+  font-style: normal !important;
+  font-variant: normal !important;
+  text-rendering: auto !important;
+  line-height: 1 !important;
+}
+
+// Específico para curiosidades
+.curiosidades-hero .hero-title i,
+.card-icon i,
+.section-title i {
+  font-family: "Font Awesome 5 Free" !important;
+  font-weight: 900 !important;
+  display: inline-block !important;
+}
+
 // CSS limpio - solo configuración básica

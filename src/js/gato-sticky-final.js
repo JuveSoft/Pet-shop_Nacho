@@ -27,13 +27,13 @@ document.addEventListener("DOMContentLoaded", function () {
     // SIN transition - movimiento instantáneo
   });
 
-  // Estilos de la imagen - CARGA INMEDIATA
+  // Estilos de la imagen - CARGA DIFERIDA para optimizar
   const img = gato.querySelector("img");
   Object.assign(img.style, {
     width: "100%",
     height: "auto",
     display: "block",
-    loading: "eager", // Carga inmediata, no lazy
+    loading: "lazy", // Carga diferida para optimizar peso inicial
   });
 
   // Agregar al body INMEDIATAMENTE
