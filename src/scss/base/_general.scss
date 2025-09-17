@@ -105,16 +105,6 @@ header {
   grid-area: header;
 }
 
-.btn-volver {
-  display: block;
-  margin: 2rem;
-  padding: 0.5rem;
-  background-color: rgb(2, 250, 2);
-  a {
-    color: rgb(3, 126, 3);
-    font-size: clamp(1.2rem, 2.2vw, 2.2rem);
-  }
-}
 .centrado-texto {
   text-align: center;
   margin: auto;

@@ -1,4 +1,20 @@
+@use "../abstracts/variables" as *;
+@use "../base/typography";
+
 /* CURIOSIDADES - SIMPLE Y LIMPIO */
+
+/* Estilos para iconos Font Awesome */
+.fas,
+.fab,
+.far {
+  font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands" !important;
+  font-weight: 900 !important;
+  display: inline-block !important;
+  font-style: normal !important;
+  font-variant: normal !important;
+  text-rendering: auto !important;
+  line-height: 1 !important;
+}
 
 /* Contenedor principal - 80% ancho en desktop */
 .contenedor {
@@ -98,7 +114,7 @@
   max-width: 100%;
   min-width: 280px;
   flex-direction: column;
-  margin-bottom: 1.5rem;
+  margin-bottom: 11.5rem;
   padding: 0 8px;
 
   /* Desktop: mejor uso del espacio */
@@ -109,7 +125,7 @@
   /* Grid de curiosidades - ADAPTABLE Y FINO */
   .curiosidades-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
     gap: 12px;
     margin: 20px 0;
     max-width: 1200px;
@@ -243,16 +259,32 @@
 
   /* Anchos específicos para las barras de porcentajes */
   /* Perros */
-  .perros .chart-item.proteinas .chart-bar { width: 25%; }
-  .perros .chart-item.grasas .chart-bar { width: 15%; }
-  .perros .chart-item.carbohidratos .chart-bar { width: 40%; }
-  .perros .chart-item.fibra .chart-bar { width: 8%; }
+  .perros .chart-item.proteinas .chart-bar {
+    width: 25%;
+  }
+  .perros .chart-item.grasas .chart-bar {
+    width: 15%;
+  }
+  .perros .chart-item.carbohidratos .chart-bar {
+    width: 40%;
+  }
+  .perros .chart-item.fibra .chart-bar {
+    width: 8%;
+  }
 
   /* Gatos */
-  .gatos .chart-item.proteinas .chart-bar { width: 35%; }
-  .gatos .chart-item.grasas .chart-bar { width: 18%; }
-  .gatos .chart-item.carbohidratos .chart-bar { width: 10%; }
-  .gatos .chart-item.fibra .chart-bar { width: 5%; }
+  .gatos .chart-item.proteinas .chart-bar {
+    width: 35%;
+  }
+  .gatos .chart-item.grasas .chart-bar {
+    width: 18%;
+  }
+  .gatos .chart-item.carbohidratos .chart-bar {
+    width: 10%;
+  }
+  .gatos .chart-item.fibra .chart-bar {
+    width: 5%;
+  }
 
   /* Contenedores de las infografías - OPTIMIZADO MÓVILES Y DESKTOP */
   .infografia-section {
@@ -322,12 +354,6 @@
       font-size: 0.85rem;
     }
 
-    .curiosidades-grid {
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 10px;
-      padding: 0 5px;
-    }
-
     .curiosidad-card {
       padding: 12px 8px;
       margin: 0.3rem;
@@ -360,23 +386,13 @@
     }
 
     .hero-title {
-      font-size: 1.2rem;
+      //      font-size: 1.2rem;
       margin-bottom: 8px;
 
       i {
         font-size: 1rem;
         margin-right: 4px;
       }
-    }
-
-    .hero-subtitle {
-      font-size: 0.8rem;
-    }
-
-    .curiosidades-grid {
-      grid-template-columns: 1fr;
-      gap: 8px;
-      padding: 0 3px;
     }
 
     .curiosidad-card {
@@ -395,14 +411,14 @@
       }
     }
 
-    .curiosidad-card h3 {
-      font-size: 0.9rem;
-      margin-bottom: 6px;
-    }
+    // .curiosidad-card h3 {
+    //   font-size: 0.9rem;
+    //   margin-bottom: 6px;
+    // }
 
-    .curiosidad-card p {
-      font-size: 0.8rem;
-    }
+    // .curiosidad-card p {
+    //   font-size: 0.8rem;
+    // }
 
     .infografia-section {
       margin: 25px 0;
@@ -479,6 +495,1206 @@
 
     .curiosidad-card p {
       font-size: 0.75rem;
+    }
+  }
+}
+
+/* SECCIÓN CALL TO ACTION - CENTRADA Y SEPARADA */
+.cta-section {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  margin: auto;
+  //margin-bottom: 20rem !important;
+  //padding: 20px 30px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  position: relative;
+  max-width: 95%;
+  width: 95%;
+  display: block;
+  left: 50%;
+  transform: translateX(-50%);
+
+  /* Desktop: más espacioso */
+  @media (min-width: 769px) {
+    margin: auto;
+    //margin-bottom: 25rem !important;
+    //padding: 60px 40px;
+    padding-bottom: 60px !important;
+    max-width: 90%;
+    width: 90%;
+  }
+
+  /* Tablets */
+  @media (min-width: 481px) and (max-width: 768px) {
+    margin-bottom: 22rem !important;
+  }
+
+  /* Móviles pequeños */
+  @media (max-width: 480px) {
+    margin-bottom: 18rem !important;
+  }
+
+  /* Efecto de borde sutil */
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #667eea, #764ba2, #f093fb);
+    z-index: -1;
+    padding: 2px;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: subtract;
+  }
+
+  .cta-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+    display: block;
+
+    /* Centrar todos los elementos hijos */
+    h2,
+    p,
+    .cta-buttons {
+      text-align: center !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+
+    h2 {
+      text-align: center !important;
+      width: 100% !important;
+      display: block !important;
+    }
+
+    p {
+      text-align: center !important;
+      width: 100% !important;
+      display: block !important;
+    }
+  }
+}
+
+/* CONTENEDOR DE BOTONES - CENTRADO Y ESPACIADO */
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+
+  /* Desktop: más separación */
+  @media (min-width: 769px) {
+    gap: 35px;
+    margin-top: 40px;
+  }
+
+  /* Móviles: apilados pero centrados */
+  @media (max-width: 480px) {
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 25px;
+  }
+}
+
+/* BOTONES DIVERTIDOS Y LLAMATIVOS 🎉 */
+.btn-fun {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+
+  /* Animación de pulso sutil */
+  animation: pulse-glow 3s ease-in-out infinite;
+
+  /* Efecto de brillo interno */
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.3),
+      transparent
+    );
+    transition: left 0.6s ease;
+  }
+
+  /* Iconos animados */
+  i {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+  }
+
+  span {
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Hover effects */
+  &:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+
+    &::before {
+      left: 100%;
+    }
+
+    i {
+      transform: rotate(15deg) scale(1.2);
+      animation: bounce-icon 0.6s ease;
+    }
+  }
+
+  /* Active (click) effect */
+  &:active {
+    transform: translateY(-1px) scale(1.02);
+    transition: transform 0.1s ease;
+  }
+}
+
+/* Botón primario - Gradiente azul a púrpura */
+.btn-primary.btn-fun {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+
+  &:hover {
+    background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 50%, #ec4899 100%);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+  }
+}
+
+/* Botón secundario - Gradiente verde a azul */
+.btn-secondary.btn-fun {
+  background: linear-gradient(135deg, #4ecdc4 0%, #45b7d1 50%, #96c93d 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(78, 205, 196, 0.4);
+
+  &:hover {
+    background: linear-gradient(135deg, #38b2ac 0%, #3182ce 50%, #84cc16 100%);
+    box-shadow: 0 8px 25px rgba(78, 205, 196, 0.6);
+  }
+}
+
+/* BOTÓN VOLVER - FUNCIONAL Y BONITO */
+.btn-volver {
+  /* Valores con más separación del header */
+  margin: 2rem; //!important;
+  padding: 0; // !important;
+  background: none; // !important;
+  border: none; // !important;
+
+  /* Pantallas pequeñas: 480px y menores */
+  @media (max-width: 480px) {
+    margin: 1rem 15px 15px 15px !important;
+  }
+}
+
+/* Regla extra específica para el botón interno */
+.btn-volver .modern-back,
+.btn-volver .volver-btn,
+.btn-volver button {
+  /* NO aplicar margin al botón interno, solo padding */
+  margin: 0 !important;
+}
+
+.btn-volver .modern-back {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.95),
+    rgba(248, 249, 250, 0.9)
+  );
+  border: 2px solid rgba(102, 126, 234, 0.3);
+  border-radius: 10px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #4c51bf;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+  backdrop-filter: blur(10px);
+
+  i {
+    font-size: 0.9rem;
+    transition: transform 0.4s ease;
+  }
+
+  &:hover {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border-color: #667eea;
+    transform: translateY(-2px) translateX(-4px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+
+    i {
+      transform: translateX(-3px) scale(1.1);
+    }
+  }
+
+  &:active {
+    transform: translateY(-1px) translateX(-2px);
+    transition: transform 0.15s ease;
+  }
+}
+
+/* FORZAR SEPARACIÓN DEL FOOTER - EXTREMADAMENTE ESPECÍFICO */
+body .contenedor .cta-section,
+.contenedor .cta-section,
+div.cta-section {
+  margin-bottom: 2rem !important;
+  padding-bottom: 4rem !important;
+}
+
+/* Para desktop */
+@media (min-width: 769px) {
+  body .contenedor .cta-section,
+  .contenedor .cta-section,
+  div.cta-section {
+    margin-bottom: 2rem !important;
+    padding-bottom: 4rem !important;
+  }
+}
+
+/* Para tablets */
+@media (min-width: 481px) and (max-width: 768px) {
+  body .contenedor .cta-section,
+  .contenedor .cta-section,
+  div.cta-section {
+    margin-bottom: 2rem !important;
+    padding-bottom: 4rem !important;
+  }
+}
+
+/* FORZAR CENTRADO DE CTA-CONTENT - EXTREMADAMENTE ESPECÍFICO */
+body .contenedor .cta-section .cta-content,
+.contenedor .cta-section .cta-content,
+div.cta-section .cta-content,
+.cta-content {
+  text-align: center !important;
+  margin: 0 auto !important;
+  display: block !important;
+  width: 100% !important;
+  max-width: 800px !important;
+}
+
+body .contenedor .cta-section .cta-content h2,
+.contenedor .cta-section .cta-content h2,
+div.cta-section .cta-content h2,
+.cta-content h2 {
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  width: 100% !important;
+  display: block !important;
+}
+
+body .contenedor .cta-section .cta-content p,
+.contenedor .cta-section .cta-content p,
+div.cta-section .cta-content p,
+.cta-content p {
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  width: 100% !important;
+  display: block !important;
+}
+
+/* ESTILOS PARA ICONOS FONT AWESOME */
+.fas,
+.fab,
+.far {
+  font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands" !important;
+  font-weight: 900 !important;
+  display: inline-block !important;
+  font-style: normal !important;
+  font-variant: normal !important;
+  text-rendering: auto !important;
+  line-height: 1 !important;
+}
+
+/* Contenedor principal - 80% ancho en desktop */
+.contenedor {
+  width: 100%;
+  max-width: none;
+  margin: 0 auto;
+
+  /* Desktop: 80% del ancho de pantalla */
+  @media (min-width: 769px) {
+    width: 80%;
+    max-width: 1400px;
+  }
+
+  /* Tablets grandes: 90% */
+  @media (min-width: 768px) and (max-width: 968px) {
+    width: 90%;
+  }
+}
+
+/* Hero section - CENTRADO Y FINO PARA MÓVILES */
+.curiosidades-hero {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 30px 10px;
+  text-align: center;
+  margin: 0 auto 30px auto;
+  width: 100%;
+  display: block;
+  position: relative;
+  min-height: 120px;
+
+  /* Desktop: mejor padding */
+  @media (min-width: 769px) {
+    padding: 50px 30px;
+    min-height: 140px;
+  }
+
+  .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    display: block;
+    width: 100%;
+    padding: 0 8px;
+    box-sizing: border-box;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .hero-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin: 0 auto 12px auto;
+    line-height: 1.3;
+    text-align: center;
+    display: block;
+
+    /* Desktop: tamaño más grande */
+    @media (min-width: 769px) {
+      font-size: 2.2rem;
+      margin-bottom: 15px;
+    }
+
+    i {
+      color: #ffd700;
+      font-size: 1.4rem;
+      margin-right: 6px;
+      display: inline-block;
+
+      /* Desktop: icono más grande */
+      @media (min-width: 769px) {
+        font-size: 2rem;
+        margin-right: 10px;
+      }
+    }
+  }
+
+  .hero-subtitle {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    opacity: 0.9;
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+
+    /* Desktop: texto más grande */
+    @media (min-width: 769px) {
+      font-size: 1.1rem;
+    }
+  }
+}
+
+.curiosidades-main {
+  position: relative;
+  display: flex;
+  max-width: 100%;
+  min-width: 280px;
+  flex-direction: column;
+  margin-bottom: 11.5rem;
+  padding: 0 8px;
+
+  /* Desktop: mejor uso del espacio */
+  @media (min-width: 769px) {
+    padding: 0 20px;
+  }
+
+  /* Grid de curiosidades - ADAPTABLE Y FINO */
+  .curiosidades-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 12px;
+    margin: 20px 0;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 8px;
+  }
+
+  .curiosidad-card {
+    background: white;
+    border-radius: 8px;
+    padding: 15px 12px;
+    text-align: center;
+    margin: 0.5rem;
+    border: 1px solid #e0e0e0;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .mito-item {
+    border: 2px solid #ff6b6b;
+    border-radius: 0.8rem;
+    margin: 0.3rem;
+    padding: 12px;
+  }
+
+  .curiosidad-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+  }
+
+  .card-icon {
+    width: 40px;
+    height: 40px;
+    background: #667eea;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 12px auto;
+    flex-shrink: 0;
+  }
+
+  .card-icon i {
+    color: white;
+    font-size: 1rem;
+  }
+
+  .curiosidad-card h3 {
+    margin-bottom: 8px;
+    color: #333;
+    font-size: 1rem;
+    line-height: 1.3;
+  }
+
+  .curiosidad-card p {
+    font-size: 0.85rem;
+    color: #666;
+    line-height: 1.4;
+    flex-grow: 1;
+  }
+
+  /* Estilos para las barras de gráficos de porcentajes - OPTIMIZADO MÓVILES */
+  .nutrition-chart {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+    padding: 0 5px;
+  }
+
+  .chart-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 0;
+    flex-wrap: wrap;
+
+    span {
+      font-weight: 600;
+      color: #333;
+      min-width: 100px;
+      font-size: 0.8rem;
+      flex-shrink: 0;
+    }
+  }
+
+  .chart-bar {
+    height: 16px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    min-width: 60px;
+    flex-grow: 1;
+    position: relative;
+    background: linear-gradient(90deg, #e0e0e0, #f5f5f5);
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      border-radius: 8px;
+      transition: width 0.6s ease-in-out;
+    }
+  }
+
+  /* Colores específicos para cada tipo de nutriente */
+  .chart-item.proteinas .chart-bar {
+    background: linear-gradient(90deg, #ff6b6b, #ee5a6f);
+    box-shadow: 0 2px 8px rgba(255, 107, 107, 0.3);
+  }
+
+  .chart-item.grasas .chart-bar {
+    background: linear-gradient(90deg, #4ecdc4, #44a08d);
+    box-shadow: 0 2px 8px rgba(78, 205, 196, 0.3);
+  }
+
+  .chart-item.carbohidratos .chart-bar {
+    background: linear-gradient(90deg, #45b7d1, #96c93d);
+    box-shadow: 0 2px 8px rgba(69, 183, 209, 0.3);
+  }
+
+  .chart-item.fibra .chart-bar {
+    background: linear-gradient(90deg, #f093fb, #f5576c);
+    box-shadow: 0 2px 8px rgba(240, 147, 251, 0.3);
+  }
+
+  /* Anchos específicos para las barras de porcentajes */
+  /* Perros */
+  .perros .chart-item.proteinas .chart-bar {
+    width: 25%;
+  }
+  .perros .chart-item.grasas .chart-bar {
+    width: 15%;
+  }
+  .perros .chart-item.carbohidratos .chart-bar {
+    width: 40%;
+  }
+  .perros .chart-item.fibra .chart-bar {
+    width: 8%;
+  }
+
+  /* Gatos */
+  .gatos .chart-item.proteinas .chart-bar {
+    width: 35%;
+  }
+  .gatos .chart-item.grasas .chart-bar {
+    width: 18%;
+  }
+  .gatos .chart-item.carbohidratos .chart-bar {
+    width: 10%;
+  }
+  .gatos .chart-item.fibra .chart-bar {
+    width: 5%;
+  }
+
+  /* Contenedores de las infografías - OPTIMIZADO MÓVILES Y DESKTOP */
+  .infografia-section {
+    margin: 40px 0;
+    padding: 25px 15px;
+    background: #f8f9fa;
+    border-radius: 12px;
+
+    /* Grid de 2 columnas para desktop */
+    .infografia-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      margin-top: 25px;
+
+      /* Desktop: 2 columnas lado a lado */
+      @media (min-width: 768px) {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+      }
+    }
+  }
+
+  .animal-nutrition {
+    background: white;
+    border-radius: 10px;
+    padding: 20px 15px;
+    margin: 0;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+    }
+
+    h3 {
+      text-align: center;
+      font-size: 1.1rem;
+      color: #333;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      line-height: 1.3;
+
+      i {
+        font-size: 1.2rem;
+        color: #667eea;
+        flex-shrink: 0;
+      }
+    }
+  }
+
+  /* Responsive - MEJORADO PARA MÓVILES PEQUEÑOS */
+  @media (max-width: 768px) {
+    .hero-title {
+      font-size: 1.4rem;
+
+      i {
+        font-size: 1.2rem;
+      }
+    }
+
+    .hero-subtitle {
+      font-size: 0.85rem;
+    }
+
+    .curiosidad-card {
+      padding: 12px 8px;
+      margin: 0.3rem;
+      min-height: 180px;
+    }
+
+    .chart-item {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 5px;
+
+      span {
+        min-width: auto;
+        font-size: 0.75rem;
+      }
+    }
+
+    .chart-bar {
+      width: 100%;
+      min-width: 80px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    padding: 0 5px;
+
+    .curiosidades-hero {
+      padding: 20px 8px;
+      min-height: 100px;
+    }
+
+    .hero-title {
+      //      font-size: 1.2rem;
+      margin-bottom: 8px;
+
+      i {
+        font-size: 1rem;
+        margin-right: 4px;
+      }
+    }
+
+    .curiosidad-card {
+      padding: 10px 6px;
+      margin: 0.2rem;
+      min-height: 160px;
+    }
+
+    .card-icon {
+      width: 35px;
+      height: 35px;
+      margin-bottom: 8px;
+
+      i {
+        font-size: 0.9rem;
+      }
+    }
+
+    // .curiosidad-card h3 {
+    //   font-size: 0.9rem;
+    //   margin-bottom: 6px;
+    // }
+
+    // .curiosidad-card p {
+    //   font-size: 0.8rem;
+    // }
+
+    .infografia-section {
+      margin: 25px 0;
+      padding: 15px 8px;
+    }
+
+    .animal-nutrition {
+      padding: 15px 10px;
+      margin: 10px 0;
+
+      h3 {
+        font-size: 1rem;
+        margin-bottom: 10px;
+        gap: 6px;
+
+        i {
+          font-size: 1rem;
+        }
+      }
+    }
+
+    .nutrition-chart {
+      gap: 8px;
+      margin-top: 10px;
+      padding: 0 3px;
+    }
+
+    .chart-item {
+      padding: 4px 0;
+
+      span {
+        font-size: 0.7rem;
+      }
+    }
+
+    .chart-bar {
+      height: 14px;
+      border-radius: 7px;
+      min-width: 60px;
+    }
+  }
+
+  @media (max-width: 320px) {
+    .curiosidades-hero {
+      padding: 15px 5px;
+      min-height: 90px;
+    }
+
+    .hero-title {
+      font-size: 1.1rem;
+    }
+
+    .hero-subtitle {
+      font-size: 0.75rem;
+    }
+
+    .curiosidad-card {
+      padding: 8px 5px;
+      min-height: 140px;
+    }
+
+    .card-icon {
+      width: 30px;
+      height: 30px;
+
+      i {
+        font-size: 0.8rem;
+      }
+    }
+
+    .curiosidad-card h3 {
+      font-size: 0.85rem;
+    }
+
+    .curiosidad-card p {
+      font-size: 0.75rem;
+    }
+  }
+}
+
+/* SECCIÓN CALL TO ACTION - CENTRADA Y SEPARADA */
+.cta-section {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  margin: auto;
+  //margin-bottom: 20rem !important;
+  //padding: 20px 30px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  position: relative;
+  max-width: 95%;
+  width: 95%;
+  display: block;
+  left: 50%;
+  transform: translateX(-50%);
+
+  /* Desktop: más espacioso */
+  @media (min-width: 769px) {
+    margin: auto;
+    //margin-bottom: 25rem !important;
+    //padding: 60px 40px;
+    padding-bottom: 60px !important;
+    max-width: 90%;
+    width: 90%;
+  }
+
+  /* Tablets */
+  @media (min-width: 481px) and (max-width: 768px) {
+    margin-bottom: 22rem !important;
+  }
+
+  /* Móviles pequeños */
+  @media (max-width: 480px) {
+    margin-bottom: 18rem !important;
+  }
+
+  /* Efecto de borde sutil */
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #667eea, #764ba2, #f093fb);
+    z-index: -1;
+    padding: 2px;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: subtract;
+  }
+
+  .cta-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+    display: block;
+
+    /* Centrar todos los elementos hijos */
+    h2,
+    p,
+    .cta-buttons {
+      text-align: center !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+
+    h2 {
+      text-align: center !important;
+      width: 100% !important;
+      display: block !important;
+    }
+
+    p {
+      text-align: center !important;
+      width: 100% !important;
+      display: block !important;
+    }
+  }
+}
+
+/* CONTENEDOR DE BOTONES - CENTRADO Y ESPACIADO */
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+
+  /* Desktop: más separación */
+  @media (min-width: 769px) {
+    gap: 35px;
+    margin-top: 40px;
+  }
+
+  /* Móviles: apilados pero centrados */
+  @media (max-width: 480px) {
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 25px;
+  }
+}
+
+/* BOTONES DIVERTIDOS Y LLAMATIVOS 🎉 */
+.btn-fun {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+
+  /* Animación de pulso sutil */
+  animation: pulse-glow 3s ease-in-out infinite;
+
+  /* Efecto de brillo interno */
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.3),
+      transparent
+    );
+    transition: left 0.6s ease;
+  }
+
+  /* Iconos animados */
+  i {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+  }
+
+  span {
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Hover effects */
+  &:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+
+    &::before {
+      left: 100%;
+    }
+
+    i {
+      transform: rotate(15deg) scale(1.2);
+      animation: bounce-icon 0.6s ease;
+    }
+  }
+
+  /* Active (click) effect */
+  &:active {
+    transform: translateY(-1px) scale(1.02);
+    transition: transform 0.1s ease;
+  }
+}
+
+/* Botón primario - Gradiente azul a púrpura */
+.btn-primary.btn-fun {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+
+  &:hover {
+    background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 50%, #ec4899 100%);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+  }
+}
+
+/* Botón secundario - Gradiente verde a azul */
+.btn-secondary.btn-fun {
+  background: linear-gradient(135deg, #4ecdc4 0%, #45b7d1 50%, #96c93d 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(78, 205, 196, 0.4);
+
+  &:hover {
+    background: linear-gradient(135deg, #38b2ac 0%, #3182ce 50%, #84cc16 100%);
+    box-shadow: 0 8px 25px rgba(78, 205, 196, 0.6);
+  }
+}
+
+/* BOTÓN VOLVER - FUNCIONAL Y BONITO */
+.btn-volver {
+  /* Valores con más separación del header */
+  margin: 2rem; //!important;
+  padding: 0; // !important;
+  background: none; // !important;
+  border: none; // !important;
+
+  /* Pantallas pequeñas: 480px y menores */
+  @media (max-width: 480px) {
+    margin: 1rem 15px 15px 15px !important;
+  }
+}
+
+/* Regla extra específica para el botón interno */
+.btn-volver .modern-back,
+.btn-volver .volver-btn,
+.btn-volver button {
+  /* NO aplicar margin al botón interno, solo padding */
+  margin: 0 !important;
+}
+
+.btn-volver .modern-back {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.95),
+    rgba(248, 249, 250, 0.9)
+  );
+  border: 2px solid rgba(102, 126, 234, 0.3);
+  border-radius: 10px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #4c51bf;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+  backdrop-filter: blur(10px);
+
+  i {
+    font-size: 0.9rem;
+    transition: transform 0.4s ease;
+  }
+
+  &:hover {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border-color: #667eea;
+    transform: translateY(-2px) translateX(-4px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+
+    i {
+      transform: translateX(-3px) scale(1.1);
+    }
+  }
+
+  &:active {
+    transform: translateY(-1px) translateX(-2px);
+    transition: transform 0.15s ease;
+  }
+}
+
+/* FORZAR SEPARACIÓN DEL FOOTER - EXTREMADAMENTE ESPECÍFICO */
+body .contenedor .cta-section,
+.contenedor .cta-section,
+div.cta-section {
+  margin-bottom: 2rem !important;
+  padding-bottom: 4rem !important;
+}
+
+/* Para desktop */
+@media (min-width: 769px) {
+  body .contenedor .cta-section,
+  .contenedor .cta-section,
+  div.cta-section {
+    margin-bottom: 2rem !important;
+    padding-bottom: 4rem !important;
+  }
+}
+
+/* Para tablets */
+@media (min-width: 481px) and (max-width: 768px) {
+  body .contenedor .cta-section,
+  .contenedor .cta-section,
+  div.cta-section {
+    margin-bottom: 2rem !important;
+    padding-bottom: 4rem !important;
+  }
+}
+
+/* FORZAR CENTRADO DE CTA-CONTENT - EXTREMADAMENTE ESPECÍFICO */
+body .contenedor .cta-section .cta-content,
+.contenedor .cta-section .cta-content,
+div.cta-section .cta-content,
+.cta-content {
+  text-align: center !important;
+  margin: 0 auto !important;
+  display: block !important;
+  width: 100% !important;
+  max-width: 800px !important;
+}
+
+body .contenedor .cta-section .cta-content h2,
+.contenedor .cta-section .cta-content h2,
+div.cta-section .cta-content h2,
+.cta-content h2 {
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  width: 100% !important;
+  display: block !important;
+}
+
+body .contenedor .cta-section .cta-content p,
+.contenedor .cta-section .cta-content p,
+div.cta-section .cta-content p,
+.cta-content p {
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  width: 100% !important;
+  display: block !important;
+}
+
+/* Animaciones */
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  50% {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  }
+}
+
+@keyframes bounce-icon {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: rotate(15deg) scale(1.2) translateY(0);
+  }
+  40% {
+    transform: rotate(15deg) scale(1.2) translateY(-5px);
+  }
+  60% {
+    transform: rotate(15deg) scale(1.2) translateY(-3px);
+  }
+}
+
+/* Responsive para botones */
+@media (max-width: 480px) {
+  .btn-fun {
+    padding: 12px 24px;
+    font-size: 0.9rem;
+    gap: 6px;
+    width: 100%;
+    max-width: 280px;
+
+    i {
+      font-size: 1rem;
     }
   }
 }
