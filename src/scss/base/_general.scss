@@ -35,14 +35,14 @@ body {
 }
 
 // 🔧 ELIMINACIÓN DEFINITIVA DE MÁRGENES FANTASMA - SOLO GATO NUCLEAR EXCLUIDO
-.contenedor *:not(.gato-nuclear):not(.gato-img-nuclear),
-#portada,
-#portada *:not(.gato-nuclear):not(.gato-img-nuclear),
-.overlay,
-.overlay *:not(.gato-nuclear):not(.gato-img-nuclear) {
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-}
+// .contenedor *:not(.gato-nuclear):not(.gato-img-nuclear),
+// #portada,
+// #portada *:not(.gato-nuclear):not(.gato-img-nuclear),
+// .overlay,
+// .overlay *:not(.gato-nuclear):not(.gato-img-nuclear) {
+//   margin-left: 0 !important;
+//   margin-right: 0 !important;
+// }
 
 .contenedor {
   position: relative;

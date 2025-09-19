@@ -68,3 +68,11 @@ logs
 temp/
 tmp/
 backup/
+
+# Bloquear JS "gato" no deseados
+src/js/gato-debug-intenso.js
+src/js/gato-debug.js
+src/js/gato-floor.js
+src/js/gato-simple-fixed.js
+src/js/gato-simple-nuevo.js
+src/js/gato-simple.js
