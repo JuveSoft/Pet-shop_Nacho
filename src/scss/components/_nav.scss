@@ -1,8 +1,17 @@
-// Navigation Styles - Responsive
+// ========================================
+// NAVEGACIÓN UNIFICADA - ESTILOS COMPLETOS
+// ========================================
+// Este archivo contiene toda la lógica de navegación responsive
+// Reemplaza tanto _nav.scss como _nav-responsive.scss
+
 .navegacion-principal {
   position: relative;
   font-family: "Inter", sans-serif !important;
+  min-height: 4rem;
 
+  // ========================================
+  // BOTÓN HAMBURGUESA / TOGGLE
+  // ========================================
   .nav-toggle {
     display: none;
     background: none;
@@ -11,18 +20,13 @@
     padding: 0.5rem;
     z-index: 1001;
     position: relative;
-    margin-right: 2rem; // MARGEN AJUSTADO para la hamburguesa
+    margin-right: 2rem;
 
-    // Make it more tappable on mobile
+    // Hacer más táctil en móviles
     min-width: 44px;
     min-height: 54px;
 
-    // &:focus {
-    //   outline: 2px solid #007bff;
-    //   outline-offset: 2px;
-    // }
-
-    // Hamburger icon
+    // Icono hamburguesa
     .hamburger {
       display: block;
       width: 25px;
@@ -51,7 +55,7 @@
       }
     }
 
-    // Active state (cuando el menú está abierto)
+    // Estado activo (cuando el menú está abierto)
     &.active .hamburger {
       background-color: transparent;
 
@@ -67,6 +71,9 @@
     }
   }
 
+  // ========================================
+  // MENÚ PRINCIPAL Y ITEMS
+  // ========================================
   .nav-menu {
     display: flex;
     list-style: none;
@@ -94,24 +101,24 @@
     padding: 0.5rem;
     display: block;
     transition: color 0.3s ease;
-    //margin-top: 3rem;
 
     &:hover {
       color: #007bff;
     }
   }
 
-  // Dropdown styles - Alineados a la derecha de cada palabra
+  // ========================================
+  // DROPDOWN STYLES
+  // ========================================
   .dropdown-menu {
     position: absolute;
     top: 100%;
-    left: auto; // CAMBIO: quitar left centrado
-    right: 0; // CAMBIO: alinear a la derecha de la palabra
-    transform: translateY(-10px); // CAMBIO: solo mover hacia arriba, no centrar
+    left: auto;
+    right: 0; // Alinear a la derecha de la palabra
+    transform: translateY(-10px);
     background: white;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    //  border: 13px solid green !important; // BORDE TEMPORAL verde para dropdowns
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
@@ -120,14 +127,14 @@
     max-width: 75vw;
     padding: 0.5rem 1rem;
 
-    // En pantallas muy grandes
+    // Pantallas muy grandes
     @media (min-width: 1800px) {
       min-width: 450px;
       max-width: 60vw;
       padding: 2rem;
     }
 
-    // Dynamic positioning classes (controlled by JavaScript)
+    // Clases de posicionamiento dinámico (controladas por JavaScript)
     &.dropdown-right {
       left: auto;
       right: 0;
@@ -181,7 +188,7 @@
       margin: 0;
     }
 
-    li1 {
+    li {
       margin-bottom: 0.1rem;
     }
 
@@ -199,39 +206,76 @@
     }
   }
 
-  // Mobile styles
+  // ========================================
+  // RESPONSIVE STYLES - MOBILE
+  // ========================================
   @media (max-width: 768px) {
     .nav-toggle {
-      display: block;
+      display: block !important;
+      background: none !important;
+      border: none !important;
+      position: absolute !important;
+      right: 1rem !important;
+      top: 50% !important;
+      transform: translateY(-50%) !important;
+      z-index: 1002 !important;
+      padding: 1rem !important;
+      cursor: pointer !important;
     }
 
-    // .menu-item:first-child {
-    //   margin-top: 2rem;
-    // }
+    .hamburger {
+      display: block !important;
+      width: 28px !important;
+      height: 3px !important;
+      background: #333 !important;
+      position: relative !important;
+      transition: all 0.3s ease !important;
+    }
+
+    .hamburger::before,
+    .hamburger::after {
+      content: "" !important;
+      display: block !important;
+      width: 28px !important;
+      height: 3px !important;
+      background: #333 !important;
+      position: absolute !important;
+      transition: all 0.3s ease !important;
+      left: 0 !important;
+    }
+
+    .hamburger::before {
+      top: -9px !important;
+    }
+
+    .hamburger::after {
+      bottom: -9px !important;
+    }
 
     .nav-menu {
-      position: fixed;
-      top: 0.5rem;
-      left: -100%;
-      width: 100%;
-      height: 100vh;
-      background: white;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: stretch;
-      padding: 1rem 1rem;
-      transition: left 0.3s ease;
-      z-index: 999;
-      overflow-y: auto;
-      overflow-x: hidden;
-      box-sizing: border-box;
+      display: none !important;
 
       &.active {
         left: 0;
       }
+
+      &.show {
+        display: flex !important;
+        flex-direction: column !important;
+        position: absolute !important;
+        top: 100% !important;
+        left: 0 !important;
+        right: 0 !important;
+        background: #fff !important;
+        border-top: 1px solid #dee2e6 !important;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
+        z-index: 1000 !important;
+        animation: slideDown 0.3s ease !important;
+      }
     }
 
     .menu-item {
+      width: 100% !important;
       border-bottom: 1px solid #eee;
       flex-shrink: 0;
       position: relative;
@@ -247,17 +291,24 @@
         padding: 1rem;
         margin: 0;
         border-radius: 0;
-        // border: 2px solid orange !important; // TEMPORAL para ver límites en móvil
       }
     }
 
     .menu-trigger {
-      padding: 0.55rem 0.5rem;
-      border: none;
-      background: none;
+      text-align: left !important;
+      border-bottom: 1px solid #eee !important;
+      padding: 1rem 1.5rem !important;
+      color: #333 !important;
+      text-decoration: none !important;
+      display: block !important;
       font-size: 1.2rem;
       flex-shrink: 0;
       font-family: "Inter", sans-serif !important;
+
+      &:hover {
+        background: #f8f9fa !important;
+        color: #007bff !important;
+      }
     }
 
     .dropdown-content {
@@ -279,50 +330,59 @@
       li {
         margin-bottom: 0.8rem;
       }
+
+      .dropdown-title {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+        padding-bottom: 0.3rem;
+
+        &::after {
+          width: 60px;
+          height: 1px;
+        }
+      }
     }
 
-    .dropdown-column .dropdown-title {
-      font-size: 1rem;
-      margin-bottom: 0.5rem;
-      padding-bottom: 0.3rem;
-
-      &::after {
-        width: 60px;
-        height: 1px;
+    // Animación de entrada
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
       }
     }
   }
-  // Tablet adjustments
+
+  // ========================================
+  // RESPONSIVE STYLES - TABLET
+  // ========================================
   @media (max-width: 1200px) and (min-width: 769px) {
     .dropdown-menu {
       min-width: 300px;
       max-width: 70vw;
     }
 
-    // .menu-item:first-child .dropdown-menu {
-    //   min-width: 420px !important;
-    //   max-width: 75vw !important;
-    // }
-
     .dropdown-content {
       grid-template-columns: repeat(2, 1fr);
     }
   }
 
-  // Large screens adjustments
+  // ========================================
+  // RESPONSIVE STYLES - LARGE SCREENS
+  // ========================================
   @media (min-width: 1201px) {
     .dropdown-menu {
       min-width: 380px;
       max-width: 65vw;
     }
-
-    // .menu1-item:first-child .dropdown-menu {
-    //   min-width: 520px !important;
-    //   max-width: 75vw !important;
-    // }
   }
 
-  // Ajustes para dispositivos muy pequeños
+  // ========================================
+  // RESPONSIVE STYLES - SMALL MOBILE
+  // ========================================
   @media (max-width: 480px) {
     .nav-menu {
       padding: 1rem 1rem 4rem 1rem !important;
@@ -348,7 +408,9 @@
     }
   }
 
-  // Estilos para pantallas súper pequeñas
+  // ========================================
+  // RESPONSIVE STYLES - EXTRA SMALL MOBILE
+  // ========================================
   @media (max-width: 320px) {
     .nav-menu {
       padding: 2rem 0.8rem 4rem 0.8rem !important;
@@ -376,193 +438,6 @@
 
     .menu-item {
       margin-bottom: 0.8rem !important;
-    }
-  }
-
-  // ✅ ESTILOS FINALES MÓVIL - MIGRADOS DESDE HTML
-  @media (max-width: 768px) {
-    .nav-toggle {
-      display: block !important;
-      background: none !important;
-      border: none !important;
-      position: absolute !important;
-      right: 1rem !important;
-      top: 50% !important;
-      transform: translateY(-50%) !important;
-      z-index: 1002 !important;
-      padding: 1rem !important;
-      cursor: pointer !important;
-    }
-
-    .hamburger {
-      display: block !important;
-      width: 28px !important;
-      height: 3px !important;
-      background: #333 !important;
-      position: relative !important;
-      transition: all 0.3s ease !important;
-    }
-
-    .hamburger::before,
-    .hamburger::after {
-      content: "" !important;
-      display: block !important;
-      width: 28px !important;
-      height: 3px !important;
-      background: #333 !important;
-      position: absolute !important;
-      transition: all 0.3s ease !important;
-      left: 0 !important;
-    }
-
-    .hamburger::before {
-      top: -9px !important;
-    }
-
-    .hamburger::after {
-      bottom: -9px !important;
-    }
-
-    .nav-menu {
-      display: none !important;
-    }
-
-    .nav-menu.show {
-      display: flex !important;
-      flex-direction: column !important;
-      position: absolute !important;
-      top: 100% !important;
-      left: 0 !important;
-      right: 0 !important;
-      background: #fff !important;
-      border-top: 1px solid #dee2e6 !important;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
-      z-index: 1000 !important;
-      animation: slideDown 0.3s ease !important;
-    }
-
-    @keyframes slideDown {
-      from {
-        opacity: 0;
-        transform: translateY(-10px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .menu-item {
-      width: 100% !important;
-    }
-
-    .menu-trigger {
-      text-align: left !important;
-      border-bottom: 1px solid #eee !important;
-      padding: 1rem 1.5rem !important;
-      color: #333 !important;
-      text-decoration: none !important;
-      display: block !important;
-    }
-
-    .menu-trigger:hover {
-      background: #f8f9fa !important;
-      color: #007bff !important;
-    }
-  }
-}
-
-// ✅ OVERRIDE FINAL - ESTILOS QUE FUNCIONAN (MIGRADOS DESDE HTML)
-// Estos estilos tienen máxima prioridad y sobrescriben conflictos
-@media (max-width: 768px) {
-  .navegacion-principal {
-    .nav-toggle {
-      display: block !important;
-      background: none !important;
-      border: none !important;
-      position: absolute !important;
-      right: 1rem !important;
-      top: 50% !important;
-      transform: translateY(-50%) !important;
-      z-index: 1002 !important;
-      padding: 1rem !important;
-      cursor: pointer !important;
-    }
-
-    .hamburger {
-      display: block !important;
-      width: 28px !important;
-      height: 3px !important;
-      background: #333 !important;
-      position: relative !important;
-      transition: all 0.3s ease !important;
-    }
-
-    .hamburger::before,
-    .hamburger::after {
-      content: "" !important;
-      display: block !important;
-      width: 28px !important;
-      height: 3px !important;
-      background: #333 !important;
-      position: absolute !important;
-      transition: all 0.3s ease !important;
-      left: 0 !important;
-    }
-
-    .hamburger::before {
-      top: -9px !important;
-    }
-
-    .hamburger::after {
-      bottom: -9px !important;
-    }
-
-    .nav-menu {
-      display: none !important;
-    }
-
-    .nav-menu.show {
-      display: flex !important;
-      flex-direction: column !important;
-      position: absolute !important;
-      top: 100% !important;
-      left: 0 !important;
-      right: 0 !important;
-      background: #fff !important;
-      border-top: 1px solid #dee2e6 !important;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
-      z-index: 1000 !important;
-      animation: slideDownFinal 0.3s ease !important;
-    }
-
-    @keyframes slideDownFinal {
-      from {
-        opacity: 0;
-        transform: translateY(-10px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .menu-item {
-      width: 100% !important;
-    }
-
-    .menu-trigger {
-      text-align: left !important;
-      border-bottom: 1px solid #eee !important;
-      padding: 1rem 1.5rem !important;
-      color: #333 !important;
-      text-decoration: none !important;
-      display: block !important;
-    }
-
-    .menu-trigger:hover {
-      background: #f8f9fa !important;
-      color: #007bff !important;
     }
   }
 }

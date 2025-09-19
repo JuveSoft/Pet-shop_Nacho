@@ -42,28 +42,29 @@ logs
 # css/main.min.css
 # css/main.min.css.map
 
-# Archivos específicos para prevenir reaparición
-# JavaScript no utilizados
-src/js/gato-*.js
-!src/js/gato-sticky-final.js
-
-# CSS específicos no utilizados
-css/image-effects.css
-css/video-effects.css
-css/curiosidades-simple-clean.css
-css/test.css
-css/test.css.map
-
-# Archivos de respaldo
+# Archivos de respaldo automáticos (patrones generales)
 *.backup
 *_backup.*
 *-backup.*
 *.html.backup
 *.js.backup
 *.css.backup
+*~
 
-# Archivos temporales de desarrollo
-enhanced-features.js
+# Archivos temporales de desarrollo (patrones generales)
 *-temp.*
 *-old.*
 *-copy.*
+*-test.*
+*-debug.*
+*.tmp.*
+
+# Archivos duplicados o versiones
+*-v[0-9]*.*
+*-version[0-9]*.*
+*-copy[0-9]*.*
+
+# Carpetas temporales
+temp/
+tmp/
+backup/

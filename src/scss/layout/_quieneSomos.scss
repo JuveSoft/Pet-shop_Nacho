@@ -1,14 +1,18 @@
 .quienes-somos {
   position: relative;
-  display: block; // Cambiado de flex a block para mejor layout
-  max-width: 1200px; // Ancho máximo contenido
-  width: 100%; // Ocupa todo el ancho disponible
+  display: block;
+  max-width: 1200px;
+  width: 80%;
   text-align: justify;
   margin: 1rem auto;
-  //background-color: rgb(235, 243, 234);
+  background-color: rgb(235, 243, 234);
   padding: 1.5rem;
   border-radius: 8px;
   box-shadow: 8px 8px 15px 5px rgba(0, 0, 0, 0.1);
+
+  // Forzar centrado absoluto
+  left: 50%;
+  transform: translateX(-50%);
 
   h2 {
     font-size: clamp(1.8rem, 2.3vw, 2.4rem);
@@ -50,7 +54,7 @@
 
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 1.5rem;
       margin-bottom: 2rem;
 

@@ -1,0 +1,253 @@
+/* ========================================
+   ENHANCED FEATURES STYLES
+   ======================================== */
+
+/* DARK MODE VARIABLES */
+:root {
+  /* Light Mode Colors */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --text-primary: #333333;
+  --text-secondary: #666666;
+  --border-color: #e0e0e0;
+  --shadow-light: rgba(0, 0, 0, 0.1);
+  --shadow-medium: rgba(0, 0, 0, 0.15);
+  --accent-blue: #007bff;
+  --accent-purple: #667eea;
+}
+
+[data-theme="dark"] {
+  /* Dark Mode Colors */
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #2d2d2d;
+  --text-primary: #ffffff;
+  --text-secondary: #cccccc;
+  --border-color: #404040;
+  --shadow-light: rgba(255, 255, 255, 0.1);
+  --shadow-medium: rgba(255, 255, 255, 0.15);
+  --accent-blue: #4a9eff;
+  --accent-purple: #8b9cf5;
+}
+
+/* THEME TOGGLE BUTTON */
+.theme-toggle-container {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 15px; /* Espacio entre el último enlace y el botón */
+
+  /* Responsive - En móviles aparece con el menú */
+  @media (max-width: 768px) {
+    margin-left: 0;
+    margin-top: 10px;
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+.theme-toggle {
+  background: var(--bg-secondary);
+  border: 2px solid var(--border-color);
+  border-radius: 50%;
+  width: 45px; /* Tamaño más discreto */
+  height: 45px;
+  padding: 10px; /* Espacio interno para mayor comodidad visual */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem; /* Icono proporcional al nuevo tamaño */
+  color: var(--text-primary);
+  box-shadow: 0 3px 12px var(--shadow-light); /* Sombra más visible */
+
+  /* Responsive - Tamaño ajustado para móviles */
+  @media (max-width: 480px) {
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+    font-size: 1rem;
+  }
+}
+
+.theme-toggle:hover {
+  background: var(--accent-blue);
+  color: white;
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px var(--shadow-medium);
+}
+
+.theme-toggle i {
+  transition: all 0.3s ease;
+}
+
+#sun-icon {
+  display: none;
+  color: #ffa500;
+}
+
+#moon-icon {
+  color: #4a90e2;
+}
+
+/* SCROLL TO TOP BUTTON */
+.scroll-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.5rem;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px var(--shadow-medium);
+}
+
+.scroll-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.scroll-to-top:hover {
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 6px 20px var(--shadow-medium);
+}
+
+/* LOADING SPINNER */
+.loading-spinner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: var(--bg-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 0.5s ease;
+}
+
+.loading-spinner.fade-out {
+  opacity: 0;
+}
+
+.spinner-container {
+  text-align: center;
+  color: var(--text-primary);
+}
+
+.spinner {
+  width: 60px;
+  height: 60px;
+  border: 4px solid var(--border-color);
+  border-top: 4px solid var(--accent-blue);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 20px;
+}
+
+.spinner-container p {
+  font-family: "Inter", sans-serif;
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* LAZY LOADING IMAGES */
+img.lazy {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+img.loaded {
+  opacity: 1;
+}
+
+/* DARK MODE TRANSITIONS FOR EXISTING ELEMENTS */
+body,
+header,
+footer,
+.contenedor,
+.curiosidades-hero,
+.cta-section,
+.producto-oferta {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.curiosidades-hero,
+.cta-section {
+  background: linear-gradient(
+    135deg,
+    var(--bg-secondary) 0%,
+    var(--border-color) 100%
+  );
+}
+
+.producto-oferta {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 15px var(--shadow-light);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text-primary);
+  transition: color 0.3s ease;
+}
+
+p,
+span,
+div {
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
+}
+
+/* RESPONSIVE ADJUSTMENTS */
+@media (max-width: 768px) {
+  .scroll-to-top {
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
+
+  .spinner {
+    width: 50px;
+    height: 50px;
+  }
+
+  .spinner-container p {
+    font-size: 1rem;
+  }
+}
+
+/* SMOOTH ANIMATIONS FOR THEME CHANGES */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease;
+}

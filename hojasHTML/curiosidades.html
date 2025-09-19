@@ -18,23 +18,108 @@
     />
 
     <link rel="stylesheet" href="../css/main.min.css" />
+
+    <!-- Estilos de navegación migrados a SCSS externo -->
   </head>
   <body>
     <header>
       <div class="titulo">
-        <h1>PetShop <span>LuNa</span></h1>
+        <h1>Pet Shop <span>LuNa</span></h1>
       </div>
+
+      <nav class="navegacion-principal">
+        <!-- Botón hamburguesa para móviles -->
+        <button class="nav-toggle" aria-label="Abrir menú">
+          <span class="hamburger"></span>
+        </button>
+
+        <ul class="nav-menu">
+          <li class="menu-item has-dropdown">
+            <a href="#" class="menu-trigger">Productos</a>
+            <div class="dropdown-menu">
+              <div class="dropdown-content">
+                <div class="dropdown-column">
+                  <h4 class="dropdown-title">Alimentos</h4>
+                  <ul>
+                    <li>
+                      <a href="Productos/Alimentos.html">Bolsas</a>
+                    </li>
+                    <li><a href="#">Pedigre</a></li>
+                    <li><a href="#">Dog Chow</a></li>
+                    <li><a href="#">Pirulín</a></li>
+                  </ul>
+                </div>
+                <div class="dropdown-column">
+                  <h4 class="dropdown-title">Accesorios</h4>
+                  <ul>
+                    <li><a href="#">Las pilchas</a></li>
+                    <li><a href="#">Platos</a></li>
+                    <li>
+                      <a href="#">Correas - Collares - Juguetes - Otros</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="menu-item has-dropdown">
+            <a href="curiosidades.html" class="menu-trigger">Curiosidades</a>
+            <div class="dropdown-menu">
+              <div class="dropdown-content">
+                <div class="dropdown-column">
+                  <h4 class="dropdown-title">Especie</h4>
+                  <ul>
+                    <li><a href="#">Perros</a></li>
+                    <li><a href="#">Gatos</a></li>
+                    <li><a href="#">Otros</a></li>
+                    <li><a href="#">Conductas</a></li>
+                  </ul>
+                </div>
+
+                <div class="dropdown-column">
+                  <h4 class="dropdown-title">Información</h4>
+                  <ul>
+                    <li><a href="curiosidades.html">Acerca de Alimentos</a></li>
+                    <li><a href="#">Acerca de Accesorios</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="menu-item has-dropdown">
+            <a href="#" class="menu-trigger">Contacto</a>
+            <div class="dropdown-menu">
+              <div class="dropdown-content">
+                <div class="dropdown-column">
+                  <h4 class="dropdown-title">Información</h4>
+                  <ul>
+                    <li>
+                      <a href="quienesSomos.html">Quienes somos</a>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="dropdown-column">
+                  <h4 class="dropdown-title">Modos de contacto</h4>
+                  <ul>
+                    <li><a href="#">Correo</a></li>
+                    <li>
+                      <a href="contacto.html">Donde estamos</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="menu-item">
+            <a href="../index.html" class="menu-trigger">Inicio</a>
+          </li>
+        </ul>
+      </nav>
     </header>
-    <div class="btn-volver">
-      <button
-        id="entrar"
-        class="volver-btn modern-back"
-        onclick="history.back()"
-      >
-        <i class="fas fa-arrow-left"></i>
-        <span>Volver</span>
-      </button>
-    </div>
 
     <div class="contenedor">
       <!-- Hero Section -->
@@ -162,43 +247,44 @@
                 </p>
               </div>
             </div>
-          </div>
-          <div class="curiosidades curiosidad-card mito-item">
-            <div class="mito-header mito-falso">
-              <i class="fas fa-times"></i>
-              <h3>MITO</h3>
-            </div>
-            <p><strong>"La comida casera siempre es mejor"</strong></p>
-            <div class="realidad">
-              <div class="realidad-header">
-                <i class="fas fa-check"></i>
-                <h4>REALIDAD</h4>
-              </div>
-              <p>
-                Aunque puede ser nutritiva, la comida casera requiere
-                conocimiento especializado para asegurar el balance nutricional
-                correcto.
-              </p>
-            </div>
-          </div>
 
-          <div class="curiosidades curiosidad-card mito-item">
-            <div class="mito-header mito-falso">
-              <i class="fas fa-times"></i>
-              <h3>MITO</h3>
+            <div class="curiosidades curiosidad-card mito-item">
+              <div class="mito-header mito-falso">
+                <i class="fas fa-times"></i>
+                <h3>MITO</h3>
+              </div>
+              <p><strong>"La comida casera siempre es mejor"</strong></p>
+              <div class="realidad">
+                <div class="realidad-header">
+                  <i class="fas fa-check"></i>
+                  <h4>REALIDAD</h4>
+                </div>
+                <p>
+                  Aunque puede ser nutritiva, la comida casera requiere
+                  conocimiento especializado para asegurar el balance
+                  nutricional correcto.
+                </p>
+              </div>
             </div>
-            <p>
-              <strong>"Los gatos pueden beber leche sin problemas"</strong>
-            </p>
-            <div class="realidad">
-              <div class="realidad-header">
-                <i class="fas fa-check"></i>
-                <h4>REALIDAD</h4>
+
+            <div class="curiosidades curiosidad-card mito-item">
+              <div class="mito-header mito-falso">
+                <i class="fas fa-times"></i>
+                <h3>MITO</h3>
               </div>
               <p>
-                La mayoría de gatos adultos son intolerantes a la lactosa. La
-                leche puede causar problemas digestivos.
+                <strong>"Los gatos pueden beber leche sin problemas"</strong>
               </p>
+              <div class="realidad">
+                <div class="realidad-header">
+                  <i class="fas fa-check"></i>
+                  <h4>REALIDAD</h4>
+                </div>
+                <p>
+                  La mayoría de gatos adultos son intolerantes a la lactosa. La
+                  leche puede causar problemas digestivos.
+                </p>
+              </div>
             </div>
           </div>
         </section>
@@ -264,20 +350,20 @@
               <h3><i class="fas fa-dog"></i> Perros</h3>
               <div class="nutrition-chart">
                 <div class="chart-item proteinas">
-                  <div class="chart-bar"></div>
                   <span>Proteínas: 18-25%</span>
+                  <div class="chart-bar protein p-25"></div>
                 </div>
                 <div class="chart-item grasas">
-                  <div class="chart-bar"></div>
                   <span>Grasas: 8-15%</span>
+                  <div class="chart-bar fat p-15"></div>
                 </div>
                 <div class="chart-item carbohidratos">
-                  <div class="chart-bar"></div>
                   <span>Carbohidratos: 30-40%</span>
+                  <div class="chart-bar carbs p-35"></div>
                 </div>
                 <div class="chart-item fibra">
-                  <div class="chart-bar"></div>
                   <span>Fibra: 2-8%</span>
+                  <div class="chart-bar fiber p-5"></div>
                 </div>
               </div>
             </div>
@@ -286,20 +372,20 @@
               <h3><i class="fas fa-cat"></i> Gatos</h3>
               <div class="nutrition-chart">
                 <div class="chart-item proteinas">
-                  <div class="chart-bar"></div>
                   <span>Proteínas: 30-35%</span>
+                  <div class="chart-bar protein p-35"></div>
                 </div>
                 <div class="chart-item grasas">
-                  <div class="chart-bar"></div>
                   <span>Grasas: 15-18%</span>
+                  <div class="chart-bar fat p-18"></div>
                 </div>
                 <div class="chart-item carbohidratos">
-                  <div class="chart-bar"></div>
                   <span>Carbohidratos: 5-10%</span>
+                  <div class="chart-bar carbs p-10"></div>
                 </div>
                 <div class="chart-item fibra">
-                  <div class="chart-bar"></div>
                   <span>Fibra: 2-5%</span>
+                  <div class="chart-bar fiber p-5"></div>
                 </div>
               </div>
             </div>
@@ -393,5 +479,8 @@
         </p>
       </div>
     </footer>
+
+    <script src="../src/js/dark-mode.js?v=2024"></script>
+    <script src="../src/js/hamburger-test.js"></script>
   </body>
 </html>

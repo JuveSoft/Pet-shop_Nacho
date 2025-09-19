@@ -11,102 +11,14 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <link rel="stylesheet" href="css/main.min.css?v=1008" />
 
-    <!-- CSS FINAL PARA HAMBURGUESA -->
-     <style>
-      /* ESTILOS FINALES MÓVIL */
-      @media (max-width: 768px) {
-        .nav-toggle {
-          display: block !important;
-          background: none !important;
-          border: none !important;
-          position: absolute !important;
-          right: 1rem !important;
-          top: 50% !important;
-          transform: translateY(-50%) !important;
-          z-index: 1002 !important;
-          padding: 1rem !important;
-          cursor: pointer !important;
-        }
-
-        .hamburger {
-          display: block !important;
-          width: 28px !important;
-          height: 3px !important;
-          background: #333 !important;
-          position: relative !important;
-          transition: all 0.3s ease !important;
-        }
-
-        .hamburger::before,
-        .hamburger::after {
-          content: "" !important;
-          display: block !important;
-          width: 28px !important;
-          height: 3px !important;
-          background: #333 !important;
-          position: absolute !important;
-          transition: all 0.3s ease !important;
-          left: 0 !important;
-        }
-
-        .hamburger::before {
-          top: -9px !important;
-        }
-
-        .hamburger::after {
-          bottom: -9px !important;
-        }
-
-        .nav-menu {
-          display: none !important;
-        }
-
-        .nav-menu.show {
-          display: flex !important;
-          flex-direction: column !important;
-          position: absolute !important;
-          top: 100% !important;
-          left: 0 !important;
-          right: 0 !important;
-          background: #fff !important;
-          border-top: 1px solid #dee2e6 !important;
-          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
-          z-index: 1000 !important;
-          animation: slideDown 0.3s ease !important;
-        }
-
-        @keyframes slideDown {
-          from {
-            opacity: 0;
-            transform: translateY(-10px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        .menu-item {
-          width: 100% !important;
-        }
-
-        .menu-trigger {
-          text-align: left !important;
-          border-bottom: 1px solid #eee !important;
-          padding: 1rem 1.5rem !important;
-          color: #333 !important;
-          text-decoration: none !important;
-          display: block !important;
-        }
-
-        .menu-trigger:hover {
-          background: #f8f9fa !important;
-          color: #007bff !important;
-        }
-      }
-    </style>
+    <!-- Estilos de navegación migrados a SCSS externo -->
 
 
  
@@ -336,5 +248,6 @@
     <!-- <script src="src/js/navigation-fixed.js"></script> -->
     <script src="src/js/video-control-simple.js"></script>
     <script src="src/js/gato-sticky-final.js"></script>
+    <script src="src/js/dark-mode.js?v=2024"></script>
   </body>
 </html>

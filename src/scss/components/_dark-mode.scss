@@ -1,0 +1,199 @@
+// Dark Mode / Light Mode Toggle
+// Variables para dark mode
+:root {
+  // Light mode (default)
+  --bg-color: #ffffff;
+  --text-color: #333333;
+  --header-bg: #f8f9fa;
+  --footer-bg: #343a40;
+  --card-bg: #ffffff;
+  --border-color: #e9ecef;
+  --shadow: rgba(0, 0, 0, 0.1);
+  --accent-color: #007bff;
+  --nav-bg: #ffffff;
+  --nav-text: #333333;
+}
+
+// Dark mode
+[data-theme="dark"] {
+  --bg-color: #1a1a1a;
+  --text-color: #e0e0e0;
+  --header-bg: #2d2d2d;
+  --footer-bg: #1a1a1a;
+  --card-bg: #2d2d2d;
+  --border-color: #404040;
+  --shadow: rgba(0, 0, 0, 0.3);
+  --accent-color: #4dabf7;
+  --nav-bg: #2d2d2d;
+  --nav-text: #e0e0e0;
+}
+
+// Aplicar variables CSS
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+// Header
+header {
+  background-color: var(--header-bg);
+  color: var(--text-color);
+  transition: background-color 0.3s ease;
+}
+
+// Cards y containers
+.contenedor,
+.producto-oferta,
+.cta-section,
+.curiosidades-hero {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border-color: var(--border-color);
+  box-shadow: 0 4px 15px var(--shadow);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+// Footer
+footer {
+  background-color: var(--footer-bg);
+  color: var(--text-color);
+  transition: background-color 0.3s ease;
+}
+
+// Navigation
+nav {
+  background-color: var(--nav-bg);
+  color: var(--nav-text);
+  transition: background-color 0.3s ease;
+}
+
+// Links
+a {
+  color: var(--accent-color);
+  transition: color 0.3s ease;
+}
+
+// Títulos y subtítulos - Solo aplicar a elementos sin fondo blanco
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  transition: color 0.3s ease;
+}
+
+// Hero section y títulos principales
+.hero-title,
+.section-title {
+  color: var(--text-color) !important;
+}
+
+// Títulos específicos en cards y containers con fondo
+.card-title,
+.subtitle,
+.curiosidades-hero h1,
+.curiosidades-hero h2 {
+  color: var(--text-color) !important;
+}
+
+// Textos en elementos con fondo (no en elementos con fondo blanco)
+.contenedor p,
+.curiosidades-hero p,
+.curiosidad-card p,
+.cta-section p,
+.footer p {
+  color: var(--text-color) !important;
+}
+
+// Excluir específicamente elementos de mitos que tienen fondo blanco
+.mito-item,
+.mito-item *,
+.mito-header,
+.mito-header *,
+.realidad,
+.realidad *,
+.realidad-header,
+.realidad-header * {
+  color: initial !important;
+}
+
+// Iconos en títulos
+.section-title i,
+.hero-title i {
+  color: var(--accent-color) !important;
+}
+
+// Botón toggle dark mode
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  background: var(--card-bg);
+  border: 2px solid var(--border-color);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px var(--shadow);
+
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px var(--shadow);
+  }
+
+  // Icono sol/luna
+  .sun-icon,
+  .moon-icon {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .sun-icon {
+    color: #ffd43b;
+  }
+
+  .moon-icon {
+    color: #74c0fc;
+  }
+
+  // Ocultar/mostrar iconos según el tema
+  [data-theme="dark"] & .sun-icon {
+    opacity: 0;
+    transform: rotate(180deg);
+  }
+
+  [data-theme="dark"] & .moon-icon {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+
+  [data-theme="light"] & .sun-icon,
+  :root:not([data-theme]) & .sun-icon {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+
+  [data-theme="light"] & .moon-icon,
+  :root:not([data-theme]) & .moon-icon {
+    opacity: 0;
+    transform: rotate(-180deg);
+  }
+}
+
+// Responsive para móviles
+@media (max-width: 768px) {
+  .theme-toggle {
+    top: 45px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+}
