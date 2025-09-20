@@ -1,0 +1,403 @@
+main {
+  //grid-area: main;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
+  padding-bottom: 0 !important; // Sin padding inferior
+  margin-bottom: 0 !important; // Sin margin inferior
+  margin: 3rem auto;
+  justify-content: center;
+  @media (max-width: 768px) {
+    padding: 1rem;
+    padding-bottom: 0 !important; // Mantener sin padding inferior en móvil
+  }
+
+  @media (min-width: 769px) {
+    //margin: auto;
+    padding: 1.5rem 2rem;
+    //max-width: 100%;
+  }
+
+  // Eliminar margin-bottom del último elemento para pegarlo al footer
+  > *:last-child {
+    margin-bottom: 0 !important;
+  }
+
+  // También aplicar a elementos dentro de secciones
+  section > *:last-child {
+    margin-bottom: 0 !important;
+  }
+
+  // Variables CSS consolidadas
+  :root {
+    --bg: #fdfdfd;
+    --card-bg: #fff;
+    --text: #1f2937;
+    --muted: #6b7280;
+    --shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    --shadow-hover: 0 8px 18px rgba(0, 0, 0, 0.1);
+    --shadow-strong: 0 12px 30px rgba(0, 0, 0, 0.12);
+    --radius: 12px;
+    --radius-large: 16px;
+  }
+
+  // Sección principal de accesorios
+  .accesorios {
+    padding: 2rem 1.25rem;
+    background: var(--bg);
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell,
+      Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji",
+      "Segoe UI Symbol";
+    color: var(--text);
+    max-width: 1200px;
+    margin: 0 auto;
+
+    h2 {
+      margin: 0 0 1.25rem 0;
+      font-size: 1.6rem;
+    }
+  }
+
+  // Contenedor de tarjetas responsive
+  .card-container,
+  .cards-grid {
+    display: grid;
+    gap: 1.25rem;
+    min-width: 80%;
+    grid-template-columns: 1fr; // 1 columna por defecto (móvil)
+
+    // 2 columnas (tablet)
+    @media (min-width: 600px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    // 4 columnas (desktop grande)
+    @media (min-width: 1100px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  // Estilos de tarjetas consolidados
+  .card {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    padding: 1.1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12); // box-shadow más suave y visible
+    text-align: center;
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.05); // recuadro muy suave
+
+    &:focus-within,
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); // sombra más pronunciada en hover
+    }
+
+    .icon {
+      font-size: 2.2rem;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    h3 {
+      margin: 0.35rem 0 0.25rem;
+      font-size: 1.1rem;
+    }
+
+    p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+        background: rgba(255, 255, 255, 0.18);
+        padding: 0.5rem 0.6rem;
+        border-radius: 10px;
+        font-size: 0.95rem;
+        margin: 0.35rem 0;
+        backdrop-filter: blur(2px);
+      }
+    }
+  }
+
+  // Flyers especiales
+  .flyer,
+  .flyer-perros {
+    max-width: 500px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    border-radius: var(--radius-large);
+    color: white;
+    font-family: "Segoe UI", sans-serif;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+
+    .icon,
+    .flyer-icon {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      margin: 0.5rem 0;
+    }
+
+    .frase {
+      font-size: 1.1rem;
+      font-style: italic;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    ul,
+    .juguetes-lista {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        background: rgba(255, 255, 255, 0.2);
+        margin: 0.4rem 0;
+        padding: 0.5rem;
+        border-radius: 8px;
+        font-size: 1rem;
+      }
+    }
+  }
+
+  // Gradientes por especie (consolidados)
+  .perros {
+    background: linear-gradient(135deg, #ff4d4d, #ff9966);
+  }
+  .gatos {
+    background: linear-gradient(135deg, #a96eff, #d59cff);
+  }
+  .pajaritos {
+    background: linear-gradient(135deg, #4db8ff, #80d4ff);
+  }
+  .conejos {
+    background: linear-gradient(135deg, #66cc99, #99e6cc);
+  }
+
+  // Recomendaciones especiales
+  .recomendaciones-perros {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background: #fff8f0;
+    border-radius: var(--radius-large);
+    font-family: "Segoe UI", sans-serif;
+    color: #333;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+  }
+
+  .grupo {
+    margin-bottom: 2rem;
+
+    h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .frase {
+      font-style: italic;
+      color: #555;
+      margin-bottom: 0.6rem;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+
+      li {
+        background: #ffe6cc;
+        margin: 0.4rem 0;
+        padding: 0.6rem 0.8rem;
+        border-radius: 10px;
+      }
+    }
+  }
+
+  // Estilos de tabla
+  .estilo table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+
+    th,
+    td {
+      border: 1px solid #ddd;
+      padding: 0.6rem;
+      text-align: left;
+    }
+
+    th {
+      background: #ffcc99;
+    }
+
+    td {
+      background: #fff3e0;
+    }
+  }
+
+  // Botón final
+  .boton-final {
+    text-align: center;
+    margin-top: 2rem;
+
+    a {
+      display: inline-block;
+      max-width: 100%;
+      padding: 0.8rem 1.2rem;
+      background: #ff944d;
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      transition: background 0.3s ease;
+
+      &:hover {
+        background: #ff7733;
+      }
+    }
+
+    // En pantallas chicas, que no se achique ni se rompa
+    @media (max-width: 480px) {
+      a {
+        font-size: 0.95rem;
+        padding: 0.7rem 1rem;
+        white-space: normal;
+        text-overflow: unset;
+      }
+    }
+  }
+
+  // Contenedor específico para juguetes
+  .cards-juguetes {
+    padding: 2rem 1.25rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: system-ui, "Segoe UI", Roboto, Arial;
+    color: var(--text);
+
+    h2 {
+      margin: 0 0 1.25rem;
+      font-size: 1.6rem;
+    }
+  }
+
+  // Efectos avanzados para tarjetas con colores (perros, gatos, etc.)
+  .card.perros,
+  .card.gatos,
+  .card.pajaritos,
+  .card.conejos {
+    position: relative;
+    color: #fff;
+    padding: 1.25rem;
+    box-shadow: var(--shadow-strong);
+    overflow: hidden;
+    transform: translateZ(0); // activa GPU
+    transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+    animation: float 5s ease-in-out infinite;
+
+    &:hover {
+      transform: translateY(-6px) rotate3d(1, 1, 0, 4deg) scale(1.01);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+      filter: saturate(1.08);
+    }
+
+    .icon {
+      font-size: 2.4rem;
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+
+    h3 {
+      margin: 0.25rem 0;
+      font-size: 1.25rem;
+    }
+
+    .frase {
+      margin: 0.25rem 0 0.6rem;
+      font-weight: 600;
+    }
+
+    ul li {
+      background: rgba(255, 255, 255, 0.18);
+      padding: 0.5rem 0.6rem;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      margin: 0.35rem 0;
+      backdrop-filter: blur(2px);
+    }
+  }
+
+  // Efecto de brillo diagonal
+  .card .shine {
+    position: absolute;
+    inset: -40%;
+    background: linear-gradient(
+      120deg,
+      transparent 40%,
+      rgba(255, 255, 255, 0.25) 50%,
+      transparent 60%
+    );
+    transform: translateX(-60%) rotate(15deg);
+    animation: shineMove 6s linear infinite;
+    pointer-events: none;
+  }
+
+  // Animaciones
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-4px);
+    }
+  }
+
+  @keyframes shineMove {
+    0% {
+      transform: translateX(-70%) rotate(15deg);
+    }
+    100% {
+      transform: translateX(70%) rotate(15deg);
+    }
+  }
+
+  // Respeto reduce motion
+  @media (prefers-reduced-motion: reduce) {
+    .card,
+    .card .shine {
+      animation: none;
+    }
+    .card.perros,
+    .card.gatos,
+    .card.pajaritos,
+    .card.conejos {
+      transition: none;
+    }
+  }
+}

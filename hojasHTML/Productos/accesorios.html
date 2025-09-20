@@ -1,87 +1,372 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Accesorios - Pet Shop LuNa</title>
-    <!-- Google Fonts - Inter -->
+    <title>Curiosidades sobre Alimentos para Mascotas - Pet Shop LuNa</title>
+    <!-- Google Fonts - Inter (similar a Mozilla) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <!-- Font Awesome - Restaurado -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
     <link rel="stylesheet" href="../../css/main.min.css" />
+
+    <!-- Estilos de navegación migrados a SCSS externo -->
   </head>
   <body>
-    <header class="header">
-      <div class="contenedor contenido-header">
-        <div class="titulo">
-          <h1>Pet Shop <span>LuNa</span></h1>
-        </div>
-
-        <!-- Menú Hamburguesa para móviles -->
-        <div class="hamburger-menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-
-        <nav class="navegacion-principal">
-          <a href="../../index.html">Inicio</a>
-          <a href="../quienesSomos.html">¿Quiénes somos?</a>
-          <a href="Alimentos.html">Alimentos</a>
-          <a href="accesorios.html">Accesorios</a>
-          <a href="../contacto.html">Contacto</a>
-        </nav>
+    <header>
+      <div class="titulo">
+        <h1>Pet Shop <span>LuNa</span></h1>
       </div>
+
+      <nav class="navegacion-principal">
+        <!-- Botón hamburguesa para móviles -->
+        <button class="nav-toggle" aria-label="Abrir menú">
+          <span class="hamburger"></span>
+        </button>
+
+        <ul class="nav-menu">
+          <li class="menu-item has-dropdown">
+            <a href="#" class="menu-trigger">Productos</a>
+            <div class="dropdown-menu">
+              <div class="dropdown-content">
+                <div class="dropdown-column">
+                  <h4 class="dropdown-title">Alimentos</h4>
+                  <ul>
+                    <li>
+                      <a href="Productos/Alimentos.html">Bolsas</a>
+                    </li>
+                    <li><a href="#">Pedigre</a></li>
+                    <li><a href="#">Dog Chow</a></li>
+                    <li><a href="#">Pirulín</a></li>
+                  </ul>
+                </div>
+                <div class="dropdown-column">
+                  <h4 class="dropdown-title">Accesorios</h4>
+                  <ul>
+                    <li><a href="#">Las pilchas</a></li>
+                    <li><a href="#">Platos</a></li>
+                    <li>
+                      <a href="#">Correas - Collares - Juguetes - Otros</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="menu-item has-dropdown">
+            <a href="curiosidades.html" class="menu-trigger">Curiosidades</a>
+            <div class="dropdown-menu">
+              <div class="dropdown-content">
+                <div class="dropdown-column">
+                  <h4 class="dropdown-title">Especie</h4>
+                  <ul>
+                    <li><a href="#">Perros</a></li>
+                    <li><a href="#">Gatos</a></li>
+                    <li><a href="#">Otros</a></li>
+                    <li><a href="#">Conductas</a></li>
+                  </ul>
+                </div>
+
+                <div class="dropdown-column">
+                  <h4 class="dropdown-title">Información</h4>
+                  <ul>
+                    <li><a href="curiosidades.html">Acerca de Alimentos</a></li>
+                    <li><a href="#">Acerca de Accesorios</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="menu-item has-dropdown">
+            <a href="#" class="menu-trigger">Contacto</a>
+            <div class="dropdown-menu">
+              <div class="dropdown-content">
+                <div class="dropdown-column">
+                  <h4 class="dropdown-title">Información</h4>
+                  <ul>
+                    <li>
+                      <a href="quienesSomos.html">Quienes somos</a>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="dropdown-column">
+                  <h4 class="dropdown-title">Modos de contacto</h4>
+                  <ul>
+                    <li><a href="#">Correo</a></li>
+                    <li>
+                      <a href="contacto.html">Donde estamos</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="menu-item">
+            <a href="../../index.html" class="menu-trigger">Inicio</a>
+          </li>
+        </ul>
+      </nav>
     </header>
+    <div class="contenedor">
+      <main class="main">
+        <section class="accesorios" aria-labelledby="titulo-accesorios">
+          <h2 id="titulo-accesorios">🐾 Accesorios para Mascotas</h2>
 
-    <main class="contenedor">
-      <h2 class="centrar-texto fw-300 titulo-secciones">
-        Accesorios para Mascotas
-      </h2>
+          <div class="card-container">
+            <article class="card">
+              <div class="icon" aria-hidden="true">🎒</div>
+              <h3>Paseo y control</h3>
+              <p>
+                Collares, correas y arneses para salidas seguras y con estilo.
+              </p>
+            </article>
 
-      <div class="productos-grid">
-        <!-- Aquí irían los productos de accesorios -->
-        <div class="producto">
-          <h3>Próximamente</h3>
-          <p>
-            Estamos preparando nuestra selección de accesorios para tu mascota.
-          </p>
-        </div>
-      </div>
-    </main>
+            <article class="card">
+              <div class="icon" aria-hidden="true">🛏️</div>
+              <h3>Descanso</h3>
+              <p>Camas y mantas para un descanso reparador y cómodo.</p>
+            </article>
+
+            <article class="card">
+              <div class="icon" aria-hidden="true">🎲</div>
+              <h3>Juguetes</h3>
+              <p>Pelotas, mordillos y túneles para estimular cuerpo y mente.</p>
+            </article>
+
+            <article class="card">
+              <div class="icon" aria-hidden="true">🧼</div>
+              <h3>Higiene</h3>
+              <p>Cepillos, toallitas y shampoo para una rutina saludable.</p>
+            </article>
+
+            <article class="card">
+              <div class="icon" aria-hidden="true">🚗</div>
+              <h3>Transporte</h3>
+              <p>Mochilas y transportadoras para viajes sin estrés.</p>
+            </article>
+
+            <article class="card">
+              <div class="icon" aria-hidden="true">👕</div>
+              <h3>Moda y estilo</h3>
+              <p>Ropa, bandanas y gafas para expresar su personalidad.</p>
+            </article>
+
+            <article class="card">
+              <div class="icon" aria-hidden="true">🍽️</div>
+              <h3>Comederos y bebederos</h3>
+              <p>Soluciones prácticas para una alimentación eficiente.</p>
+            </article>
+
+            <article class="card">
+              <div class="icon" aria-hidden="true">🎯</div>
+              <h3>Entrenamiento</h3>
+              <p>
+                Clickers y alfombras olfativas para reforzar conductas
+                positivas.
+              </p>
+            </article>
+          </div>
+        </section>
+        <section class="cards-juguetes" aria-labelledby="juguetes-titulo">
+          <h2 id="juguetes-titulo">🎲 Juguetes por especie</h2>
+
+          <div class="cards-grid">
+            <article class="card perros">
+              <div class="shine" aria-hidden="true"></div>
+              <div class="icon">🐶🎾</div>
+              <h3>Perros</h3>
+              <p class="frase">¡Jugá como un campeón!</p>
+              <ul>
+                <li>Mordillos resistentes</li>
+                <li>Pelotas con sonido</li>
+                <li>Cuerdas para tirar</li>
+              </ul>
+            </article>
+
+            <article class="card gatos">
+              <div class="shine" aria-hidden="true"></div>
+              <div class="icon">🐱🧶</div>
+              <h3>Gatos</h3>
+              <p class="frase">Despertá su instinto felino</p>
+              <ul>
+                <li>Ratones de tela</li>
+                <li>Cañas con plumas</li>
+                <li>Túneles con catnip</li>
+              </ul>
+            </article>
+
+            <article class="card pajaritos">
+              <div class="shine" aria-hidden="true"></div>
+              <div class="icon">🐦🔔</div>
+              <h3>Pajaritos</h3>
+              <p class="frase">¡Que no se aburran!</p>
+              <ul>
+                <li>Campanas y espejos</li>
+                <li>Escaleras</li>
+                <li>Columpios</li>
+              </ul>
+            </article>
+
+            <article class="card conejos">
+              <div class="shine" aria-hidden="true"></div>
+              <div class="icon">🐰🥕</div>
+              <h3>Conejos</h3>
+              <p class="frase">Roer, saltar, explorar</p>
+              <ul>
+                <li>Pelotas de madera</li>
+                <li>Túneles</li>
+                <li>Juguetes naturales</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section class="recomendaciones-perros">
+          <h2>🐶 Recomendaciones para Perros</h2>
+
+          <div class="grupo">
+            <h3>🧒 Cachorros (0–12 meses)</h3>
+            <p class="frase">Crecen rápido, necesitan cuidado especial.</p>
+            <ul>
+              <li>Mordillo de silicona con sabor</li>
+              <li>Cama tipo nido</li>
+              <li>Plato antideslizante</li>
+              <li>Shampoo hipoalergénico</li>
+            </ul>
+          </div>
+
+          <div class="grupo">
+            <h3>🧍 Adultos (1–7 años)</h3>
+            <p class="frase">Energía, juego y paseos largos.</p>
+            <ul>
+              <li>Pelota con sonido</li>
+              <li>Arnés acolchado con diseño</li>
+              <li>Cepillo doble cara</li>
+              <li>Alfombra olfativa</li>
+            </ul>
+          </div>
+
+          <div class="grupo">
+            <h3>👴 Seniors (8+ años)</h3>
+            <p class="frase">Comodidad, digestión y abrigo.</p>
+            <ul>
+              <li>Cama memory foam</li>
+              <li>Juguete dispensador de premios</li>
+              <li>Plato elevado</li>
+              <li>Ropa térmica</li>
+            </ul>
+          </div>
+
+          <div class="grupo estilo">
+            <h3>🐕 Según estilo de vida</h3>
+            <table>
+              <tr>
+                <th>Tipo de perro</th>
+                <th>Recomendaciones</th>
+              </tr>
+              <tr>
+                <td>Activo / deportista</td>
+                <td>Juguetes resistentes, snacks energéticos</td>
+              </tr>
+              <tr>
+                <td>Hogareño / tranquilo</td>
+                <td>Cama mullida, juguetes suaves</td>
+              </tr>
+              <tr>
+                <td>Ansioso / sensible</td>
+                <td>Mordillo calmante, difusor de feromonas</td>
+              </tr>
+              <tr>
+                <td>Sociable / juguetón</td>
+                <td>Pelotas interactivas, túneles</td>
+              </tr>
+            </table>
+          </div>
+
+          <div class="boton-final">
+            <a href="#productos-perros">Ver todos los productos para perros</a>
+          </div>
+        </section>
+      </main>
+    </div>
 
     <footer class="footer">
-      <div class="contenedor contenido-footer">
-        <div class="footer-info">
-          <h3>Pet Shop LuNa</h3>
-          <p>Tu tienda de confianza para el cuidado de tus mascotas</p>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Pet Shop <span>LuNa</span></h3>
+          <p>
+            Tu tienda de confianza para el cuidado y bienestar de tus mascotas.
+            Calidad, amor y atención personalizada desde 2024.
+          </p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"
+              ><i class="fab fa-facebook"></i
+            ></a>
+            <a href="#" aria-label="Instagram"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="#" aria-label="WhatsApp"
+              ><i class="fab fa-whatsapp"></i
+            ></a>
+          </div>
         </div>
-        <div class="footer-contacto">
+
+        <div class="footer-section">
+          <h4>Productos</h4>
+          <ul>
+            <li><a href="Productos/Alimentos.html">Alimentos</a></li>
+            <li><a href="Productos/accesorios.html">Accesorios</a></li>
+            <li><a href="#">Juguetes</a></li>
+            <li><a href="#">Higiene</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Información</h4>
+          <ul>
+            <li><a href="quienesSomos.html">Quiénes Somos</a></li>
+            <li><a href="curiosidades.html">Curiosidades</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="#">Términos y Condiciones</a></li>
+            <li><a href="#">Política de Privacidad</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
           <h4>Contacto</h4>
-          <p>📍 Dirección: Tu dirección aquí</p>
-          <p>📞 Teléfono: (123) 456-7890</p>
-          <p>✉️ Email: info@petshopluna.com</p>
-        </div>
-        <div class="footer-redes">
-          <h4>Síguenos</h4>
-          <div class="redes-sociales">
-            <a href="#" aria-label="Facebook">📘</a>
-            <a href="#" aria-label="Instagram">📷</a>
-            <a href="#" aria-label="Twitter">🐦</a>
+          <div class="contact-info">
+            <p>
+              <i class="fas fa-map-marker-alt"></i> Av. Principal 123, Ciudad
+            </p>
+            <p><i class="fas fa-phone"></i> (011) 1234-5678</p>
+            <p><i class="fas fa-envelope"></i> info@petshopluna.com</p>
+            <p><i class="fas fa-clock"></i> Lun-Sáb: 9:00 - 20:00</p>
           </div>
         </div>
       </div>
-      <div class="footer-copyright">
-        <p>&copy; 2024 Pet Shop LuNa. Todos los derechos reservados.</p>
+
+      <div class="footer-bottom">
+        <p>
+          &copy; 2024 Pet Shop LuNa. Todos los derechos reservados. | Hecho con
+          ❤️ para tu mascota
+        </p>
       </div>
     </footer>
-
-    <!-- Scripts -->
-    <script src="../../src/js/hamburger-test.js"></script>
+    <script src="../../src/JS/_index.js"></script>
     <script src="../../src/js/dark-mode.js?v=2024"></script>
+    <script src="../../src/js/hamburger-test.js"></script>
   </body>
 </html>

@@ -102,12 +102,16 @@ h6 {
 .contenedor p,
 .curiosidades-hero p,
 .curiosidad-card p,
-.cta-section p,
-.footer p {
+.cta-section p {
   color: var(--text-color) !important;
 }
 
-// Excluir específicamente elementos de mitos que tienen fondo blanco
+// Footer p debe mantenerse claro en ambos modos
+footer p {
+  color: #ecf0f1 !important; // siempre claro para contraste con fondo oscuro
+}
+
+// Excluir específicamente elementos con fondo claro que necesitan texto oscuro
 .mito-item,
 .mito-item *,
 .mito-header,
@@ -115,7 +119,9 @@ h6 {
 .realidad,
 .realidad *,
 .realidad-header,
-.realidad-header * {
+.realidad-header *,
+.recomendaciones-perros,
+.recomendaciones-perros * {
   color: initial !important;
 }
 

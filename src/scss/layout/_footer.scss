@@ -34,9 +34,6 @@ footer.footer {
       gap: 1rem;
     }
   }
-  // footer {
-  //   grid-area: footer;
-  // }
 
   .footer-section {
     min-width: 0; // Permite que el flex-item se encoja
@@ -64,7 +61,7 @@ footer.footer {
     p {
       line-height: 1.6;
       margin-bottom: 1.5rem;
-      color: #bdc3c7;
+      color: #ecf0f1; // color claro para mejor contraste
       font-size: 0.95rem;
     }
 
@@ -186,9 +183,9 @@ footer.footer {
       margin-bottom: 1rem;
 
       i {
-        color: #3498db;
-        //margin-right: 0.8rem;
-        //width: 16px;
+        color: #74c3f7;
+        margin-right: 1rem;
+        width: 16px;
         text-align: center;
       }
     }
@@ -201,15 +198,15 @@ footer.footer {
     margin-top: 2.5rem;
     border-top: 1px solid #34495e;
 
-    p {
-      margin: 0;
-      color: #95a5a6;
-      font-size: 0.9rem;
+    // p {
+    //   margin: 0;
+    //   color: #95a5a6;
+    //   font-size: 0.9rem;
 
-      @media (max-width: 480px) {
-        font-size: 0.8rem;
-      }
-    }
+    //   @media (max-width: 480px) {
+    //     font-size: 0.8rem;
+    //   }
+    // }
   }
 
   // Responsive adjustments
@@ -248,33 +245,3 @@ footer.footer {
     }
   }
 }
-
-// // FOOTER LIMPIO - SIN TRANSFORMS NI OFFSETS
-// footer[class="footer"] {
-//   margin: 0 !important;
-//   padding: 0 !important;
-// }
-
-// // OTRA OPCIÓN: Selector universal
-// footer {
-//   &.footer {
-//     margin: 0 !important;
-//     padding-top: 0 !important;
-//   }
-// }
-
-// // Ajuste para que el footer se mantenga abajo
-// html,
-// body {
-//   height: 100%;
-// }
-
-// .contenedor {
-//   min-height: 20vh;
-//   display: flex;
-//   flex-direction: column;
-// }
-
-// main {
-//   flex: 1;
-// }
