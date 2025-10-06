@@ -20,7 +20,6 @@ body {
   // Configuración del header embebido migrado
   font-family: $font-sans;
   background: $background-light;
-  padding-top: $header-height-desktop; // Espacio para header fijo
   line-height: 1.6;
 
   // Responsive
@@ -34,28 +33,17 @@ body {
   box-sizing: border-box;
 }
 
-// 🔧 ELIMINACIÓN DEFINITIVA DE MÁRGENES FANTASMA - SOLO GATO NUCLEAR EXCLUIDO
-// .contenedor *:not(.gato-nuclear):not(.gato-img-nuclear),
-// #portada,
-// #portada *:not(.gato-nuclear):not(.gato-img-nuclear),
-// .overlay,
-// .overlay *:not(.gato-nuclear):not(.gato-img-nuclear) {
-//   margin-left: 0 !important;
-//   margin-right: 0 !important;
-// }
-
 .contenedor {
   position: relative;
-  width: 100%;
+  width: 80%;
   max-width: 1200px;
   height: auto;
-  margin: 2rem auto;
+  margin: auto;
   margin-bottom: 0 !important; // Sin espacio al footer
   min-height: calc(100vh - 140px); // Altura completa menos el header
   padding: 0 !important; // ELIMINAR CUALQUIER PADDING
   padding-bottom: 0 !important; // Asegurar que no hay padding inferior
   box-sizing: border-box;
-
   display: grid;
   grid-template-rows: auto 1fr auto;
   grid-template-areas:
@@ -87,21 +75,12 @@ body {
       margin: auto;
       min-width: 180px;
     }
-
-    @media (min-width: 481px) and (max-width: 768px) {
-      padding: 1rem;
-      margin: 2rem auto;
-    }
-
-    @media (min-width: 769px) {
-      padding: 1.5rem 2rem;
-      margin: 3rem auto;
-    }
   }
 }
 
 // Asignación de áreas del grid
 header {
+  margin: 0;
   grid-area: header;
 }
 

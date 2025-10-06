@@ -6,11 +6,16 @@
   display: flex;
   min-width: 200px;
 
-  // // Espaciado equilibrado
-  // @media (max-width: 768px) {
-  //   margin-top: 0;
-  //   padding-top: 0.5rem; // Un poco de espacio superior en móvil
-  // }
+  // Espaciado equilibrado
+  @media (max-width: 768px) {
+    margin-top: 0;
+    padding-top: 0.5rem; // Un poco de espacio superior en móvil
+  }
+
+  @media (min-width: 769px) {
+    margin-top: 0;
+    padding-top: 1rem; // Más espacio en desktop
+  }
 
   // Media container - contenedor principal para imagen/video
   .media-container {
@@ -50,22 +55,6 @@
       height: auto !important;
       flex-shrink: 0;
       margin: 0 !important; // Sin margin, el flexbox lo centra
-    }
-  }
-
-  // ==================== SOBRESCRIBIR REGLAS CONFLICTIVAS ====================
-  // Forzar centrado del media-container a pesar de las reglas generales del overlay
-  .overlay .media-container {
-    margin-left: auto !important;
-    margin-right: auto !important;
-    width: 80% !important; // Que use el ancho disponible como los textos
-
-    @media (min-width: 769px) {
-      margin: auto !important; // Forzar centrado completo
-      display: flex !important;
-      justify-content: center !important;
-      align-items: center !important;
-      padding: 0 1rem !important; // Mismo padding que .centrado-texto
     }
   }
 }

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Datos Gatos</title>
+    <link rel="stylesheet" href="../../css/main.min.css" />
+  </head>
+  <body>
+    <header>
+      <div class="titulo">
+        <h1>Pet Shop <span>LuNa</span></h1>
+      </div>
+
+      <nav class="navegacion-principal">
+        <!-- Botón hamburguesa para móviles -->
+        <button class="nav-toggle" aria-label="Abrir menú">
+          <span class="hamburger"></span>
+        </button>
+
+        <ul class="nav-menu">
+          <li class="menu-item">
+            <a href="index.html" class="menu-trigger">Inicio</a>
+          </li>
+          <li class="menu-item has-dropdown">
+            <a href="#" class="menu-trigger">Productos</a>
+            <div class="dropdown-menu">
+              <div class="dropdown-content">
+                <div class="dropdown-column">
+                  <h4 class="dropdown-title">Alimentos</h4>
+                  <ul>
+                    <li>
+                      <a href="/hojasHTML/Productos/bolsas.htmll">Bolsas</a>
+                    </li>
+                    <li><a href="#">Pedigre</a></li>
+                    <li><a href="#">Dog Chow</a></li>
+                    <li><a href="#">Pirulín</a></li>
+                  </ul>
+                </div>
+                <div class="dropdown-column">
+                  <h4 class="dropdown-title">Accesorios</h4>
+                  <ul>
+                    <li><a href="#">Las pilchas</a></li>
+                    <li><a href="#">Platos</a></li>
+                    <li>
+                      <a href="#">Correas - Collares - Juguetes - Otros</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="menu-item has-dropdown">
+            <a href="#" class="menu-trigger">Curiosidades</a>
+            <div class="dropdown-menu">
+              <div class="dropdown-content">
+                <div class="dropdown-column">
+                  <h4 class="dropdown-title">Especie</h4>
+                  <ul>
+                    <li>
+                      <a href="/hojasHTML/Especie/perros.html">Perros</a>
+                    </li>
+                    <li><a href="/hojasHTML/Especie/gatos.html">Gatos</a></li>
+
+                    <li><a href="#">Conductas</a></li>
+                  </ul>
+                </div>
+
+                <div class="dropdown-column">
+                  <h4 class="dropdown-title">Información</h4>
+                  <ul>
+                    <li>
+                      <a href="../Informacion/acerca_de_alimentos.html"
+                        >Acerca de Alimentos</a
+                      >
+                    </li>
+                    <li>
+                      <a href="../Informacion/acerca_de_accesorios.html"
+                        >Acerca de Accesorios</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="menu-item has-dropdown">
+            <a href="#" class="menu-trigger">Contacto</a>
+            <div class="dropdown-menu">
+              <div class="dropdown-content">
+                <div class="dropdown-column">
+                  <h4 class="dropdown-title">Información</h4>
+                  <ul>
+                    <li>
+                      <a href="/hojasHTML/quienesSomos.html">Quienes somos</a>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="dropdown-column">
+                  <h4 class="dropdown-title">Modos de contacto</h4>
+                  <ul>
+                    <li><a href="#">Correo</a></li>
+                    <li>
+                      <a href="/hojasHTML/contacto.html">Donde estamos</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <div class="contenedor contenedor-especies">
+      <div class="modulo">
+        <div class="selector">
+          <button onclick="mostrar('conejos')">🐰 Conejos</button>
+          <button onclick="mostrar('roedores')">🐹 Roedores</button>
+          <button onclick="mostrar('aves')">🐦 Aves</button>
+          <button onclick="mostrar('reptiles')">🐢 Reptiles</button>
+          <button onclick="mostrar('etica')">🚫 Ética Animal</button>
+        </div>
+
+        <div id="conejos" class="modulo modulo-especie">
+          <h2>🐰 Cuidados para Conejos</h2>
+          <ul>
+            <li>🏠 Espacio amplio, seguro y libre de cables.</li>
+            <li>🥬 Dieta rica en heno, verduras y agua fresca.</li>
+            <li>🧼 Limpieza frecuente del hábitat y control veterinario.</li>
+            <li>🧠 Necesitan estimulación y compañía: no son juguetes.</li>
+          </ul>
+        </div>
+
+        <div id="roedores" class="modulo modulo-especie">
+          <h2>🐹 Cuidados para Roedores</h2>
+          <ul>
+            <li>🏡 Jaulas ventiladas con escondites y ruedas.</li>
+            <li>🥕 Alimentación específica según especie.</li>
+            <li>🧽 Limpieza semanal y control de olores.</li>
+            <li>👀 Supervisión constante si hay niños en casa.</li>
+          </ul>
+        </div>
+
+        <div id="aves" class="modulo modulo-especie">
+          <h2>🐦 Cuidados para Aves</h2>
+          <ul>
+            <li>🕊️ Jaulas amplias con perchas y juguetes.</li>
+            <li>🌞 Luz natural y protección contra corrientes de aire.</li>
+            <li>
+              🗣️ Estimulación vocal y social: muchas aves son muy inteligentes.
+            </li>
+            <li>🧼 Higiene diaria y chequeos veterinarios.</li>
+          </ul>
+        </div>
+
+        <div id="reptiles" class="modulo modulo-especie">
+          <h2>🐢 Cuidados para Reptiles</h2>
+          <ul>
+            <li>🌡️ Control de temperatura y humedad según especie.</li>
+            <li>💡 Luz UVB para metabolismo y salud ósea.</li>
+            <li>🍽️ Dieta específica (vegetales, insectos, proteínas).</li>
+            <li>📜 Verificar legalidad y origen ético del animal.</li>
+          </ul>
+        </div>
+
+        <div id="etica" class="modulo modulo-especie">
+          <h2>🚫 Tenencia Ética y Legal</h2>
+          <ul>
+            <li>
+              🦁 Evitar animales silvestres, exóticos o en peligro de extinción.
+            </li>
+            <li>📜 Consultar leyes locales sobre especies prohibidas.</li>
+            <li>🌱 Promover adopción responsable y rechazar tráfico ilegal.</li>
+            <li>
+              🧠 Informarse antes de incorporar cualquier especie al hogar.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script>
+      function mostrar(especie) {
+        document
+          .querySelectorAll(".modulo-especie")
+          .forEach((div) => (div.style.display = "none"));
+        document.getElementById(especie).style.display = "block";
+      }
+    </script>
+  </body>
+</html>

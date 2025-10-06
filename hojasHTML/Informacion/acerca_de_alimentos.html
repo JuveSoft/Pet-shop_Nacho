@@ -17,7 +17,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
 
-    <link rel="stylesheet" href="../css/main.min.css" />
+    <link rel="stylesheet" href="../../css/main.min.css" />
 
     <!-- Estilos de navegación migrados a SCSS externo -->
   </head>
@@ -34,6 +34,9 @@
         </button>
 
         <ul class="nav-menu">
+          <li class="menu-item">
+            <a href="/index.html" class="menu-trigger">Inicio</a>
+          </li>
           <li class="menu-item has-dropdown">
             <a href="#" class="menu-trigger">Productos</a>
             <div class="dropdown-menu">
@@ -42,7 +45,7 @@
                   <h4 class="dropdown-title">Alimentos</h4>
                   <ul>
                     <li>
-                      <a href="Productos/Alimentos.html">Bolsas</a>
+                      <a href="/hojasHTML/Productos/bolsas.htmll">Bolsas</a>
                     </li>
                     <li><a href="#">Pedigre</a></li>
                     <li><a href="#">Dog Chow</a></li>
@@ -64,24 +67,30 @@
           </li>
 
           <li class="menu-item has-dropdown">
-            <a href="curiosidades.html" class="menu-trigger">Curiosidades</a>
+            <a href="#" class="menu-trigger">Curiosidades</a>
             <div class="dropdown-menu">
               <div class="dropdown-content">
                 <div class="dropdown-column">
                   <h4 class="dropdown-title">Especie</h4>
                   <ul>
-                    <li><a href="#">Perros</a></li>
-                    <li><a href="#">Gatos</a></li>
-                    <li><a href="#">Otros</a></li>
-                    <li><a href="#">Conductas</a></li>
+                    <li>
+                      <a href="/hojasHTML/Especie/perros.html">Perros</a>
+                    </li>
+                    <li><a href="/hojasHTML/Especie/gatos.html">Gatos</a></li>
+                    <li>
+                      <a href="/hojasHTML/Especie/otras_especies.html">Otros</a>
+                    </li>
                   </ul>
                 </div>
 
                 <div class="dropdown-column">
                   <h4 class="dropdown-title">Información</h4>
                   <ul>
-                    <li><a href="curiosidades.html">Acerca de Alimentos</a></li>
-                    <li><a href="#">Acerca de Accesorios</a></li>
+                    <li>
+                      <a href="acerca_de_accesorios.html"
+                        >Acerca de Accesorios</a
+                      >
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -98,13 +107,6 @@
                     <li>
                       <a href="quienesSomos.html">Quienes somos</a>
                     </li>
-                  </ul>
-                </div>
-
-                <div class="dropdown-column">
-                  <h4 class="dropdown-title">Modos de contacto</h4>
-                  <ul>
-                    <li><a href="#">Correo</a></li>
                     <li>
                       <a href="contacto.html">Donde estamos</a>
                     </li>
@@ -112,10 +114,6 @@
                 </div>
               </div>
             </div>
-          </li>
-
-          <li class="menu-item">
-            <a href="../index.html" class="menu-trigger">Inicio</a>
           </li>
         </ul>
       </nav>
@@ -139,13 +137,13 @@
       <main class="curiosidades curiosidades-main">
         <!-- Sección de Datos Curiosos -->
         <section class="curiosidades-section">
-          <h2 class="section-title">
+          <h2 class="section-title centrado-texto">
             <i class="fas fa-star"></i>
             ¿Sabías que...?
           </h2>
 
-          <div class="curiosidades curiosidades-grid">
-            <div class="curiosidad-card">
+          <div class="curiosidades curiosidades-grid section">
+            <div class="curiosidades curiosidad-card section">
               <div class="card-icon">
                 <i class="fas fa-dog"></i>
               </div>
@@ -157,7 +155,7 @@
               </p>
             </div>
 
-            <div class="curiosidades curiosidad-card">
+            <div class="curiosidades curiosidad-card section">
               <div class="card-icon">
                 <i class="fas fa-cat"></i>
               </div>
@@ -169,7 +167,7 @@
               </p>
             </div>
 
-            <div class="curiosidades curiosidad-card">
+            <div class="curiosidades curiosidad-card section">
               <div class="card-icon">
                 <i class="fas fa-clock"></i>
               </div>
@@ -181,7 +179,7 @@
               </p>
             </div>
 
-            <div class="curiosidades curiosidad-card">
+            <div class="curiosidades curiosidad-card section">
               <div class="card-icon">
                 <i class="fas fa-tint"></i>
               </div>
@@ -193,7 +191,7 @@
               </p>
             </div>
 
-            <div class="curiosidades curiosidad-card">
+            <div class="curiosidades curiosidad-card section">
               <div class="card-icon">
                 <i class="fas fa-apple"></i>
               </div>
@@ -205,7 +203,7 @@
               </p>
             </div>
 
-            <div class="curiosidades curiosidad-card">
+            <div class="curiosidades curiosidad-card section">
               <div class="card-icon">
                 <i class="fas fa-tooth"></i>
               </div>
@@ -229,7 +227,7 @@
           </h2>
 
           <div class="mitos-container">
-            <div class="curiosidades curiosidad-card mito-item">
+            <div class="curiosidades curiosidad-card mito-item section">
               <div class="mito-header mito-falso">
                 <i class="fas fa-times"></i>
                 <h3>MITO</h3>
@@ -248,7 +246,7 @@
               </div>
             </div>
 
-            <div class="curiosidades curiosidad-card mito-item">
+            <div class="curiosidades curiosidad-card mito-item section">
               <div class="mito-header mito-falso">
                 <i class="fas fa-times"></i>
                 <h3>MITO</h3>
@@ -267,7 +265,7 @@
               </div>
             </div>
 
-            <div class="curiosidades curiosidad-card mito-item">
+            <div class="curiosidades curiosidad-card mito-item section">
               <div class="mito-header mito-falso">
                 <i class="fas fa-times"></i>
                 <h3>MITO</h3>
@@ -290,14 +288,14 @@
         </section>
 
         <!-- Sección de Consejos Nutricionales -->
-        <section class="curiosidades curiosidad-card consejos-section">
+        <section class="curiosidades curiosidad-card consejos-section section">
           <h2 class="section-title">
             <i class="fas fa-heart"></i>
             Consejos Nutricionales
           </h2>
 
           <div class="consejos-grid">
-            <div class="curiosidades curiosidad-card consejo-card edad">
+            <div class="curiosidades curiosidad-card consejo-card edad section">
               <div class="consejo-header">
                 <i class="fas fa-baby"></i>
                 <h3>Cachorros y Gatitos</h3>
@@ -310,7 +308,9 @@
               </ul>
             </div>
 
-            <div class="curiosidades curiosidad-card consejo-card adulto">
+            <div
+              class="curiosidades curiosidad-card consejo-card adulto section"
+            >
               <div class="consejo-header">
                 <i class="fas fa-user"></i>
                 <h3>Adultos</h3>
@@ -323,7 +323,9 @@
               </ul>
             </div>
 
-            <div class="curiosidades curiosidad-card consejo-card senior">
+            <div
+              class="curiosidades curiosidad-card consejo-card senior section"
+            >
               <div class="consejo-header">
                 <i class="fas fa-user-tie"></i>
                 <h3>Seniors</h3>
@@ -339,14 +341,14 @@
         </section>
 
         <!-- Sección de Infografía Nutricional -->
-        <section class="infografia-section">
+        <section class="infografia-section section">
           <h2 class="section-title centrado-texto">
             <i class="fas fa-chart-pie"></i>
             Composición Ideal del Alimento
           </h2>
 
           <div class="infografia-grid">
-            <div class="animal-nutrition perros">
+            <div class="animal-nutrition perros section">
               <h3><i class="fas fa-dog"></i> Perros</h3>
               <div class="nutrition-chart">
                 <div class="chart-item proteinas">
@@ -368,7 +370,7 @@
               </div>
             </div>
 
-            <div class="animal-nutrition gatos">
+            <div class="animal-nutrition gatos section">
               <h3><i class="fas fa-cat"></i> Gatos</h3>
               <div class="nutrition-chart">
                 <div class="chart-item proteinas">
@@ -393,7 +395,7 @@
         </section>
 
         <!-- Call to Action -->
-        <section class="cta-section">
+        <section class="cta-section section">
           <div class="cta-content">
             <h2>¿Tienes dudas sobre la alimentación de tu mascota?</h2>
             <p>
@@ -406,7 +408,7 @@
                 <span>Consulta Gratuita</span>
               </a>
               <a
-                href="Productos/Alimentos.html"
+                href="Productos/bolsas.htmll"
                 class="btn btn-secondary btn-fun"
               >
                 <i class="fas fa-shopping-bag"></i>
@@ -441,7 +443,7 @@
         <div class="footer-section">
           <h4>Productos</h4>
           <ul>
-            <li><a href="Productos/Alimentos.html">Alimentos</a></li>
+            <li><a href="Productos/bolsas.htmll">Alimentos</a></li>
             <li><a href="Productos/accesorios.html">Accesorios</a></li>
             <li><a href="#">Juguetes</a></li>
             <li><a href="#">Higiene</a></li>
@@ -452,7 +454,7 @@
           <h4>Información</h4>
           <ul>
             <li><a href="quienesSomos.html">Quiénes Somos</a></li>
-            <li><a href="curiosidades.html">Curiosidades</a></li>
+            <li><a href="acerca_de_bolsas.htmll">Curiosidades</a></li>
             <li><a href="contacto.html">Contacto</a></li>
             <li><a href="#">Términos y Condiciones</a></li>
             <li><a href="#">Política de Privacidad</a></li>

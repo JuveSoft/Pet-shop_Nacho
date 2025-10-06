@@ -30,14 +30,12 @@ main {
 
   .contenedor-ofertas {
     position: relative;
-
     width: 100%;
     max-width: 1000px; // Limita el ancho máximo
     height: auto;
     margin: auto;
     justify-content: center;
     display: grid;
-
     gap: 2rem;
     margin: auto;
     @media (max-width: 678px) {

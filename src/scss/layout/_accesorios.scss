@@ -4,8 +4,8 @@ main {
   flex-direction: column;
   width: 100%;
   box-sizing: border-box;
-  padding-bottom: 0 !important; // Sin padding inferior
-  margin-bottom: 0 !important; // Sin margin inferior
+  // padding-bottom: 0 !important; // Sin padding inferior
+  // margin-bottom: 0 !important; // Sin margin inferior
   margin: 3rem auto;
   justify-content: center;
   @media (max-width: 768px) {
