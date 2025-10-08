@@ -5,7 +5,7 @@ main {
   box-sizing: border-box;
   padding-bottom: 0 !important; // Sin padding inferior
   margin-bottom: 0 !important; // Sin margin inferior
-  margin: 3rem auto;
+  margin: 1rem auto;
   justify-content: center;
   @media (max-width: 768px) {
     padding: 1rem;
@@ -33,17 +33,16 @@ main {
     width: 100%;
     max-width: 1000px; // Limita el ancho máximo
     height: auto;
-    margin: auto;
+
     justify-content: center;
     display: grid;
     gap: 2rem;
-    margin: auto;
+    margin: 3rem auto;
     @media (max-width: 678px) {
       position: relative;
       display: grid;
-
       gap: 1rem;
-      margin: auto;
+      margin: 3rem auto;
     }
 
     // Tablet pequeña
@@ -63,8 +62,8 @@ main {
       width: 100%; // Cambiado de 90% a 100%
       //max-width: 300px; // Limita el ancho máximo del producto
       height: auto;
-      margin: auto;
-      box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.1);
+      margin: 1rem auto;
+      box-shadow: 5px 10px 60px rgba(0, 0, 0, 0.2);
       display: flex;
       flex-direction: column;
       background-color: white;
@@ -121,4 +120,18 @@ main {
       }
     }
   }
+}
+
+section {
+  padding: 1rem 2rem;
+  //border-bottom: 1px solid #dddddd;
+}
+
+ul {
+  list-style-type: 🐾;
+  padding-left: 1.5em;
+}
+
+.etica {
+  background-color: #e9f5f2;
 }

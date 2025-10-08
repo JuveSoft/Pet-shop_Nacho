@@ -40,7 +40,7 @@ body {
   height: auto;
   margin: auto;
   margin-bottom: 0 !important; // Sin espacio al footer
-  min-height: calc(100vh - 140px); // Altura completa menos el header
+  //min-height: calc(100vh - 140px); // Altura completa menos el header
   padding: 0 !important; // ELIMINAR CUALQUIER PADDING
   padding-bottom: 0 !important; // Asegurar que no hay padding inferior
   box-sizing: border-box;
@@ -56,7 +56,7 @@ body {
     width: 100%;
     margin: 0;
     padding: 0;
-    min-height: calc(100vh - 100px); // Altura móvil menos header móvil
+    // min-height: calc(100vh - 100px); // Altura móvil menos header móvil
   }
 
   // Overlay dentro del contenedor - centrado y sin márgenes problemáticos
@@ -119,7 +119,8 @@ header {
 }
 
 // Específico para curiosidades
-.curiosidades-hero .hero-title i,
+.curiosidades-hero,
+.hero-title i,
 .card-icon i,
 .section-title i {
   font-family: "Font Awesome 5 Free" !important;

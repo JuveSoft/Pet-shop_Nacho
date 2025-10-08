@@ -280,7 +280,8 @@
       flex-shrink: 0;
       position: relative;
 
-      &.has-dropdown .dropdown-menu {
+      &.has-dropdown,
+      .dropdown-menu {
         position: static !important;
         opacity: 1 !important;
         visibility: visible !important;
@@ -385,13 +386,14 @@
   // ========================================
   @media (max-width: 480px) {
     .nav-menu {
-      padding: 1rem 1rem 4rem 1rem !important;
-      height: calc(100vh - 70px) !important;
-      overflow-y: auto !important;
+      padding: 1rem !important;
+      // height: calc(100vh - 70px) !important;
+      // overflow-y: auto !important;
     }
 
-    .dropdown-column .dropdown-title {
-      font-size: 0.9rem;
+    .dropdown-column,
+    .dropdown-title {
+      //font-size: 0.9rem;
 
       &::after {
         width: 50px;
@@ -400,7 +402,7 @@
     }
 
     .menu-trigger {
-      padding: 1.2rem 1rem !important;
+      padding: 1rem 1rem !important;
     }
 
     .menu-item {
@@ -413,26 +415,26 @@
   // ========================================
   @media (max-width: 320px) {
     .nav-menu {
-      padding: 2rem 0.8rem 4rem 0.8rem !important;
-      height: calc(100vh - 60px) !important;
+      padding: 1rem !important;
+      //height: calc(100vh - 60px) !important;
       overflow-y: auto !important;
     }
 
-    .dropdown-column .dropdown-title {
-      font-size: 0.8rem;
-
+    .dropdown-column,
+    .dropdown-title {
+      // font-size: 0.8rem;
       &::after {
         width: 40px;
       }
     }
 
     .menu-trigger {
-      font-size: 0.9rem;
+      //font-size: 0.9rem;
       padding: 1rem 0.8rem !important;
     }
 
     .dropdown-column a {
-      font-size: 0.8rem;
+      //font-size: 0.8rem;
       padding: 0.4rem 0 !important;
     }
 

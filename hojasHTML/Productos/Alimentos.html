@@ -17,7 +17,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="../../css/main.min.css?v=2024" />
+    <link rel="stylesheet" href="../../css/main.min.css" />
 
     <!-- Estilos de navegación migrados a SCSS externo -->
   </head>
@@ -27,103 +27,168 @@
         <div class="titulo">
           <h1>Pet Shop <span>LuNa</span></h1>
         </div>
+        <nav class="navegacion-principal">
+          <!-- Menú Hamburguesa para móviles -->
+          <div class="hamburger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
 
-        <!-- Menú Hamburguesa para móviles -->
-        <div class="hamburger-menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>   
-    
-        <!-- Botón hamburguesa para móviles -->
-        <button class="nav-toggle" aria-label="Abrir menú">
-          <span class="hamburger"></span>
-        </button>
+          <!-- Botón hamburguesa para móviles -->
+          <button class="nav-toggle" aria-label="Abrir menú">
+            <span class="hamburger"></span>
+          </button>
 
-        <ul class="nav-menu">
-          <li class="menu-item">
-            <a href="../../index.html" class="menu-trigger">Inicio</a>
-          </li>
-
-          <li class="menu-item has-dropdown">
-            <a href="#" class="menu-trigger">Productos</a>
-            <div class="dropdown-menu">
-              <div class="dropdown-content">
-                <div class="dropdown-column">
-                  <h4 class="dropdown-title">Alimentos</h4>
-                  <ul>
-                    <li><a href="#">Pedigre</a></li>
-                    <li><a href="#">Dog Chow</a></li>
-                    <li><a href="#">Pirulín</a></li>
-                  </ul>
-                </div>
-                <div class="dropdown-column">
-                  <h4 class="dropdown-title">Accesorios</h4>
-                  <ul>
-                    <li><a href="#">Las pilchas</a></li>
-                    <li><a href="#">Platos</a></li>
-                    <li>
-                      <a href="#">Correas - Collares - Juguetes - Otros</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </li>
-
-          <li class="menu-item has-dropdown">
-            <a href="#" class="menu-trigger">Curiosidades</a>
-            <div class="dropdown-menu">
-              <div class="dropdown-content">
-                <div class="dropdown-column">
-                  <h4 class="dropdown-title">Especie</h4>
-                  <ul>
-                    <li><a href="../Especie/perros.html">Perros</a></li>
-                    <li><a href="../Especie/gatos.html">Gatos</a></li>
-                    <li><a href="../Especie/otras_especies.html">Otros</a></li>                    
-                  </ul>
-                </div>
-
-                <div class="dropdown-column">
-                  <h4 class="dropdown-title">Información</h4>
-                  <ul>
-                    <li>
-                      <a href="../Informacion/acerca_de_alimentos.html">Acerca de Alimentos</a>
-                    </li>
-                    <li><a href="../Informacion/acerca_de_accesorios.html">Acerca de Accesorios</a></li>
-                  </ul>
+          <ul class="nav-menu">
+            <li class="menu-item">
+              <a href="../../index.html" class="menu-trigger">Inicio</a>
+            </li>
+            <li class="menu-item has-dropdown">
+              <a href="#" class="menu-trigger">Productos</a>
+              <div class="dropdown-menu">
+                <div class="dropdown-content">
+                  <div class="dropdown-column">
+                    <h4 class="dropdown-title">Alimentos</h4>
+                    <ul>
+                      <li><a href="#">Pedigre</a></li>
+                      <li><a href="#">Dog Chow</a></li>
+                      <li><a href="#">Pirulín</a></li>
+                    </ul>
+                  </div>
+                  <div class="dropdown-column">
+                    <h4 class="dropdown-title">Accesorios</h4>
+                    <ul>
+                      <li><a href="#">Las pilchas</a></li>
+                      <li><a href="#">Platos</a></li>
+                      <li>
+                        <a href="#">Correas - Collares - Juguetes - Otros</a>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
-            </div>
-          </li>
+            </li>
+            <li class="menu-item has-dropdown">
+              <a href="#" class="menu-trigger">Curiosidades</a>
+              <div class="dropdown-menu">
+                <div class="dropdown-content">
+                  <div class="dropdown-column">
+                    <h4 class="dropdown-title">Especie</h4>
+                    <ul>
+                      <li><a href="../Especie/perros.html">Perros</a></li>
+                      <li><a href="../Especie/gatos.html">Gatos</a></li>
+                      <li>
+                        <a href="../Especie/otras_especies.html">Otros</a>
+                      </li>
+                    </ul>
+                  </div>
 
-          <li class="menu-item has-dropdown">
-            <a href="#" class="menu-trigger">Contacto</a>
-            <div class="dropdown-menu">
-              <div class="dropdown-content">
-                <div class="dropdown-column">
-                  <h4 class="dropdown-title">Información</h4>
-                  <ul>
-                    <li>
-                      <a href="../quienesSomos.html">Quienes somos</a>
-                    </li>
-                    <li>
-                      <a href="../contacto.html">Donde estamos</a>
-                    </li>
-                  </ul>
-                </div>                
+                  <div class="dropdown-column">
+                    <h4 class="dropdown-title">Información</h4>
+                    <ul>
+                      <li>
+                        <a href="../Informacion/acerca_de_alimentos.html"
+                          >Acerca de Alimentos</a
+                        >
+                      </li>
+                      <li>
+                        <a href="../Informacion/acerca_de_accesorios.html"
+                          >Acerca de Accesorios</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               </div>
-            </div>
-          </li>
-
-      
-        </ul>
-      </nav>
+            </li>
+            <li class="menu-item has-dropdown">
+              <a href="#" class="menu-trigger">Contacto</a>
+              <div class="dropdown-menu">
+                <div class="dropdown-content">
+                  <div class="dropdown-column">
+                    <h4 class="dropdown-title">Información</h4>
+                    <ul>
+                      <li>
+                        <a href="../quienesSomos.html">Quienes somos</a>
+                      </li>
+                      <li>
+                        <a href="../contacto.html">Donde estamos</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </nav>
       </div>
     </header>
+    <main>
+      <div class="contenedor">
+        <h1>Guía de Alimentos para Perros</h1>
+        <p class="centrado-texto">
+          Elegí con responsabilidad y conocimiento 🐾
+        </p>
 
-    <div class="contenedor">
-      <main>
+        <section class="modulo">
+          <div>
+            <h2 class="centrado-texto">Kilaje</h2>
+            <ul>
+              <li>1–3 kg: Ideal para razas pequeñas o pruebas</li>
+              <li>7.5–15 kg: Consumo regular</li>
+              <li>20–25 kg: Perros grandes o múltiples mascotas</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="modulo">
+          <div>
+            <h2>Etapa de vida</h2>
+            <ul>
+              <li>Cachorro: Proteínas y calcio</li>
+              <li>Adulto: Balance nutricional</li>
+              <li>Senior: Digestión fácil y soporte articular</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="modulo">
+          <div>
+            <h2>Tipo de alimento</h2>
+            <ul>
+              <li>Seco: Económico y duradero</li>
+              <li>Húmedo: Más sabroso, menos conservable</li>
+              <li>Natural: Sin químicos ni colorantes</li>
+              <li>Terapéutico: Para condiciones médicas</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="modulo">
+          <div>
+            <h2>Marcas destacadas</h2>
+            <ul>
+              <li>Royal Canin</li>
+              <li>Vitalcan</li>
+              <li>Excellent</li>
+              <li>Old Prince</li>
+              <li>Ken-L Ration</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="modulo">
+          <div>
+            <h2>Consejos éticos</h2>
+            <ul>
+              <li>Evitá marcas con denuncias por maltrato animal</li>
+              <li>Preferí ingredientes trazables y naturales</li>
+              <li>Consultá con veterinarios antes de cambiar la dieta</li>
+            </ul>
+          </div>
+        </section>
+
         <div class="contenedor-ofertas">
           <div class="producto-oferta">
             <div class="imagen-producto">
@@ -176,61 +241,9 @@
               <!-- <p class="precio">$ 1.000.-</p> -->
             </div>
           </div>
-          <div class="producto-oferta">
-            <div class="imagen-producto">
-              <img
-              src="../../src/img/Productos/Alimentos/DibujoBolsaAlimento.png"
-              alt="image"">
-            </div>
-            <div class="datos-oferta">
-              <h3 class="familia-oferta">Pajarracos</h3>
-              <h2 class="nombre-producto">Purina</h2>
-              <h3 class="nombre-producto">Pichichus</h3>
-              <p class="tipo-producto">Cariñosos</p>
-              <p class="descripcion-producto">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              </p>
-              <!-- <p class="precio">$ 1.000.-</p> -->
-            </div>
-          </div>
-          <div class="producto-oferta">
-            <div class="imagen-producto">
-              <img
-              src="../../src/img/Productos/Alimentos/DibujoBolsaAlimento.png"
-              alt="image"">
-            </div>
-            <div class="datos-oferta">
-              <h3 class="familia-oferta">Gatitos</h3>
-              <h2 class="nombre-producto">Purina</h2>
-              <h3 class="nombre-producto">Pichichus</h3>
-              <p class="tipo-producto">Para cabrones</p>
-              <p class="descripcion-producto">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              </p>
-              <!-- <p class="precio">$ 1.000.-</p> -->
-            </div>
-          </div>
-
-          <div class="producto-oferta">
-            <div class="imagen-producto">
-              <img
-              src="../../src/img/Productos/Alimentos/DibujoBolsaAlimento.png"
-              alt="image"">
-            </div>
-            <div class="datos-oferta">
-              <h3 class="familia-oferta">Perros</h3>
-              <h2 class="nombre-producto">Purina</h2>
-              <h3 class="nombre-producto">Pichichus</h3>
-              <p class="tipo-producto">Para gordos</p>
-              <p class="descripcion-producto">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              </p>
-              <!-- <p class="precio">$ 1.000.-</p> -->
-            </div>
-          </div>
         </div>
-      </main>
-    </div>
+      </div>
+    </main>
     <footer class="footer">
       <div class="footer-content">
         <div class="footer-section">
@@ -309,4 +322,3 @@
     <script src="../../src/js/hamburger-test.js"></script>
   </body>
 </html>
-

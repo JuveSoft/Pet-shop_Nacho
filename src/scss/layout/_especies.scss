@@ -1,11 +1,10 @@
 .contenedor-especies {
   width: 80%;
-  max-width: 1000px;
 }
 
 .modulo-especie {
   display: block;
-  background-color: #caff09;
+  //background-color: #caff09;
   border-radius: 12px;
   margin: auto;
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
@@ -19,15 +18,17 @@
   }
 }
 .modulo {
+  display: block;
   width: 80%;
-  max-width: 70rem;
+  margin: auto;
   margin-bottom: 2rem;
+  box-shadow: 0px 50px 60px rgba(0, 0, 0, 0.2);
   ul {
     padding-bottom: 0;
     margin-bottom: 0;
   }
   @media (max-width: 768px) {
-    display: block;
+    //display: block;
     margin: auto;
     justify-content: center;
   }

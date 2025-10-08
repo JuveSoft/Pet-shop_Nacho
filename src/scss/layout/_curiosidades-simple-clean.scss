@@ -294,30 +294,53 @@ ul {
 
   /* Anchos específicos para las barras de porcentajes */
   /* Perros */
-  .perros .chart-item.proteinas .chart-bar {
+  .perros,
+  .chart-item,
+  .proteinas,
+  .chart-bar {
     width: 25%;
   }
-  .perros .chart-item.grasas .chart-bar {
+  .perros,
+  .chart-item.grasas,
+  .chart-bar {
     width: 15%;
   }
-  .perros .chart-item.carbohidratos .chart-bar {
+  .perros,
+  .chart-item,
+  .carbohidratos,
+  .chart-bar {
     width: 40%;
   }
-  .perros .chart-item.fibra .chart-bar {
+  .perros,
+  .chart-item,
+  .fibra,
+  .chart-bar {
     width: 8%;
   }
 
   /* Gatos */
-  .gatos .chart-item.proteinas .chart-bar {
+  .gatos,
+  .chart-item,
+  .proteinas,
+  .chart-bar {
     width: 35%;
   }
-  .gatos .chart-item.grasas .chart-bar {
+  .gatos,
+  .chart-item,
+  .grasas,
+  .chart-bar {
     width: 18%;
   }
-  .gatos .chart-item.carbohidratos .chart-bar {
+  .gatos,
+  .chart-item,
+  .carbohidratos,
+  .chart-bar {
     width: 10%;
   }
-  .gatos .chart-item.fibra .chart-bar {
+  .gatos,
+  .chart-item,
+  .fibra,
+  .chart-bar {
     width: 5%;
   }
 
@@ -701,7 +724,8 @@ ul {
 }
 
 /* Botón primario - Gradiente azul a púrpura */
-.btn-primary.btn-fun {
+.btn-primary,
+.btn-fun {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
   color: white;
   box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
@@ -713,7 +737,8 @@ ul {
 }
 
 /* Botón secundario - Gradiente verde a azul */
-.btn-secondary.btn-fun {
+.btn-secondary,
+.btn-fun {
   background: linear-gradient(135deg, #4ecdc4 0%, #45b7d1 50%, #96c93d 100%);
   color: white;
   box-shadow: 0 4px 15px rgba(78, 205, 196, 0.4);
@@ -739,12 +764,12 @@ ul {
 }
 
 /* Regla extra específica para el botón interno */
-.btn-volver .modern-back,
-.btn-volver .volver-btn,
-.btn-volver button {
-  /* NO aplicar margin al botón interno, solo padding */
-  margin: 0 !important;
-}
+// .btn-volver, .modern-back,
+// .volver-btn,
+//  button {
+//   /* NO aplicar margin al botón interno, solo padding */
+//   margin: 0 !important;
+// }
 
 .btn-volver .modern-back {
   display: inline-flex;
@@ -793,9 +818,9 @@ ul {
 }
 
 /* FORZAR SEPARACIÓN DEL FOOTER - EXTREMADAMENTE ESPECÍFICO */
-body .contenedor .cta-section,
-.contenedor .cta-section,
-div.cta-section {
+body,
+.contenedor,
+.cta-section {
   margin-bottom: 2rem !important;
   padding-bottom: 2rem !important;
 }
@@ -821,32 +846,32 @@ div.cta-section {
 // }
 
 /* FORZAR CENTRADO DE CTA-CONTENT - EXTREMADAMENTE ESPECÍFICO */
-body .contenedor .cta-section .cta-content,
-.contenedor .cta-section .cta-content,
-div.cta-section .cta-content,
-.cta-content {
-  text-align: center !important;
+body,
+.contenedor,
+.cta-section,
+.cta-content,
+.cta-section {
+  //text-align: center !important;
   margin: 0 auto !important;
   display: block !important;
   width: 100% !important;
   max-width: 800px !important;
 }
 
-body .contenedor .cta-section .cta-content h2,
-.contenedor .cta-section .cta-content h2,
-div.cta-section .cta-content h2,
-.cta-content h2 {
-  text-align: center !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  width: 100% !important;
-  display: block !important;
-}
+//body .contenedor .cta-section .cta-content h2,
+//div.cta-section{
+//text-align: center !important;
+//margin-left: auto !important;
+//margin-right: auto !important;
+//width: 100% !important;
+//display: block !important;
+//}
 
-body .contenedor .cta-section .cta-content p,
-.contenedor .cta-section .cta-content p,
-div.cta-section .cta-content p,
-.cta-content p {
+body,
+.contenedor,
+.cta-section,
+.cta-content,
+p {
   text-align: center !important;
   margin-left: auto !important;
   margin-right: auto !important;
