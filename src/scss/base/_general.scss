@@ -14,7 +14,7 @@ body {
   margin: 0;
   font-size: 62.5%;
   min-height: 100vh; // Para que el sticky funcione correctamente
-  overflow-x: hidden;
+  //overflow-x: hidden;
   width: 100%;
 
   // Configuración del header embebido migrado
@@ -35,8 +35,8 @@ body {
 
 .contenedor {
   position: relative;
-  width: 80%;
-  max-width: 1200px;
+  //width: 80%;
+  //max-width: 1200px;
   height: auto;
   margin: auto;
   margin-bottom: 0 !important; // Sin espacio al footer
@@ -45,11 +45,10 @@ body {
   padding-bottom: 0 !important; // Asegurar que no hay padding inferior
   box-sizing: border-box;
   display: grid;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: auto 1fr;
   grid-template-areas:
     "header"
-    "main"
-    "footer";
+    "main";
   background: $white;
 
   @media (max-width: 768px) {

@@ -863,11 +863,9 @@ ul {
 }
 
 /* FORZAR SEPARACIÓN DEL FOOTER - EXTREMADAMENTE ESPECÍFICO */
-body,
-.contenedor,
 .cta-section {
-  margin-bottom: 2rem !important;
-  padding-bottom: 2rem !important;
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
 }
 
 /* Para desktop */
@@ -891,11 +889,9 @@ body,
 // }
 
 /* FORZAR CENTRADO DE CTA-CONTENT - EXTREMADAMENTE ESPECÍFICO */
-body,
 .contenedor,
 .cta-section,
-.cta-content,
-.cta-section {
+.cta-content {
   //text-align: center !important;
   margin: 0 auto !important;
   display: block !important;
@@ -912,7 +908,6 @@ body,
 //display: block !important;
 //}
 
-body,
 .contenedor,
 .cta-section,
 .cta-content,
